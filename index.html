@@ -1,0 +1,453 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <title>jOpenSpace - vývojářská ne-konference</title>
+    <!-- meta -->
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow, snippet, archive" />
+	<meta name="author" content="FG Forrest, a.s." />
+    <meta name="keywords" content="openspace, non-conference, developers, podcast, presentations" />
+    <meta name="description" content="Informace o aktuálním ročníku vývojářské ne-konference jOpenSpace a archív materiálů z předchozích ročníků (podcasty)" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon-precomposed" href="./images/icon.png" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" media="screen" href="./js/highslide/highslide.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="./js/jquery-1.8.js"></script>
+    <script type="text/javascript" src="./js/jquery.ui.map.js"></script>
+    <script type="text/javascript" src="./js/jquery.organicTabs.js"></script>
+    <script type="text/javascript" src="./js/highslide/highslide-full.js"></script>
+    <script src="./js/main.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="vw">
+            <nav>
+                <ul class="clr">
+                    <li><a href="#about">O co jde</a></li>
+                    <li><a href="#mapCanvas">Mapa</a></li>
+                    <li><a href="#media">Přednášky a záznamy</a></li>
+                </ul>
+            </nav>
+            <h1 class="logo">
+                <img src="./images/logo.png" alt="jOpenSpace" />
+            </h1>
+        </div>
+    </header>
+
+    <section>
+
+        <div class="vw">
+            <div id="preContent">
+                <h2>2.-3. listopadu 2014</h2>
+                <p>v <a href="#" target="_blank">hotelu Žákova hora</a> v Herálci uprostřed Ždárských vrchů</p>
+            </div>
+
+            <div id="topContent">
+                <div class="twoCols clr">
+                    <div class="fl">
+                        <h2 id="about">O co jde</h2>
+                        <p>Vítejte na webu malé české <a href="#" target="_blank">ne-konference</a> jOpenSpace. OpenSpace konference jsou specifické tím, že se jejich program příliš dopředu neplánuje. Mluví se zkrátka o tom, co účastníky zajímá. Nikdo totiž není jen pasivním divákem, každý přispěje svou troškou do mlýna. Pokud Vás zajímá více o tomto druhu "konferencí" podívejte se na <a href="#" target="_blank">slideshow</a> Bruce Eckela (anglicky).</p>
+                        <p>Nápad uspořádat podobný typ k onference i u nás se zrodil v hlavě Michala Šrajera (<a href="#" target="_blank">Inmite s.r.o.</a>), který se nechal do značné míry inspirovat velmi vyvedenou akcí <a href="#" target="_blank">JavaPosse Roundup</a>, již poněkolikáte konanou za velkou louží.</p>
+                        <img src="./images/foto-1.jpg" alt="Společné foto" class="motive" />
+                        <p>Doposud se odehrály 4 ročníky této akce. První dva se konaly na Jizerce, třetí poblíž Znojma a poslední v Krkonoších. Na akci se vždy sjede 15 - 25 lidí, které spojuje zájem o vývoj aplikací a stráví víkend diskusí o technologiích, zkušenostech a aktuálních problémech, které řeší. Kromě neformálních diskusí si každý z účastníků připraví krátkou přednášku na jím zvolené téma - typicky v rozsahu okolo 10 minut. To, že se jedná o zajímavé přednášky se můžete sami přesvědčit poslechnutím audio záznamů, které jsou dostupné na těchto stránkách.</p>
+                        <p>Od roku 2011 jsou registrace na tuto akci otevřené komukoliv, kdo má zájem se zúčastnit. Poslední ne-konference byla organizována přes <a href="#" target="_blank">Srazy.info</a> a tento trend by měl v budoucnosti také pokračovat.</p>
+                        <p>V případě Vašeho zájmu o účast na další ne-konferenci, sledujte oznámení na těchto stránkách. Pokud máte nějaké další dotazy, můžete mne kontaktovat na adrese: novotnaci (na) gmail (tečka) com</p>
+                    </div>
+                    <div class="fr">
+                        <h2>Děkujeme</h2>
+                        <ul id="sponsors">
+                            <li>
+                                <img src="./images/avast.png" alt="Avast!" />
+                                <p>Generálním sponzorem konference je firma <a href="#" target="_blank">AVAST!</a> dodávající profesionální bezpečnostní řešení pro celý svět.</p>
+                            </li>
+                            <li>
+                                <img src="./images/jetBrains.png" alt="Avast!" />
+                                <p>Pět nejlepších přednášek získá licenci na vývojářský nástroj z dílny <a href="#" target="_blank">JetBrains</a> dle své vlastní volby.</p>
+                            </li>
+                            <li>
+                                <img src="./images/avast.png" alt="Avast!" />
+                                <p>Generálním sponzorem konference je firma <a href="#" target="_blank">AVAST!</a> dodávající profesionální bezpečnostní řešení pro celý svět.</p>
+                            </li>
+                            <li>
+                                <img src="./images/jetBrains.png" alt="Avast!" />
+                                <p>Pět nejlepších přednášek získá licenci na vývojářský nástroj z dílny <a href="#" target="_blank">JetBrains</a> dle své vlastní volby.</p>
+                            </li>
+                            <li>
+                                <img src="./images/avast.png" alt="Avast!" />
+                                <p>Generálním sponzorem konference je firma <a href="#" target="_blank">AVAST!</a> dodávající profesionální bezpečnostní řešení pro celý svět.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="mapCanvas"></div>
+
+        <div class="vw" id="bottomContentCnt">
+            <div id="bottomContent">
+                <div id="bottomContentSwitch">
+                    <h2 id="media">Přednášky a záznamy</h2>
+                    <ul class="nav clr">
+                        <li><a href="#year2013" class="current">2013</a></li>
+                        <li><a href="#year2011">2011</a></li>
+                        <li><a href="#year2010">2010</a></li>
+                        <li><a href="#year2009">2009</a></li>
+                        <li><a href="#year2008">2008</a></li>
+                    </ul>
+                </div>
+                <div class="list-wrap">
+                    <div id="year2013" class="galleryGroup">
+                        <div class="in">
+                            <ul class="gallery clr">
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-1.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-2.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-3.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-4.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-5.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-6.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-7.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-8.jpg" alt="" /></a></li>
+                            </ul>
+                        </div>
+
+                        <article>
+                            <div class="in">
+                                <p class="author">Roman Pichlík</p>
+                                <h3>How to write a cynical software - stability Patterns & Anti-patterns</h3>
+                                <p class="articleContent">Cynical software expect bad things to happen and is never surprised when they do. Cynical software doesn't even trust itself, so it puts up internal barriers to protect itself from failures. It refuses to get too intimate with other systems, because it could get hurt. There is only one certainty bugs will happen. They cannot be eliminated, so they must be survived instead. A failure in one service can spread to other services there being accelerating and causing unavailability of the whole system. This talk give you an overview of stability challenges in service oriented architecture we have in GoodData. The talk is highly influenced by Release It! book, design of Netflix's famous library Hystrix and last but not least lessons we've learnt during sleepless nights."</p>
+                                <p class="authorInfo">DevOps, Agile Continuos Delivery, Architecture</p>
+                            </div>
+                            <ul class="clr articleMedia">
+                                <li><a href="#">Podcast</a></li>
+                                <li><a href="#">Prezentace</a></li>
+                            </ul>
+                        </article>
+
+                        <article>
+                            <div class="in">
+                                <p class="author">Pavel Jetenský</p>
+                                <h3>Jaké je to být IT PhD studentem</h3>
+                                <p class="articleContent">Přemýšleli jste někdy o tom, jaké je to být prezenčním PhD studentem? V LT se podělím o svoje zkušenosti (jsem 3. rokem studentem), zjistíte, jaké mám stipendium, jak je to s vědeckými konferencemi a články, jak se financuje a hodnotí česká věda. Bude to o svobodě koumat si, na čem chci a radosti z učení, ale i o otravné administraci a politikaření.</p>
+                                <p class="authorInfo">Programátor na volné noze.</p>
+                            </div>
+                            <ul class="clr articleMedia">
+                                <li><a href="#">Podcast</a></li>
+                                <li><a href="#">Prezentace</a></li>
+                            </ul>
+                        </article>
+
+                        <article>
+                            <div class="in">
+                                <p class="author">Roman Pichlík</p>
+                                <h3>How to write a cynical software - stability Patterns & Anti-patterns</h3>
+                                <p class="articleContent">Cynical software expect bad things to happen and is never surprised when they do. Cynical software doesn't even trust itself, so it puts up internal barriers to protect itself from failures. It refuses to get too intimate with other systems, because it could get hurt. There is only one certainty bugs will happen. They cannot be eliminated, so they must be survived instead. A failure in one service can spread to other services there being accelerating and causing unavailability of the whole system. This talk give you an overview of stability challenges in service oriented architecture we have in GoodData. The talk is highly influenced by Release It! book, design of Netflix's famous library Hystrix and last but not least lessons we've learnt during sleepless nights."</p>
+                                <p class="authorInfo">DevOps, Agile Continuos Delivery, Architecture</p>
+                            </div>
+                            <ul class="clr articleMedia">
+                                <li><a href="#">Podcast</a></li>
+                                <li><a href="#">Prezentace</a></li>
+                            </ul>
+                        </article>
+
+                        <article>
+                            <div class="in">
+                                <p class="author">Pavel Jetenský</p>
+                                <h3>Jaké je to být IT PhD studentem</h3>
+                                <p class="articleContent">Přemýšleli jste někdy o tom, jaké je to být prezenčním PhD studentem? V LT se podělím o svoje zkušenosti (jsem 3. rokem studentem), zjistíte, jaké mám stipendium, jak je to s vědeckými konferencemi a články, jak se financuje a hodnotí česká věda. Bude to o svobodě koumat si, na čem chci a radosti z učení, ale i o otravné administraci a politikaření.</p>
+                                <p class="authorInfo">Programátor na volné noze.</p>
+                            </div>
+                            <ul class="clr articleMedia">
+                                <li><a href="#">Podcast</a></li>
+                                <li><a href="#">Prezentace</a></li>
+                            </ul>
+                        </article>
+                    </div>
+
+                    <div id="year2011" class="hide galleryGroup">
+                        <div class="in">
+                            <ul class="gallery clr">
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-1.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-2.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-3.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-4.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-5.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-6.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-7.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-8.jpg" alt="" /></a></li>
+                            </ul>
+                        </div>
+
+                        <article>
+                            <div class="in">
+                                <p class="author">Roman Pichlík</p>
+                                <h3>How to write a cynical software - stability Patterns & Anti-patterns</h3>
+                                <p class="articleContent">Cynical software expect bad things to happen and is never surprised when they do. Cynical software doesn't even trust itself, so it puts up internal barriers to protect itself from failures. It refuses to get too intimate with other systems, because it could get hurt. There is only one certainty bugs will happen. They cannot be eliminated, so they must be survived instead. A failure in one service can spread to other services there being accelerating and causing unavailability of the whole system. This talk give you an overview of stability challenges in service oriented architecture we have in GoodData. The talk is highly influenced by Release It! book, design of Netflix's famous library Hystrix and last but not least lessons we've learnt during sleepless nights."</p>
+                                <p class="authorInfo">DevOps, Agile Continuos Delivery, Architecture</p>
+                            </div>
+                            <ul class="clr articleMedia">
+                                <li><a href="#">Podcast</a></li>
+                                <li><a href="#">Prezentace</a></li>
+                            </ul>
+                        </article>
+
+                        <article>
+                            <div class="in">
+                                <p class="author">Pavel Jetenský</p>
+                                <h3>Jaké je to být IT PhD studentem</h3>
+                                <p class="articleContent">Přemýšleli jste někdy o tom, jaké je to být prezenčním PhD studentem? V LT se podělím o svoje zkušenosti (jsem 3. rokem studentem), zjistíte, jaké mám stipendium, jak je to s vědeckými konferencemi a články, jak se financuje a hodnotí česká věda. Bude to o svobodě koumat si, na čem chci a radosti z učení, ale i o otravné administraci a politikaření.</p>
+                                <p class="authorInfo">Programátor na volné noze.</p>
+                            </div>
+                            <ul class="clr articleMedia">
+                                <li><a href="#">Podcast</a></li>
+                                <li><a href="#">Prezentace</a></li>
+                            </ul>
+                        </article>
+
+                        <article>
+                            <div class="in">
+                                <p class="author">Roman Pichlík</p>
+                                <h3>How to write a cynical software - stability Patterns & Anti-patterns</h3>
+                                <p class="articleContent">Cynical software expect bad things to happen and is never surprised when they do. Cynical software doesn't even trust itself, so it puts up internal barriers to protect itself from failures. It refuses to get too intimate with other systems, because it could get hurt. There is only one certainty bugs will happen. They cannot be eliminated, so they must be survived instead. A failure in one service can spread to other services there being accelerating and causing unavailability of the whole system. This talk give you an overview of stability challenges in service oriented architecture we have in GoodData. The talk is highly influenced by Release It! book, design of Netflix's famous library Hystrix and last but not least lessons we've learnt during sleepless nights."</p>
+                                <p class="authorInfo">DevOps, Agile Continuos Delivery, Architecture</p>
+                            </div>
+                            <ul class="clr articleMedia">
+                                <li><a href="#">Podcast</a></li>
+                                <li><a href="#">Prezentace</a></li>
+                            </ul>
+                        </article>
+
+                        <article>
+                            <div class="in">
+                                <p class="author">Pavel Jetenský</p>
+                                <h3>Jaké je to být IT PhD studentem</h3>
+                                <p class="articleContent">Přemýšleli jste někdy o tom, jaké je to být prezenčním PhD studentem? V LT se podělím o svoje zkušenosti (jsem 3. rokem studentem), zjistíte, jaké mám stipendium, jak je to s vědeckými konferencemi a články, jak se financuje a hodnotí česká věda. Bude to o svobodě koumat si, na čem chci a radosti z učení, ale i o otravné administraci a politikaření.</p>
+                                <p class="authorInfo">Programátor na volné noze.</p>
+                            </div>
+                            <ul class="clr articleMedia">
+                                <li><a href="#">Podcast</a></li>
+                                <li><a href="#">Prezentace</a></li>
+                            </ul>
+                        </article>
+                    </div>
+
+                    <div id="year2010" class="hide galleryGroup">
+                        <div class="in">
+                            <ul class="gallery clr">
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-1.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-2.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-3.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-4.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-5.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-6.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-7.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-8.jpg" alt="" /></a></li>
+                            </ul>
+                        </div>
+
+                        <article>
+                            <div class="in">
+                                <p class="author">Roman Pichlík</p>
+                                <h3>How to write a cynical software - stability Patterns & Anti-patterns</h3>
+                                <p class="articleContent">Cynical software expect bad things to happen and is never surprised when they do. Cynical software doesn't even trust itself, so it puts up internal barriers to protect itself from failures. It refuses to get too intimate with other systems, because it could get hurt. There is only one certainty bugs will happen. They cannot be eliminated, so they must be survived instead. A failure in one service can spread to other services there being accelerating and causing unavailability of the whole system. This talk give you an overview of stability challenges in service oriented architecture we have in GoodData. The talk is highly influenced by Release It! book, design of Netflix's famous library Hystrix and last but not least lessons we've learnt during sleepless nights."</p>
+                                <p class="authorInfo">DevOps, Agile Continuos Delivery, Architecture</p>
+                            </div>
+                            <ul class="clr articleMedia">
+                                <li><a href="#">Podcast</a></li>
+                                <li><a href="#">Prezentace</a></li>
+                            </ul>
+                        </article>
+
+                        <article>
+                            <div class="in">
+                                <p class="author">Pavel Jetenský</p>
+                                <h3>Jaké je to být IT PhD studentem</h3>
+                                <p class="articleContent">Přemýšleli jste někdy o tom, jaké je to být prezenčním PhD studentem? V LT se podělím o svoje zkušenosti (jsem 3. rokem studentem), zjistíte, jaké mám stipendium, jak je to s vědeckými konferencemi a články, jak se financuje a hodnotí česká věda. Bude to o svobodě koumat si, na čem chci a radosti z učení, ale i o otravné administraci a politikaření.</p>
+                                <p class="authorInfo">Programátor na volné noze.</p>
+                            </div>
+                            <ul class="clr articleMedia">
+                                <li><a href="#">Podcast</a></li>
+                                <li><a href="#">Prezentace</a></li>
+                            </ul>
+                        </article>
+
+                        <article>
+                            <div class="in">
+                                <p class="author">Roman Pichlík</p>
+                                <h3>How to write a cynical software - stability Patterns & Anti-patterns</h3>
+                                <p class="articleContent">Cynical software expect bad things to happen and is never surprised when they do. Cynical software doesn't even trust itself, so it puts up internal barriers to protect itself from failures. It refuses to get too intimate with other systems, because it could get hurt. There is only one certainty bugs will happen. They cannot be eliminated, so they must be survived instead. A failure in one service can spread to other services there being accelerating and causing unavailability of the whole system. This talk give you an overview of stability challenges in service oriented architecture we have in GoodData. The talk is highly influenced by Release It! book, design of Netflix's famous library Hystrix and last but not least lessons we've learnt during sleepless nights."</p>
+                                <p class="authorInfo">DevOps, Agile Continuos Delivery, Architecture</p>
+                            </div>
+                            <ul class="clr articleMedia">
+                                <li><a href="#">Podcast</a></li>
+                                <li><a href="#">Prezentace</a></li>
+                            </ul>
+                        </article>
+
+                        <article>
+                            <div class="in">
+                                <p class="author">Pavel Jetenský</p>
+                                <h3>Jaké je to být IT PhD studentem</h3>
+                                <p class="articleContent">Přemýšleli jste někdy o tom, jaké je to být prezenčním PhD studentem? V LT se podělím o svoje zkušenosti (jsem 3. rokem studentem), zjistíte, jaké mám stipendium, jak je to s vědeckými konferencemi a články, jak se financuje a hodnotí česká věda. Bude to o svobodě koumat si, na čem chci a radosti z učení, ale i o otravné administraci a politikaření.</p>
+                                <p class="authorInfo">Programátor na volné noze.</p>
+                            </div>
+                            <ul class="clr articleMedia">
+                                <li><a href="#">Podcast</a></li>
+                                <li><a href="#">Prezentace</a></li>
+                            </ul>
+                        </article>
+                    </div>
+
+                    <div id="year2009" class="hide galleryGroup">
+                        <div class="in">
+                            <ul class="gallery clr">
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-1.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-2.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-3.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-4.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-5.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-6.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-7.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-8.jpg" alt="" /></a></li>
+                            </ul>
+                        </div>
+
+                        <article>
+                            <div class="in">
+                                <p class="author">Roman Pichlík</p>
+                                <h3>How to write a cynical software - stability Patterns & Anti-patterns</h3>
+                                <p class="articleContent">Cynical software expect bad things to happen and is never surprised when they do. Cynical software doesn't even trust itself, so it puts up internal barriers to protect itself from failures. It refuses to get too intimate with other systems, because it could get hurt. There is only one certainty bugs will happen. They cannot be eliminated, so they must be survived instead. A failure in one service can spread to other services there being accelerating and causing unavailability of the whole system. This talk give you an overview of stability challenges in service oriented architecture we have in GoodData. The talk is highly influenced by Release It! book, design of Netflix's famous library Hystrix and last but not least lessons we've learnt during sleepless nights."</p>
+                                <p class="authorInfo">DevOps, Agile Continuos Delivery, Architecture</p>
+                            </div>
+                            <ul class="clr articleMedia">
+                                <li><a href="#">Podcast</a></li>
+                                <li><a href="#">Prezentace</a></li>
+                            </ul>
+                        </article>
+
+                        <article>
+                            <div class="in">
+                                <p class="author">Pavel Jetenský</p>
+                                <h3>Jaké je to být IT PhD studentem</h3>
+                                <p class="articleContent">Přemýšleli jste někdy o tom, jaké je to být prezenčním PhD studentem? V LT se podělím o svoje zkušenosti (jsem 3. rokem studentem), zjistíte, jaké mám stipendium, jak je to s vědeckými konferencemi a články, jak se financuje a hodnotí česká věda. Bude to o svobodě koumat si, na čem chci a radosti z učení, ale i o otravné administraci a politikaření.</p>
+                                <p class="authorInfo">Programátor na volné noze.</p>
+                            </div>
+                            <ul class="clr articleMedia">
+                                <li><a href="#">Podcast</a></li>
+                                <li><a href="#">Prezentace</a></li>
+                            </ul>
+                        </article>
+
+                        <article>
+                            <div class="in">
+                                <p class="author">Roman Pichlík</p>
+                                <h3>How to write a cynical software - stability Patterns & Anti-patterns</h3>
+                                <p class="articleContent">Cynical software expect bad things to happen and is never surprised when they do. Cynical software doesn't even trust itself, so it puts up internal barriers to protect itself from failures. It refuses to get too intimate with other systems, because it could get hurt. There is only one certainty bugs will happen. They cannot be eliminated, so they must be survived instead. A failure in one service can spread to other services there being accelerating and causing unavailability of the whole system. This talk give you an overview of stability challenges in service oriented architecture we have in GoodData. The talk is highly influenced by Release It! book, design of Netflix's famous library Hystrix and last but not least lessons we've learnt during sleepless nights."</p>
+                                <p class="authorInfo">DevOps, Agile Continuos Delivery, Architecture</p>
+                            </div>
+                            <ul class="clr articleMedia">
+                                <li><a href="#">Podcast</a></li>
+                                <li><a href="#">Prezentace</a></li>
+                            </ul>
+                        </article>
+
+                        <article>
+                            <div class="in">
+                                <p class="author">Pavel Jetenský</p>
+                                <h3>Jaké je to být IT PhD studentem</h3>
+                                <p class="articleContent">Přemýšleli jste někdy o tom, jaké je to být prezenčním PhD studentem? V LT se podělím o svoje zkušenosti (jsem 3. rokem studentem), zjistíte, jaké mám stipendium, jak je to s vědeckými konferencemi a články, jak se financuje a hodnotí česká věda. Bude to o svobodě koumat si, na čem chci a radosti z učení, ale i o otravné administraci a politikaření.</p>
+                                <p class="authorInfo">Programátor na volné noze.</p>
+                            </div>
+                            <ul class="clr articleMedia">
+                                <li><a href="#">Podcast</a></li>
+                                <li><a href="#">Prezentace</a></li>
+                            </ul>
+                        </article>
+                    </div>
+
+                    <div id="year2008" class="hide galleryGroup">
+                        <div class="in">
+                            <ul class="gallery clr">
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-1.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-2.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-3.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-4.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-5.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-6.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-7.jpg" alt="" /></a></li>
+                                <li><a href="./images/gallery/detail/gallery-1.jpg" class="highslide" rel="highslide"><img src="./images/gallery/thumbnail/gallery-8.jpg" alt="" /></a></li>
+                            </ul>
+                        </div>
+
+                        <article>
+                            <div class="in">
+                                <p class="author">Roman Pichlík</p>
+                                <h3>How to write a cynical software - stability Patterns & Anti-patterns</h3>
+                                <p class="articleContent">Cynical software expect bad things to happen and is never surprised when they do. Cynical software doesn't even trust itself, so it puts up internal barriers to protect itself from failures. It refuses to get too intimate with other systems, because it could get hurt. There is only one certainty bugs will happen. They cannot be eliminated, so they must be survived instead. A failure in one service can spread to other services there being accelerating and causing unavailability of the whole system. This talk give you an overview of stability challenges in service oriented architecture we have in GoodData. The talk is highly influenced by Release It! book, design of Netflix's famous library Hystrix and last but not least lessons we've learnt during sleepless nights."</p>
+                                <p class="authorInfo">DevOps, Agile Continuos Delivery, Architecture</p>
+                            </div>
+                            <ul class="clr articleMedia">
+                                <li><a href="#">Podcast</a></li>
+                                <li><a href="#">Prezentace</a></li>
+                            </ul>
+                        </article>
+
+                        <article>
+                            <div class="in">
+                                <p class="author">Pavel Jetenský</p>
+                                <h3>Jaké je to být IT PhD studentem</h3>
+                                <p class="articleContent">Přemýšleli jste někdy o tom, jaké je to být prezenčním PhD studentem? V LT se podělím o svoje zkušenosti (jsem 3. rokem studentem), zjistíte, jaké mám stipendium, jak je to s vědeckými konferencemi a články, jak se financuje a hodnotí česká věda. Bude to o svobodě koumat si, na čem chci a radosti z učení, ale i o otravné administraci a politikaření.</p>
+                                <p class="authorInfo">Programátor na volné noze.</p>
+                            </div>
+                            <ul class="clr articleMedia">
+                                <li><a href="#">Podcast</a></li>
+                                <li><a href="#">Prezentace</a></li>
+                            </ul>
+                        </article>
+
+                        <article>
+                            <div class="in">
+                                <p class="author">Roman Pichlík</p>
+                                <h3>How to write a cynical software - stability Patterns & Anti-patterns</h3>
+                                <p class="articleContent">Cynical software expect bad things to happen and is never surprised when they do. Cynical software doesn't even trust itself, so it puts up internal barriers to protect itself from failures. It refuses to get too intimate with other systems, because it could get hurt. There is only one certainty bugs will happen. They cannot be eliminated, so they must be survived instead. A failure in one service can spread to other services there being accelerating and causing unavailability of the whole system. This talk give you an overview of stability challenges in service oriented architecture we have in GoodData. The talk is highly influenced by Release It! book, design of Netflix's famous library Hystrix and last but not least lessons we've learnt during sleepless nights."</p>
+                                <p class="authorInfo">DevOps, Agile Continuos Delivery, Architecture</p>
+                            </div>
+                            <ul class="clr articleMedia">
+                                <li><a href="#">Podcast</a></li>
+                                <li><a href="#">Prezentace</a></li>
+                            </ul>
+                        </article>
+
+                        <article>
+                            <div class="in">
+                                <p class="author">Pavel Jetenský</p>
+                                <h3>Jaké je to být IT PhD studentem</h3>
+                                <p class="articleContent">Přemýšleli jste někdy o tom, jaké je to být prezenčním PhD studentem? V LT se podělím o svoje zkušenosti (jsem 3. rokem studentem), zjistíte, jaké mám stipendium, jak je to s vědeckými konferencemi a články, jak se financuje a hodnotí česká věda. Bude to o svobodě koumat si, na čem chci a radosti z učení, ale i o otravné administraci a politikaření.</p>
+                                <p class="authorInfo">Programátor na volné noze.</p>
+                            </div>
+                            <ul class="clr articleMedia">
+                                <li><a href="#">Podcast</a></li>
+                                <li><a href="#">Prezentace</a></li>
+                            </ul>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+</body>
+</html>
