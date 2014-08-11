@@ -78,7 +78,7 @@ header nav ul li a { text-decoration: none; color: #f6f7e3; font-size: .944em;}
 header nav ul li a:hover { text-decoration: none; color: #64b49e;}
 .logo { text-align: center;}
 
-section { padding-bottom: 83px;}
+section { margin-bottom: 25px;}
 
 /* precontent */
 #preContent { background-color: #fff; background-color: rgba( 255, 255, 255, .71); text-align: center; padding: 27px 0 36px 0;}
@@ -140,6 +140,9 @@ section { padding-bottom: 83px;}
 .highslide-previous { background: url("./design/sprites.png") no-repeat scroll 0 -400px; display: inline-block; height: 48px; overflow: hidden; text-indent: -9999px; width: 48px;}
 .highslide-previous:hover { opacity: .95;}
 .closebutton:hover { opacity: .95;}
+
+/* patička */
+footer { margin-bottom: 30px;}
 
 /* responsive */
 @media all and (max-width: 1139px) {
