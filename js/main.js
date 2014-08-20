@@ -33,10 +33,10 @@ $(document).ready(function() {
 
     /* mapka */
     $('#mapCanvas').gmap().bind('init', function(ev, map) {
-        $('#mapCanvas').gmap('addMarker', {'position': '49.69059,15.9948', 'bounds': true}).click(function() {
-            $('#mapCanvas').gmap('openInfoWindow', {'content': '<a href="http://zakova-hora.hotel.cz/" target="_blank" class="mapAnchor">http://zakova-hora.hotel.cz/</a>'}, this);
+        $('#mapCanvas').gmap('addMarker', {'position': '48.8584769, 17.5931369', 'bounds': true}).click(function() {
+            $('#mapCanvas').gmap('openInfoWindow', {'content': '<div style="text-wrap: none"><strong>Hotel Háj</strong><br/>GPS: 48°51\'30.517"N, 17°35\'35.293"E<br/><a href="http://www.hotelhaj.cz/" target="_blank" class="mapAnchor">http://www.hotelhaj.cz/</a></div>'}, this);
         });
-        $('#mapCanvas').gmap('option', 'zoom', 16);
+        $('#mapCanvas').gmap('option', 'zoom', 14);
     });
 
     /* přepínání tabů */
