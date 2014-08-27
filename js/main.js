@@ -7,8 +7,18 @@ document.createElement('figure');
 
 $(document).ready(function() {
 
+    /* podcasty a videa - jiné zobrazení při jedné a více než dvou položkách */
+    $('.articleMedia').each(function() {
+        var size = $('>li', this).size();
+        if ( size == 1 ) {
+            $(this).addClass('oneItem');
+        } else if ( size > 2 ) {
+            $(this).addClass('moreItems');
+        }
+    });
+
     /* menu */
-    $(document).on('click', 'nav ul li a', function(e) {
+    $(document).on('click', 'nav ul li a, .scroll', function(e) {
         e.preventDefault();
         var el = $(this).attr('href');
         var elOffset = $(el).offset().top;
