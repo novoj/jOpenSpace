@@ -95,7 +95,7 @@ ul.centered > li { display: inline-block; list-style: none; vertical-align: midd
 #topContent .twoCols > .fl > * { padding: 0 100px;}
 #topContent .twoCols > .fl .motive { padding: 0; margin: 54px 0 52px 0;}
 #topContent .twoCols > .fr { width: 390px; background: url('./design/bg-right-col.jpg') 0 0 repeat; text-align: center; padding: 63px 40px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
-#topContent .twoCols > .fr h2 { color: #fff; margin-bottom: 74px;}
+#topContent .twoCols > .fr h2 { color: #fff; margin-bottom: 32px;}
 #topContent .twoCols > .fr li { font-size: .944em; margin-bottom: 86px;}
 #topContent .twoCols > .fr li * { color: #fff;}
 #topContent .twoCols > .fr li p { line-height: 1.8;}

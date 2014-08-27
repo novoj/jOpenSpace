@@ -69,3 +69,33 @@ $(document).ready(function() {
 
 });
 
+function stirSponsors(ul) {
+    ul.hide();
+    var items = ul.find("li").toArray();
+    var randomizedItems = shuffle(items);
+    ul.empty();
+    for(item in randomizedItems) {
+        ul.append(randomizedItems[item]);
+    }
+    ul.fadeIn(1000);
+}
+
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex ;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+}
+
