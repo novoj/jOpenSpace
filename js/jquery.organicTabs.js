@@ -58,7 +58,7 @@
 
                 // Don't behave like a regular link
                 // Stop propegation and bubbling
-                return false;
+                //return false;
             });
 
         };

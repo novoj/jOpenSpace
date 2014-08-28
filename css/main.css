@@ -118,17 +118,20 @@ ul.centered > li { display: inline-block; list-style: none; vertical-align: midd
 .list-wrap article ul.clr li { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; width: 50%; padding-left: 97px; background-color: #edece2;}
 .list-wrap article ul.clr li:first-of-type { margin: 0 1px 0 -1px;}
 .list-wrap article ul.clr li a { background: url('./design/sprites.png') 0 -180px no-repeat; padding: 19px 0 19px 52px; text-decoration: none; display: block; text-decoration: underline;}
+.list-wrap article ul.clr li.podcast a { background-position: 0 -180px;}
+.list-wrap article ul.clr li.presentation a { background-position: 0 -280px;}
+.list-wrap article ul.clr li.videocast a { background-position: 0 -580px;}
+.list-wrap article ul.clr li.examples a { background-position: 0 -680px;}
 .list-wrap article ul.clr li a:hover { text-decoration: none;}
 .list-wrap article ul.clr li i { font-weight: 300; margin-bottom: 20px; display: block;}
-.list-wrap article ul.clr li:last-of-type a { background-position: 0 -280px;}
 .in { padding: 61px 100px;}
 .list-wrap article ul.clr.oneItem li { margin: 0; width: 100%;}
 .list-wrap article ul.clr.moreItems li { margin: 0 0 1px 0; width: 100%;}
 .list-wrap article ul.clr.moreItems li:last-of-type { margin: 0;}
 
-/* blogy */
-.blogList li { list-style: none; margin-bottom: 10px;}
-.blogList li:last-of-type { margin-bottom: 0;}
+/* seznam */
+.styledList li { list-style: none; margin-bottom: 10px;}
+.styledList li:last-of-type { margin-bottom: 0;}
 
 /* galerie */
 .gallery {}

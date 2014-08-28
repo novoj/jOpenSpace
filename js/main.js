@@ -19,7 +19,7 @@ $(document).ready(function() {
 
     /* menu */
     $(document).on('click', 'nav ul li a, .scroll', function(e) {
-        e.preventDefault();
+        //e.preventDefault();
         var el = $(this).attr('href');
         var elOffset = $(el).offset().top;
         $('body,html').animate({
@@ -65,9 +65,40 @@ $(document).ready(function() {
         };
         // return false to prevent the onclick being set once again
         return false;
-    }
+    };
+
+    /* zobrazení tabu, pokud přijde jako hash */
+    $('#bottomContent').each(function() {
+        var hash = window.location.hash;
+        detectHashChange(hash);
+    });
+
+    /* detekce eventu history.back */
+    var hashChangeSource = '';
+    $(document).on('click', 'a', function(e) {
+        hashChangeSource = 'click';
+    });
+
+    $(window).on('hashchange', function(event){
+        if ( hashChangeSource != 'click' ) {
+            var hash = window.location.hash;
+            detectHashChange(hash);
+        }
+        hashChangeSource = '';
+    });
 
 });
+
+function detectHashChange (hash) {
+    $('#bottomContentSwitch ul li a').each(function() {
+        if ($(this).attr('href') == hash) {
+            $('#bottomContentSwitch ul li a').removeClass('current');
+            $('.list-wrap > div').addClass('hide').css({'position' : 'relative', 'top' : '0px', 'left' : '0px', 'display' : 'none'});
+            $(this).addClass('current');
+            $('.list-wrap > div' + hash).removeClass('hide').addClass('hide').removeAttr('style');
+        }
+    });
+}
 
 function stirSponsors(ul) {
     ul.hide();
