@@ -101,6 +101,7 @@ ul.centered > li { display: inline-block; list-style: none; vertical-align: midd
 #topContent .twoCols > .fr li p { line-height: 1.8;}
 #sponsors li { list-style: none; }
 #sponsors li a img { margin-bottom: 30px; margin-top: 30px; }
+.bottomSponsors li { height: 160px; }
 
 /* mapa */
 #mapCanvas { height: 659px; margin-top: -107px; width: 100%; position: absolute;}
