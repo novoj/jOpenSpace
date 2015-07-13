@@ -109,6 +109,34 @@ function stirSponsors(ul) {
     for(item in randomizedItems) {
         ul.append(randomizedItems[item]);
     }
+    ul.find("li div").each(function() {
+        var jThis = $(this);
+        if (jThis.find("p").length > 1) {
+            var original = jThis.html();
+            var text = jThis.find("p:first").html();
+            var lastDot = text.lastIndexOf('.');
+            text = "<p>" + text.substr(0, lastDot) + " &hellip; <a href='#' class='expand'>číst dál</a></p>";
+            jThis.html(text);
+            jThis.css("height", "15em");
+            jThis.data("value", "shortened");
+            var expand = function () {
+                if(jThis.data("value") == "shortened") {
+                    jThis.html(original);
+                    jThis.data("value", "original");
+                    jThis.css("height", "auto");
+                }
+            };
+            var shorten = function () {
+                if(jThis.data("value") == "original") {
+                    jThis.html(text);
+                    jThis.data("value", "shortened");
+                    jThis.css("height", "15em");
+                }
+            };
+            jThis.hover(expand, shorten);
+            jThis.find("a.expand").click(expand);
+        }
+    });
     ul.fadeIn(1000);
 }
 

@@ -99,7 +99,7 @@ ul.centered > li { display: inline-block; list-style: none; vertical-align: midd
 #topContent .twoCols > .fr li { font-size: .944em; }
 #topContent .twoCols > .fr li * { color: #fff;}
 #topContent .twoCols > .fr li p { line-height: 1.8;}
-#sponsors li { list-style: none; }
+#sponsors li { list-style: none }
 #sponsors li a img { margin-bottom: 30px; margin-top: 30px; }
 .bottomSponsors li { height: 160px; }
 
@@ -224,6 +224,7 @@ footer { margin-bottom: 30px;}
     .gallery li:nth-of-type(3n) { margin-right: 10px;}
     .list-wrap article ul.clr li { padding-left: 25px;}
     #topContent .twoCols > .fr li img { max-width: 400px;}
+    #topContent .twoCols > .fl, #topContent .twoCols > .fr { height: auto !important;}
 }
 
 @media all and (max-width: 479px) {
