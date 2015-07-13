@@ -99,7 +99,7 @@ ul.centered > li { display: inline-block; list-style: none; vertical-align: midd
 #topContent .twoCols > .fr li { font-size: .944em; }
 #topContent .twoCols > .fr li * { color: #fff;}
 #topContent .twoCols > .fr li p { line-height: 1.8;}
-#sponsors li { list-style: none }
+#sponsors li { list-style: none; font-size: 60%; line-height: 1; }
 #sponsors li a img { margin-bottom: 30px; margin-top: 30px; }
 .bottomSponsors li { height: 160px; }
 

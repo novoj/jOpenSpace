@@ -5,6 +5,23 @@ document.createElement('nav');
 document.createElement('article');
 document.createElement('figure');
 
+var recalculateColumns = function() {
+    if($(window).width() > 767) {
+        var topContentHeightArr = new Array();
+        $('#topContent .twoCols > *').each(function () {
+            var height = $(this).outerHeight(false);
+            topContentHeightArr.push(height);
+        });
+        if(topContentHeightArr[1] < topContentHeightArr[0]) {
+            $('#topContent .twoCols > .fr').css({'height': topContentHeightArr[0] + 'px'});
+            $('#topContent .twoCols > .fl').css({'height': 'auto'});
+        } else {
+            $('#topContent .twoCols > .fr').css({'height': 'auto'});
+            $('#topContent .twoCols > .fl').css({'height': topContentHeightArr[1] + 'px'});
+        }
+    }
+}
+
 $(document).ready(function() {
 
     /* podcasty a videa - jiné zobrazení při jedné a více než dvou položkách */
@@ -28,18 +45,7 @@ $(document).ready(function() {
     });
 
     /* topContent - výška pravého sloupce stejná jako levého */
-    if ( $(window).width() > 767 ) {
-        var topContentHeightArr = new Array();
-        $('#topContent .twoCols > *').each(function() {
-            var height = $(this).outerHeight(false);
-            topContentHeightArr.push(height);
-        });
-        if ( topContentHeightArr[1] < topContentHeightArr[0] ) {
-            $('#topContent .twoCols > .fr').css({'height': topContentHeightArr[0] + 'px'});
-        } else {
-            $('#topContent .twoCols > .fl').css({'height': topContentHeightArr[1] + 'px'});
-        }
-    }
+    recalculateColumns();
 
     /* mapka */
     $('#mapCanvas').gmap().bind('init', function(ev, map) {
@@ -117,20 +123,22 @@ function stirSponsors(ul) {
             var lastDot = text.lastIndexOf('.');
             text = "<p>" + text.substr(0, lastDot) + " &hellip; <a href='#' class='expand'>číst dál</a></p>";
             jThis.html(text);
-            jThis.css("height", "15em");
+            jThis.css("max-height", "15em");
             jThis.data("value", "shortened");
             var expand = function () {
                 if(jThis.data("value") == "shortened") {
                     jThis.html(original);
                     jThis.data("value", "original");
-                    jThis.css("height", "auto");
+                    jThis.css("max-height", "none");
+                    recalculateColumns();
                 }
             };
             var shorten = function () {
                 if(jThis.data("value") == "original") {
                     jThis.html(text);
                     jThis.data("value", "shortened");
-                    jThis.css("height", "15em");
+                    jThis.css("max-height", "15em");
+                    recalculateColumns();
                 }
             };
             jThis.hover(expand, shorten);
