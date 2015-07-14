@@ -123,13 +123,11 @@ function stirSponsors(ul) {
             var lastDot = text.lastIndexOf('.');
             text = "<p>" + text.substr(0, lastDot) + " &hellip; <a href='#' class='expand'>číst dál</a></p>";
             jThis.html(text);
-            jThis.css("max-height", "15em");
             jThis.data("value", "shortened");
             var expand = function () {
                 if(jThis.data("value") == "shortened") {
                     jThis.html(original);
                     jThis.data("value", "original");
-                    jThis.css("max-height", "none");
                     recalculateColumns();
                 }
             };
@@ -137,7 +135,6 @@ function stirSponsors(ul) {
                 if(jThis.data("value") == "original") {
                     jThis.html(text);
                     jThis.data("value", "shortened");
-                    jThis.css("max-height", "15em");
                     recalculateColumns();
                 }
             };
