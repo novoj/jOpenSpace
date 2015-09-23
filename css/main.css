@@ -102,6 +102,7 @@ ul.centered > li { display: inline-block; list-style: none; vertical-align: midd
 #sponsors li { list-style: none; font-size: 60%; line-height: 1; }
 #sponsors li a img { margin-bottom: 30px; margin-top: 30px; }
 .bottomSponsors li { height: 160px; }
+.bottomSponsors li span { height: 150px; width: 320px; vertical-align: bottom; display: inline-block; }
 
 /* mapa */
 #mapCanvas { height: 659px; margin-top: -107px; width: 100%; position: absolute;}
