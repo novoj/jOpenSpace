@@ -1,0 +1,3663 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>jOpenSpace</title>
+<style type="text/css">
+    body {color: #000000; font-size: 10pt; font-family: SansSerif, sans-serif; }
+li { list-style: none;  margin: 0; }
+p { margin: 0; }
+
+span.l { color: red; font-weight: bold; }
+
+a.mapnode:link,
+a.mapnode:visited,
+a.mapnode:active,
+a.mapnode:hover {
+    text-decoration: none; color: black;
+}
+a.mapnode:hover { background: #eeeee0; }
+span.foldopened, span.foldclosed  {
+    font-size: xx-small;
+    border-width: 1;
+    font-family: monospace;
+    padding: 0em 0.25em 0em 0.25em;
+    background: #e0e0e0;
+    cursor:pointer;
+}
+span.foldopened  {
+    color: white;
+    VISIBILITY: visible;
+}
+span.foldclosed {
+    color: #666666;
+    VISIBILITY: hidden;
+}
+span.foldspecial {
+    color: #666666;
+    font-size: xx-small;
+    border-style: none solid solid none;
+    border-color: #CCCCCC;
+    border-width: 1;
+    font-family: sans-serif;
+    padding: 0em 0.1em 0em 0.1em;
+    background: #e0e0e0;
+    cursor:pointer;
+}
+
+
+</style>
+<!-- ^ Position is not set to relative / absolute here because of Mozilla -->
+</head>
+<body>
+<script type="text/javascript">
+// Here we implement folding. It works fine with MSIE5.5, MSIE6.0 and
+// Mozilla 0.9.6.
+
+if (document.layers) {
+    //Netscape 4 specific code
+    pre = 'document.';
+    post = ''; }
+if (document.getElementById) {
+    //Netscape 6 specific code
+    pre = 'document.getElementById("';
+    post = '").style'; }
+if (document.all) {
+    //IE4+ specific code
+    pre = 'document.all.';
+    post = '.style'; }
+
+function layer_exists(layer) {
+    try {
+	eval(pre + layer + post);
+	return true; }
+    catch (error) {
+	return false; }}
+
+function show_layer(layer) {
+    eval(pre + layer + post).position = 'relative'; 
+    eval(pre + layer + post).visibility = 'visible'; }
+
+function hide_layer(layer) {
+    eval(pre + layer + post).visibility = 'hidden';
+    eval(pre + layer + post).position = 'absolute'; }
+
+function hide_folder(folder) {
+    hide_folding_layer(folder)
+    show_layer('show'+folder);
+
+    scrollBy(0,0); // This is a work around to make it work in Browsers (Explorer, Mozilla)
+}
+
+function show_folder(folder) {
+    // Precondition: all subfolders are folded
+
+    show_layer('hide'+folder);
+    hide_layer('show'+folder);
+    show_layer('fold'+folder);
+
+    scrollBy(0,0); // This is a work around to make it work in Browsers (Explorer, Mozilla)
+
+    var i;
+    for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
+	show_layer('show'+folder+'_'+i); }
+}
+function show_folder_completely(folder) {
+    // Precondition: all subfolders are folded
+
+    show_layer('hide'+folder);
+    hide_layer('show'+folder);
+    show_layer('fold'+folder);
+
+    scrollBy(0,0); // This is a work around to make it work in Browsers (Explorer, Mozilla)
+
+    var i;
+    for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
+	show_folder_completely(folder+'_'+i); }
+}
+
+
+
+function hide_folding_layer(folder) {
+    var i;
+    for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
+	hide_folding_layer(folder+'_'+i); }
+
+    hide_layer('hide'+folder);
+    hide_layer('show'+folder);
+    hide_layer('fold'+folder);
+
+    scrollBy(0,0); // This is a work around to make it work in Browsers (Explorer, Mozilla)
+}
+
+function fold_document() {
+    var i;
+    var folder = '1';
+    for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
+	hide_folder(folder+'_'+i); }
+}
+
+function unfold_document() {
+    var i;
+    var folder = '1';
+    for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
+	show_folder_completely(folder+'_'+i); }
+}
+
+</script>
+<SPAN class="foldspecial" onclick="fold_document()">All +</SPAN>
+<SPAN class="foldspecial" onclick="unfold_document()">All -</SPAN>
+<p><span style="font-size: 18pt; "><a href="menuitem:_$addons.roan.presentation_menuAction_on_single_node$0" target="_blank">jOpenSpace</a>
+</span>
+<ul><li>Talks</span>
+<ul><li><span id="show1_1" class="foldclosed" onClick="show_folder('1_1')" style="POSITION: absolute">+</span> <span id="hide1_1" class="foldopened" onClick="hide_folder('1_1')">-</span>
+Tom&#xe1;&#x161; Z&#xe1;lusk&#xfd; - PLSQL-Java bridge</span>
+<ul id="fold1_1" style="POSITION: relative; VISIBILITY: visible;"><li>TopMonks</span>
+
+</li>
+<li><span id="show1_1_1" class="foldclosed" onClick="show_folder('1_1_1')" style="POSITION: absolute">+</span> <span id="hide1_1_1" class="foldopened" onClick="hide_folder('1_1_1')">-</span>
+Jak zavolat PLSQL z Javy?</span>
+<ul id="fold1_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>JOOQ</span>
+
+</li>
+<li>JDBC</span>
+
+</li>
+<li>typ nesm&#xed; b&#xfd;t v PLSQL package, pak nejde zavolat</span>
+
+</li>
+<li>Rozhran&#xed; mezi PLSQL a Javy - chyb&#xed; typov&#xe1; bezpe&#x10d;nost</span>
+
+</li>
+<li><span id="show1_1_1_1" class="foldclosed" onClick="show_folder('1_1_1_1')" style="POSITION: absolute">+</span> <span id="hide1_1_1_1" class="foldopened" onClick="hide_folder('1_1_1_1')">-</span>
+jdbi.org</span>
+<ul id="fold1_1_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Princip anotac&#xed;</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_1_2" class="foldclosed" onClick="show_folder('1_1_1_2')" style="POSITION: absolute">+</span> <span id="hide1_1_1_2" class="foldopened" onClick="hide_folder('1_1_1_2')">-</span>
+&#x158;e&#x161;en&#xed;</span>
+<ul id="fold1_1_1_2" style="POSITION: relative; VISIBILITY: visible;"><li>Vytvo&#x159;&#xed;me interface pro package, s anotacc&#xed; @function</span>
+
+</li>
+<li>Datov&#xe9; typy v PLSQL maj&#xed; obdobu oanotovan&#xfd;ch DTO</span>
+
+</li>
+<li><span id="show1_1_1_2_1" class="foldclosed" onClick="show_folder('1_1_1_2_1')" style="POSITION: absolute">+</span> <span id="hide1_1_1_2_1" class="foldopened" onClick="hide_folder('1_1_1_2_1')">-</span>
+U package private dat, nelze volat p&#x159;es JDBC</span>
+<ul id="fold1_1_1_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>Rozkladem na primitivn&#xed; typy</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_1_3" class="foldclosed" onClick="show_folder('1_1_1_3')" style="POSITION: absolute">+</span> <span id="hide1_1_1_3" class="foldopened" onClick="hide_folder('1_1_1_3')">-</span>
+V&#xfd;hody</span>
+<ul id="fold1_1_1_3" style="POSITION: relative; VISIBILITY: visible;"><li>zachov&#xe1;n&#xed; typ&#x16f; - typov&#x11b; bezpe&#x10d;n&#xfd; p&#x159;&#xed;stup do PL/SQL z Javy</span>
+
+</li>
+<li>&#x17e;&#xe1;dn&#xfd; boilerplate k&#xf3;d</span>
+
+</li>
+<li>vy&#x159;e&#x161;eno p&#x159;emost&#x11b;n&#xed;</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2" class="foldclosed" onClick="show_folder('1_2')" style="POSITION: absolute">+</span> <span id="hide1_2" class="foldopened" onClick="hide_folder('1_2')">-</span>
+V&#xed;&#x165;a Pl&#x161;ek - Angular 2</span>
+<ul id="fold1_2" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_2_1" class="foldclosed" onClick="show_folder('1_2_1')" style="POSITION: absolute">+</span> <span id="hide1_2_1" class="foldopened" onClick="hide_folder('1_2_1')">-</span>
+2 cesty</span>
+<ul id="fold1_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>Vlastn&#xed; ekosystem, t&#x159;eba pou&#x17e;&#xed;t react.js (na renderov&#xe1;n&#xed; HTML), plus dal&#x161;&#xed; komponenty dle vl. v&#xfd;b&#x11b;ru</span>
+
+</li>
+<li><span id="show1_2_1_1" class="foldclosed" onClick="show_folder('1_2_1_1')" style="POSITION: absolute">+</span> <span id="hide1_2_1_1" class="foldopened" onClick="hide_folder('1_2_1_1')">-</span>
+Pou&#x17e;&#xed;t framework</span>
+<ul id="fold1_2_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Angular.js</span>
+
+</li>
+<li>Amber</span>
+
+</li>
+<li>Bobr</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_2" class="foldclosed" onClick="show_folder('1_2_2')" style="POSITION: absolute">+</span> <span id="hide1_2_2" class="foldopened" onClick="hide_folder('1_2_2')">-</span>
+Angular 1.x</span>
+<ul id="fold1_2_2" style="POSITION: relative; VISIBILITY: visible;"><li>Nau&#x10d;il lidi ps&#xe1;t single page aplikace v prohl&#xed;&#x17e;e&#x10d;i</span>
+
+</li>
+<li><span id="show1_2_2_1" class="foldclosed" onClick="show_folder('1_2_2_1')" style="POSITION: absolute">+</span> <span id="hide1_2_2_1" class="foldopened" onClick="hide_folder('1_2_2_1')">-</span>
+Je star&#xfd;, nesta&#x10d;&#xed; nov&#xfd;m trend&#x16f;m</span>
+<ul id="fold1_2_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>Dirty checking - pr&#xe1;ce s detekc&#xed; zm&#x11b;ny</span>
+
+</li>
+<li>Nepodporuje lazy loading</span>
+
+</li>
+<li><span id="show1_2_2_1_1" class="foldclosed" onClick="show_folder('1_2_2_1_1')" style="POSITION: absolute">+</span> <span id="hide1_2_2_1_1" class="foldopened" onClick="hide_folder('1_2_2_1_1')">-</span>
+Neum&#xed; renderovat na serveru</span>
+<ul id="fold1_2_2_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>server side loading</span>
+
+</li>
+<li>probl&#xe9;m indexac&#xed; search engines</span>
+
+</li>
+<li><span id="show1_2_2_1_1_1" class="foldclosed" onClick="show_folder('1_2_2_1_1_1')" style="POSITION: absolute">+</span> <span id="hide1_2_2_1_1_1" class="foldopened" onClick="hide_folder('1_2_2_1_1_1')">-</span>
+V angular 2 &#x159;e&#x161;&#xed; angular universal</span>
+<ul id="fold1_2_2_1_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>HTML str&#xe1;nky se vygeneruje JS, ale na serveru, odkud ho search engine st&#xe1;hne</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_2_1_2" class="foldclosed" onClick="show_folder('1_2_2_1_2')" style="POSITION: absolute">+</span> <span id="hide1_2_2_1_2" class="foldopened" onClick="hide_folder('1_2_2_1_2')">-</span>
+Za&#x10d;n&#x11b;me jinak, na zelen&#xe9; louce</span>
+<ul id="fold1_2_2_1_2" style="POSITION: relative; VISIBILITY: visible;"><li>Angular 2</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_3" class="foldclosed" onClick="show_folder('1_2_3')" style="POSITION: absolute">+</span> <span id="hide1_2_3" class="foldopened" onClick="hide_folder('1_2_3')">-</span>
+Angular 2</span>
+<ul id="fold1_2_3" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_2_3_1" class="foldclosed" onClick="show_folder('1_2_3_1')" style="POSITION: absolute">+</span> <span id="hide1_2_3_1" class="foldopened" onClick="hide_folder('1_2_3_1')">-</span>
+m&#xe1; probl&#xe9;m migra&#x10d;n&#xed; cesty z 1.x</span>
+<ul id="fold1_2_3_1" style="POSITION: relative; VISIBILITY: visible;"><li></span>
+
+</li>
+
+</ul>
+</li>
+<li>c&#xed;lem je b&#xfd;t komplexn&#xed; platformou - nic dal&#x161;&#xed;ho v JS nepot&#x159;ebujete</span>
+
+</li>
+<li>Je napsan&#xfd; v tightscriptu TS</span>
+
+</li>
+<li><span id="show1_2_3_2" class="foldclosed" onClick="show_folder('1_2_3_2')" style="POSITION: absolute">+</span> <span id="hide1_2_3_2" class="foldopened" onClick="hide_folder('1_2_3_2')">-</span>
+Je postaven&#xe1; na komponent&#xe1;ch</span>
+<ul id="fold1_2_3_2" style="POSITION: relative; VISIBILITY: visible;"><li>Metody</span>
+
+</li>
+<li>Vlastnosti</span>
+
+</li>
+<li>Metadata</span>
+
+</li>
+<li>&#x161;ablony</span>
+
+</li>
+<li>styly</span>
+
+</li>
+<li>vlastn&#xed; depedency injection container</span>
+
+</li>
+<li>p&#x159;esn&#x11b; def. vstupy a v&#xfd;stupy</span>
+
+</li>
+
+</ul>
+</li>
+<li>Cel&#xe1; aplikace je strom komponent</span>
+
+</li>
+<li>Na &#xfa;rovni routeru lze nahr&#xe1;t celou podaplikaci</span>
+
+</li>
+<li><span id="show1_2_3_3" class="foldclosed" onClick="show_folder('1_2_3_3')" style="POSITION: absolute">+</span> <span id="hide1_2_3_3" class="foldopened" onClick="hide_folder('1_2_3_3')">-</span>
+Angular CLI Command line interface</span>
+<ul id="fold1_2_3_3" style="POSITION: relative; VISIBILITY: visible;"><li>komplexn&#xed; v&#xfd;vojov&#xfd; stack</span>
+
+</li>
+
+</ul>
+</li>
+<li>"Spring" pro javascript sv&#x11b;t</span>
+
+</li>
+<li>Tutorial Tour of Heroes - angular.io</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3" class="foldclosed" onClick="show_folder('1_3')" style="POSITION: absolute">+</span> <span id="hide1_3" class="foldopened" onClick="hide_folder('1_3')">-</span>
+Radek Hubner - Digital preservation in the national archives</span>
+<ul id="fold1_3" style="POSITION: relative; VISIBILITY: visible;"><li>London</span>
+
+</li>
+<li><span id="show1_3_1" class="foldclosed" onClick="show_folder('1_3_1')" style="POSITION: absolute">+</span> <span id="hide1_3_1" class="foldopened" onClick="hide_folder('1_3_1')">-</span>
+Chalenges - incoming data</span>
+<ul id="fold1_3_1" style="POSITION: relative; VISIBILITY: visible;"><li>Sensitivity</span>
+
+</li>
+<li>Diversity</span>
+
+</li>
+<li>Trustability</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3_2" class="foldclosed" onClick="show_folder('1_3_2')" style="POSITION: absolute">+</span> <span id="hide1_3_2" class="foldopened" onClick="hide_folder('1_3_2')">-</span>
+Tools used</span>
+<ul id="fold1_3_2" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_3_2_1" class="foldclosed" onClick="show_folder('1_3_2_1')" style="POSITION: absolute">+</span> <span id="hide1_3_2_1" class="foldopened" onClick="hide_folder('1_3_2_1')">-</span>
+CSV validator</span>
+<ul id="fold1_3_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>ala XML schema for CSV</span>
+
+</li>
+<li>Github, opensource</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3_2_2" class="foldclosed" onClick="show_folder('1_3_2_2')" style="POSITION: absolute">+</span> <span id="hide1_3_2_2" class="foldopened" onClick="hide_folder('1_3_2_2')">-</span>
+PRONOM</span>
+<ul id="fold1_3_2_2" style="POSITION: relative; VISIBILITY: visible;"><li>Database of different file formats</span>
+
+</li>
+<li>Provides data about format and its validation</span>
+
+</li>
+<li>Java, JPEG 2000, ...</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3_2_3" class="foldclosed" onClick="show_folder('1_3_2_3')" style="POSITION: absolute">+</span> <span id="hide1_3_2_3" class="foldopened" onClick="hide_folder('1_3_2_3')">-</span>
+Droid</span>
+<ul id="fold1_3_2_3" style="POSITION: relative; VISIBILITY: visible;"><li>Digital record and object identification</span>
+
+</li>
+<li>Uses PRONOM dadtabase, validates the files</span>
+
+</li>
+<li><span id="show1_3_2_3_1" class="foldclosed" onClick="show_folder('1_3_2_3_1')" style="POSITION: absolute">+</span> <span id="hide1_3_2_3_1" class="foldopened" onClick="hide_folder('1_3_2_3_1')">-</span>
+Opensource</span>
+<ul id="fold1_3_2_3_1" style="POSITION: relative; VISIBILITY: visible;"><li>Command line</span>
+
+</li>
+<li>GUI</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3_2_4" class="foldclosed" onClick="show_folder('1_3_2_4')" style="POSITION: absolute">+</span> <span id="hide1_3_2_4" class="foldopened" onClick="hide_folder('1_3_2_4')">-</span>
+Pre ingest</span>
+<ul id="fold1_3_2_4" style="POSITION: relative; VISIBILITY: visible;"><li>Creates XML metadata describing document</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3_2_5" class="foldclosed" onClick="show_folder('1_3_2_5')" style="POSITION: absolute">+</span> <span id="hide1_3_2_5" class="foldopened" onClick="hide_folder('1_3_2_5')">-</span>
+Ingest - Preservica</span>
+<ul id="fold1_3_2_5" style="POSITION: relative; VISIBILITY: visible;"><li>Built on Drools platform</span>
+
+</li>
+<li>Chain of workflow tasks</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3_2_6" class="foldclosed" onClick="show_folder('1_3_2_6')" style="POSITION: absolute">+</span> <span id="hide1_3_2_6" class="foldopened" onClick="hide_folder('1_3_2_6')">-</span>
+Catalogue</span>
+<ul id="fold1_3_2_6" style="POSITION: relative; VISIBILITY: visible;"><li>Stores data in graph database</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3_2_7" class="foldclosed" onClick="show_folder('1_3_2_7')" style="POSITION: absolute">+</span> <span id="hide1_3_2_7" class="foldopened" onClick="hide_folder('1_3_2_7')">-</span>
+Final storage</span>
+<ul id="fold1_3_2_7" style="POSITION: relative; VISIBILITY: visible;"><li>Conversion to common, not bloated formats</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_4" class="foldclosed" onClick="show_folder('1_4')" style="POSITION: absolute">+</span> <span id="hide1_4" class="foldopened" onClick="hide_folder('1_4')">-</span>
+Jirka Bukovjan - Monetizace mobiln&#xed;ch her</span>
+<ul id="fold1_4" style="POSITION: relative; VISIBILITY: visible;"><li>NOXGAMES</span>
+
+</li>
+<li><span id="show1_4_1" class="foldclosed" onClick="show_folder('1_4_1')" style="POSITION: absolute">+</span> <span id="hide1_4_1" class="foldopened" onClick="hide_folder('1_4_1')">-</span>
+P&#x159;&#xed;stupy k placen&#xed;</span>
+<ul id="fold1_4_1" style="POSITION: relative; VISIBILITY: visible;"><li>Free to play</span>
+
+</li>
+<li><span id="show1_4_1_1" class="foldclosed" onClick="show_folder('1_4_1_1')" style="POSITION: absolute">+</span> <span id="hide1_4_1_1" class="foldopened" onClick="hide_folder('1_4_1_1')">-</span>
+Premium</span>
+<ul id="fold1_4_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>5%</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_4_1_2" class="foldclosed" onClick="show_folder('1_4_1_2')" style="POSITION: absolute">+</span> <span id="hide1_4_1_2" class="foldopened" onClick="hide_folder('1_4_1_2')">-</span>
+Freemium</span>
+<ul id="fold1_4_1_2" style="POSITION: relative; VISIBILITY: visible;"><li>vygeneruj&#xed; 95% v&#x161;eho zisku</span>
+
+</li>
+<li><span id="show1_4_1_2_1" class="foldclosed" onClick="show_folder('1_4_1_2_1')" style="POSITION: absolute">+</span> <span id="hide1_4_1_2_1" class="foldopened" onClick="hide_folder('1_4_1_2_1')">-</span>
+N&#xe1;kupy v aplikaci</span>
+<ul id="fold1_4_1_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>Jen m&#xe1;lo konverz&#xed;</span>
+
+</li>
+<li>Soust&#x159;ed&#x11b;n&#xed; se na velryby, co utrat&#xed; tis&#xed;ce dolar&#x16f;</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_4_1_2_2" class="foldclosed" onClick="show_folder('1_4_1_2_2')" style="POSITION: absolute">+</span> <span id="hide1_4_1_2_2" class="foldopened" onClick="hide_folder('1_4_1_2_2')">-</span>
+Reklamy</span>
+<ul id="fold1_4_1_2_2" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_4_1_2_2_1" class="foldclosed" onClick="show_folder('1_4_1_2_2_1')" style="POSITION: absolute">+</span> <span id="hide1_4_1_2_2_1" class="foldopened" onClick="hide_folder('1_4_1_2_2_1')">-</span>
+Rewarded videa</span>
+<ul id="fold1_4_1_2_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>Hr&#xe1;&#x10d; dostane odm&#x11b;nu za shl&#xe9;dnut&#xed; videa</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>Subscription</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_4_2" class="foldclosed" onClick="show_folder('1_4_2')" style="POSITION: absolute">+</span> <span id="hide1_4_2" class="foldopened" onClick="hide_folder('1_4_2')">-</span>
+Jak monetizovat</span>
+<ul id="fold1_4_2" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_4_2_1" class="foldclosed" onClick="show_folder('1_4_2_1')" style="POSITION: absolute">+</span> <span id="hide1_4_2_1" class="foldopened" onClick="hide_folder('1_4_2_1')">-</span>
+Motivovat hr&#xe1;&#x10d;e, aby ve h&#x159;e vydr&#x17e;el nejd&#xe9;le</span>
+<ul id="fold1_4_2_1" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_4_2_1_1" class="foldclosed" onClick="show_folder('1_4_2_1_1')" style="POSITION: absolute">+</span> <span id="hide1_4_2_1_1" class="foldopened" onClick="hide_folder('1_4_2_1_1')">-</span>
+Nejsiln&#x11b;j&#x161;&#xed; motivace = progress</span>
+<ul id="fold1_4_2_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Levely</span>
+
+</li>
+<li><span id="show1_4_2_1_1_1" class="foldclosed" onClick="show_folder('1_4_2_1_1_1')" style="POSITION: absolute">+</span> <span id="hide1_4_2_1_1_1" class="foldopened" onClick="hide_folder('1_4_2_1_1_1')">-</span>
+Stavby a vylep&#x161;en&#xed;</span>
+<ul id="fold1_4_2_1_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Clash of clans</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_4_2_1_1_2" class="foldclosed" onClick="show_folder('1_4_2_1_1_2')" style="POSITION: absolute">+</span> <span id="hide1_4_2_1_1_2" class="foldopened" onClick="hide_folder('1_4_2_1_1_2')">-</span>
+Sb&#x11b;ratelstv&#xed; a vylep&#x161;en&#xed;</span>
+<ul id="fold1_4_2_1_1_2" style="POSITION: relative; VISIBILITY: visible;"><li>Contest of champions</span>
+
+</li>
+<li>Karti&#x10d;ky, kolekce hrdin&#x16f;, m&#x16f;&#x17e;ete se s t&#xed;m chlubit</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_4_2_1_2" class="foldclosed" onClick="show_folder('1_4_2_1_2')" style="POSITION: absolute">+</span> <span id="hide1_4_2_1_2" class="foldopened" onClick="hide_folder('1_4_2_1_2')">-</span>
+Budov&#xe1;n&#xed; trvanlivosti syst&#xe9;mu</span>
+<ul id="fold1_4_2_1_2" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_4_2_1_2_1" class="foldclosed" onClick="show_folder('1_4_2_1_2_1')" style="POSITION: absolute">+</span> <span id="hide1_4_2_1_2_1" class="foldopened" onClick="hide_folder('1_4_2_1_2_1')">-</span>
+Modelov&#xe1;n&#xed; postupu</span>
+<ul id="fold1_4_2_1_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>Tutori&#xe1;lu na za&#x10d;&#xe1;tku</span>
+
+</li>
+<li>Midstage</span>
+
+</li>
+<li>End game</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_4_2_1_2_2" class="foldclosed" onClick="show_folder('1_4_2_1_2_2')" style="POSITION: absolute">+</span> <span id="hide1_4_2_1_2_2" class="foldopened" onClick="hide_folder('1_4_2_1_2_2')">-</span>
+&#x160;k&#xe1;lovatelnost</span>
+<ul id="fold1_4_2_1_2_2" style="POSITION: relative; VISIBILITY: visible;"><li>Ve vy&#x161;&#x161;&#xed;ch levelech se n&#xe1;sob&#xed; &#x17e;ivoty p&#x159;&#xed;&#x161;er i s&#xed;la &#xfa;toku</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_4_2_1_3" class="foldclosed" onClick="show_folder('1_4_2_1_3')" style="POSITION: absolute">+</span> <span id="hide1_4_2_1_3" class="foldopened" onClick="hide_folder('1_4_2_1_3')">-</span>
+Jak motivovat k placen&#xed; re&#xe1;ln&#xfd;ch pen&#x11b;z za virtu&#xe1;ln&#xed; v&#x11b;ci</span>
+<ul id="fold1_4_2_1_3" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_4_2_1_3_1" class="foldclosed" onClick="show_folder('1_4_2_1_3_1')" style="POSITION: absolute">+</span> <span id="hide1_4_2_1_3_1" class="foldopened" onClick="hide_folder('1_4_2_1_3_1')">-</span>
+Vizu&#xe1;ln&#xed; progress</span>
+<ul id="fold1_4_2_1_3_1" style="POSITION: relative; VISIBILITY: visible;"><li>Postupn&#x11b; se odkr&#xfd;v&#xe1; v&#xed;c a v&#xed;c mapy</span>
+
+</li>
+<li>Z&#xe1;kladna se po&#x159;&#xe1;d zv&#x11b;t&#x161;uje a zdokonaluje</span>
+
+</li>
+<li>Sb&#x11b;ratelstv&#xed;</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_4_2_1_3_2" class="foldclosed" onClick="show_folder('1_4_2_1_3_2')" style="POSITION: absolute">+</span> <span id="hide1_4_2_1_3_2" class="foldopened" onClick="hide_folder('1_4_2_1_3_2')">-</span>
+Soci&#xe1;ln&#xed; tlak</span>
+<ul id="fold1_4_2_1_3_2" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_4_2_1_3_2_1" class="foldclosed" onClick="show_folder('1_4_2_1_3_2_1')" style="POSITION: absolute">+</span> <span id="hide1_4_2_1_3_2_1" class="foldopened" onClick="hide_folder('1_4_2_1_3_2_1')">-</span>
+Porovn&#xe1;v&#xe1;n&#xed; a sd&#xed;len&#xed;</span>
+<ul id="fold1_4_2_1_3_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>postup a sk&#xf3;re - Candy Crush</span>
+
+</li>
+<li>stavitelstv&#xed;</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_4_2_1_3_2_2" class="foldclosed" onClick="show_folder('1_4_2_1_3_2_2')" style="POSITION: absolute">+</span> <span id="hide1_4_2_1_3_2_2" class="foldopened" onClick="hide_folder('1_4_2_1_3_2_2')">-</span>
+Guildy</span>
+<ul id="fold1_4_2_1_3_2_2" style="POSITION: relative; VISIBILITY: visible;"><li>Spojen&#xed; hr&#xe1;&#x10d;&#x16f;</span>
+
+</li>
+<li>Vz&#xe1;jemn&#xe1; pomoc</span>
+
+</li>
+<li>Soupe&#x159;en&#xed; guild</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_5" class="foldclosed" onClick="show_folder('1_5')" style="POSITION: absolute">+</span> <span id="hide1_5" class="foldopened" onClick="hide_folder('1_5')">-</span>
+Katka Novotn&#xe1; - XML eXternal Entity XXE &#xfa;tok</span>
+<ul id="fold1_5" style="POSITION: relative; VISIBILITY: visible;"><li>Zneu&#x17e;it&#xed; definovan&#xe9; <!Entity uri></span>
+
+</li>
+<li>uri - definice um&#xed;st&#x11b;n&#xed; entity, lok&#xe1;ln&#x11b; nebo vzd&#xe1;len&#x11b;</span>
+
+</li>
+<li><span id="show1_5_1" class="foldclosed" onClick="show_folder('1_5_1')" style="POSITION: absolute">+</span> <span id="hide1_5_1" class="foldopened" onClick="hide_folder('1_5_1')">-</span>
+&#xda;tok na aplikace, parsuj&#xed;c&#xed; XML</span>
+<ul id="fold1_5_1" style="POSITION: relative; VISIBILITY: visible;"><li>Umo&#x17e;n&#xed; z&#xed;skat obsah souboru z disku</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_5_2" class="foldclosed" onClick="show_folder('1_5_2')" style="POSITION: absolute">+</span> <span id="hide1_5_2" class="foldopened" onClick="hide_folder('1_5_2')">-</span>
+OWASP</span>
+<ul id="fold1_5_2" style="POSITION: relative; VISIBILITY: visible;"><li>Doporu&#x10d;en&#xed;, jak se br&#xe1;nit XXE</span>
+
+</li>
+<li>Zak&#xe1;zat validaci proti dynamick&#xfd;m DTD</span>
+
+</li>
+<li>Zak&#xe1;zat extern&#xed; entity</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_5_3" class="foldclosed" onClick="show_folder('1_5_3')" style="POSITION: absolute">+</span> <span id="hide1_5_3" class="foldopened" onClick="hide_folder('1_5_3')">-</span>
+P&#x159;&#xed;klady XXE &#xfa;toku</span>
+<ul id="fold1_5_3" style="POSITION: relative; VISIBILITY: visible;"><li>RunKeeper</span>
+
+</li>
+<li><span id="show1_5_3_1" class="foldclosed" onClick="show_folder('1_5_3_1')" style="POSITION: absolute">+</span> <span id="hide1_5_3_1" class="foldopened" onClick="hide_folder('1_5_3_1')">-</span>
+Facebook - implementace OpenID login</span>
+<ul id="fold1_5_3_1" style="POSITION: relative; VISIBILITY: visible;"><li>$33500 dolar&#x16f; odm&#x11b;na pro toho, kdo to objevil</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_5_4" class="foldclosed" onClick="show_folder('1_5_4')" style="POSITION: absolute">+</span> <span id="hide1_5_4" class="foldopened" onClick="hide_folder('1_5_4')">-</span>
+Chcete zbohatnout objeven&#xed;m bezp. d&#xed;ry?</span>
+<ul id="fold1_5_4" style="POSITION: relative; VISIBILITY: visible;"><li>Bug bounty programy</span>
+
+</li>
+<li>Google, twitter, facebook, U.S.A. - Hack the Pentagon</span>
+
+</li>
+<li>Hackerone - prost&#x159;edn&#xed;k mezi hackery a firmamy</span>
+
+</li>
+
+</ul>
+</li>
+<li>Kafemlejnek - rozhovor s Romanem Kymlem</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_6" class="foldclosed" onClick="show_folder('1_6')" style="POSITION: absolute">+</span> <span id="hide1_6" class="foldopened" onClick="hide_folder('1_6')">-</span>
+Novoj Honza Novotn&#xfd; - kdy&#x17e; v&#xe1;m rozb&#xed;jej&#xed; hra&#x10d;ky</span>
+<ul id="fold1_6" style="POSITION: relative; VISIBILITY: visible;"><li>Roman Kyml - t&#xfd;denn&#xed; hackersk&#xe9; &#x161;kolen&#xed;</span>
+
+</li>
+<li><span id="show1_6_1" class="foldclosed" onClick="show_folder('1_6_1')" style="POSITION: absolute">+</span> <span id="hide1_6_1" class="foldopened" onClick="hide_folder('1_6_1')">-</span>
+Z&#xe1;sady</span>
+<ul id="fold1_6_1" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_6_1_1" class="foldclosed" onClick="show_folder('1_6_1_1')" style="POSITION: absolute">+</span> <span id="hide1_6_1_1" class="foldopened" onClick="hide_folder('1_6_1_1')">-</span>
+Nev&#x11b;&#x159;it ni&#x10d;emu od klienta</span>
+<ul id="fold1_6_1_1" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_6_1_1_1" class="foldclosed" onClick="show_folder('1_6_1_1_1')" style="POSITION: absolute">+</span> <span id="hide1_6_1_1_1" class="foldopened" onClick="hide_folder('1_6_1_1_1')">-</span>
+HTTP hlavi&#x10d;ky</span>
+<ul id="fold1_6_1_1_1" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_6_1_1_1_1" class="foldclosed" onClick="show_folder('1_6_1_1_1_1')" style="POSITION: absolute">+</span> <span id="hide1_6_1_1_1_1" class="foldopened" onClick="hide_folder('1_6_1_1_1_1')">-</span>
+HTTP respose splitting &#xfa;tok</span>
+<ul id="fold1_6_1_1_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Zneu&#x17e;it&#xed; 302 response status</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>Parametry od klienta</span>
+
+</li>
+<li><span id="show1_6_1_1_2" class="foldclosed" onClick="show_folder('1_6_1_1_2')" style="POSITION: absolute">+</span> <span id="hide1_6_1_1_2" class="foldopened" onClick="hide_folder('1_6_1_1_2')">-</span>
+N&#xe1;zvy soubor&#x16f; z upload dialogu</span>
+<ul id="fold1_6_1_1_2" style="POSITION: relative; VISIBILITY: visible;"><li>Burb Suite aplikace to dok&#xe1;&#x17e;e p&#x159;epsat</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_6_1_1_3" class="foldclosed" onClick="show_folder('1_6_1_1_3')" style="POSITION: absolute">+</span> <span id="hide1_6_1_1_3" class="foldopened" onClick="hide_folder('1_6_1_1_3')">-</span>
+XML poslan&#xfd; na http endpoint</span>
+<ul id="fold1_6_1_1_3" style="POSITION: relative; VISIBILITY: visible;"><li>M&#x16f;&#x17e;e se otisknout do HTML a prov&#xe9;st XSS (cross site scripting)</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_6_1_1_4" class="foldclosed" onClick="show_folder('1_6_1_1_4')" style="POSITION: absolute">+</span> <span id="hide1_6_1_1_4" class="foldopened" onClick="hide_folder('1_6_1_1_4')">-</span>
+kraden&#xed; hesel p&#x159;es XSS</span>
+<ul id="fold1_6_1_1_4" style="POSITION: relative; VISIBILITY: visible;"><li>Zneu&#x17e;ije autocomplete feature</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_6_1_1_5" class="foldclosed" onClick="show_folder('1_6_1_1_5')" style="POSITION: absolute">+</span> <span id="hide1_6_1_1_5" class="foldopened" onClick="hide_folder('1_6_1_1_5')">-</span>
+Zji&#x161;t&#x11b;n&#xed;, kter&#xe9; str&#xe1;nky u&#x17e;ivatel nav&#x161;t&#xed;vil</span>
+<ul id="fold1_6_1_1_5" style="POSITION: relative; VISIBILITY: visible;"><li>JS se d&#xed;v&#xe1;, jak browser obarv&#xed; nav&#x161;t&#xed;ven&#xe9; odkazy</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_6_1_1_6" class="foldclosed" onClick="show_folder('1_6_1_1_6')" style="POSITION: absolute">+</span> <span id="hide1_6_1_1_6" class="foldopened" onClick="hide_folder('1_6_1_1_6')">-</span>
+Nebezpe&#x10d;&#xed; v URL</span>
+<ul id="fold1_6_1_1_6" style="POSITION: relative; VISIBILITY: visible;"><li>WYSIWYG editor umo&#x17e;&#x148;uj&#xed;c&#xed; vkl&#xe1;dat obr&#xe1;zek/URL</span>
+
+</li>
+<li>M&#x16f;&#x17e;e tam vlo&#x17e;it sv&#x16f;j obr&#xe1;zek, kter&#xfd; je chr&#xe1;n&#x11b;n&#xfd; HTTP autentizac&#xed;, vysko&#x10d;&#xed; pak autentiza&#x10d;n&#xed; ok&#xfd;nko kter&#xfd; u&#x17e;ivatel vypln&#xed;</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_7" class="foldclosed" onClick="show_folder('1_7')" style="POSITION: absolute">+</span> <span id="hide1_7" class="foldopened" onClick="hide_folder('1_7')">-</span>
+Jan Horal&#xed;k - Burb Suite</span>
+<ul id="fold1_7" style="POSITION: relative; VISIBILITY: visible;"><li>Platforma pro bezpe&#x10d;nostn&#xed; tesov&#xe1;n&#xed; webov&#xfd;ch aplikac&#xed;</span>
+
+</li>
+<li>Vendavo</span>
+
+</li>
+<li><span id="show1_7_1" class="foldclosed" onClick="show_folder('1_7_1')" style="POSITION: absolute">+</span> <span id="hide1_7_1" class="foldopened" onClick="hide_folder('1_7_1')">-</span>
+Inteligentn&#xed; HTTP proxy</span>
+<ul id="fold1_7_1" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_7_1_1" class="foldclosed" onClick="show_folder('1_7_1_1')" style="POSITION: absolute">+</span> <span id="hide1_7_1_1" class="foldopened" onClick="hide_folder('1_7_1_1')">-</span>
+Aktivn&#xed; testov&#xe1;n&#xed;</span>
+<ul id="fold1_7_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Pos&#xed;l&#xe1;m s&#xe1;m requesty</span>
+
+</li>
+<li>Hlavn&#xed; role SW</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_7_1_2" class="foldclosed" onClick="show_folder('1_7_1_2')" style="POSITION: absolute">+</span> <span id="hide1_7_1_2" class="foldopened" onClick="hide_folder('1_7_1_2')">-</span>
+Pasivn&#xed;</span>
+<ul id="fold1_7_1_2" style="POSITION: relative; VISIBILITY: visible;"><li>Monitoring</span>
+
+</li>
+<li>Statick&#xe1; anal&#xfd;za Javascript&#x16f;</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_7_2" class="foldclosed" onClick="show_folder('1_7_2')" style="POSITION: absolute">+</span> <span id="hide1_7_2" class="foldopened" onClick="hide_folder('1_7_2')">-</span>
+Moduly</span>
+<ul id="fold1_7_2" style="POSITION: relative; VISIBILITY: visible;"><li>Proxy</span>
+
+</li>
+<li>Intruder</span>
+
+</li>
+<li><span id="show1_7_2_1" class="foldclosed" onClick="show_folder('1_7_2_1')" style="POSITION: absolute">+</span> <span id="hide1_7_2_1" class="foldopened" onClick="hide_folder('1_7_2_1')">-</span>
+Scanner</span>
+<ul id="fold1_7_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>Dostane URL aplikace, spust&#xed; baterii test&#x16f;</span>
+
+</li>
+<li>Vhodn&#xe9; napojen&#xed; na Jenkins</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_7_2_2" class="foldclosed" onClick="show_folder('1_7_2_2')" style="POSITION: absolute">+</span> <span id="hide1_7_2_2" class="foldopened" onClick="hide_folder('1_7_2_2')">-</span>
+Spider</span>
+<ul id="fold1_7_2_2" style="POSITION: relative; VISIBILITY: visible;"><li>Sestav&#xed; site map</span>
+
+</li>
+<li>Hled&#xe1; chybn&#xe9; odkryt&#xed; soubor&#x16f;, kter&#xfd; m&#xe1; b&#xfd;t skryt&#xfd;</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_7_3" class="foldclosed" onClick="show_folder('1_7_3')" style="POSITION: absolute">+</span> <span id="hide1_7_3" class="foldopened" onClick="hide_folder('1_7_3')">-</span>
+Roz&#x161;&#xed;&#x159;en&#xed;</span>
+<ul id="fold1_7_3" style="POSITION: relative; VISIBILITY: visible;"><li>Carbonator - mo&#x17e;nost pustit v headless mod (Jenkins)</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_7_4" class="foldclosed" onClick="show_folder('1_7_4')" style="POSITION: absolute">+</span> <span id="hide1_7_4" class="foldopened" onClick="hide_folder('1_7_4')">-</span>
+WebGoat od OWASTu</span>
+<ul id="fold1_7_4" style="POSITION: relative; VISIBILITY: visible;"><li>
+    <p>
+      schv&#225;ln&#283; rozbit&#225; aplikace na tr&#233;nov&#225;n&#237; hackersk&#253;ch &#250;tok&#367;
+    </p>
+  </span>
+
+</li>
+<li>50 lekc&#xed;</span>
+
+</li>
+
+</ul>
+</li>
+<li>330&#x20ac; / rok</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_8" class="foldclosed" onClick="show_folder('1_8')" style="POSITION: absolute">+</span> <span id="hide1_8" class="foldopened" onClick="hide_folder('1_8')">-</span>
+Tom&#xe1;&#x161; Bambas - pro&#x10d; (ne)chce&#x161; pou&#x17e;&#xed;t Vaadin pro v&#xfd;voj webov&#xe9; aplikace</span>
+    <p>
+      MoroSystems
+    </p>
+  
+<ul id="fold1_8" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_8_1" class="foldclosed" onClick="show_folder('1_8_1')" style="POSITION: absolute">+</span> <span id="hide1_8_1" class="foldopened" onClick="hide_folder('1_8_1')">-</span>
+Framework v Java</span>
+<ul id="fold1_8_1" style="POSITION: relative; VISIBILITY: visible;"><li>Nahrazuje HTML/View javascript vrstvu</span>
+
+</li>
+
+</ul>
+</li>
+<li>Zam&#x11b;&#x159;en na Rich internet applications</span>
+
+</li>
+<li>Server side, komponentn&#xed;</span>
+
+</li>
+<li>View se skl&#xe1;d&#xe1; z Java komponent, kter&#xe9; generuj&#xed; HTML</span>
+
+</li>
+<li>Komponenty p&#x159;&#xed;mo propojen&#xed; do Controlleru (bez Javascript boilerplate)</span>
+
+</li>
+<li><span id="show1_8_2" class="foldclosed" onClick="show_folder('1_8_2')" style="POSITION: absolute">+</span> <span id="hide1_8_2" class="foldopened" onClick="hide_folder('1_8_2')">-</span>
+Bez javascriptu</span>
+<ul id="fold1_8_2" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_8_2_1" class="foldclosed" onClick="show_folder('1_8_2_1')" style="POSITION: absolute">+</span> <span id="hide1_8_2_1" class="foldopened" onClick="hide_folder('1_8_2_1')">-</span>
+Sna&#x17e;&#x161;&#xed; debugging</span>
+<ul id="fold1_8_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>Nen&#xed; nutn&#xe9; debugovat JS</span>
+
+</li>
+
+</ul>
+</li>
+<li>Statick&#xe1; typov&#xe1; kontrola</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_8_3" class="foldclosed" onClick="show_folder('1_8_3')" style="POSITION: absolute">+</span> <span id="hide1_8_3" class="foldopened" onClick="hide_folder('1_8_3')">-</span>
+Vaadin CDI</span>
+<ul id="fold1_8_3" style="POSITION: relative; VISIBILITY: visible;"><li>Dependency injection, events a interceptors na frontendu</span>
+
+</li>
+<li>Pou&#x17e;it&#xed; spolu s websockets</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_8_4" class="foldclosed" onClick="show_folder('1_8_4')" style="POSITION: absolute">+</span> <span id="hide1_8_4" class="foldopened" onClick="hide_folder('1_8_4')">-</span>
+Nev&#xfd;hody</span>
+<ul id="fold1_8_4" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_8_4_1" class="foldclosed" onClick="show_folder('1_8_4_1')" style="POSITION: absolute">+</span> <span id="hide1_8_4_1" class="foldopened" onClick="hide_folder('1_8_4_1')">-</span>
+Nedok&#xe1;&#x17e;e b&#x11b;&#x17e;et offline</span>
+<ul id="fold1_8_4_1" style="POSITION: relative; VISIBILITY: visible;"><li>Rendering HTML na serveru</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_8_4_2" class="foldclosed" onClick="show_folder('1_8_4_2')" style="POSITION: absolute">+</span> <span id="hide1_8_4_2" class="foldopened" onClick="hide_folder('1_8_4_2')">-</span>
+Vy&#x161;&#x161;&#xed; n&#xe1;roky na zdroje</span>
+<ul id="fold1_8_4_2" style="POSITION: relative; VISIBILITY: visible;"><li>Stav view v&#x161;ech u&#x17e;ivatel&#x16f; nar&#xe1;z je na serveru</span>
+
+</li>
+<li>N&#xe1;ro&#x10d;n&#xfd; na pam&#x11b;&#x165;</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_8_4_3" class="foldclosed" onClick="show_folder('1_8_4_3')" style="POSITION: absolute">+</span> <span id="hide1_8_4_3" class="foldopened" onClick="hide_folder('1_8_4_3')">-</span>
+Komponentov&#xe9; uzam&#x10d;en&#xed;</span>
+<ul id="fold1_8_4_3" style="POSITION: relative; VISIBILITY: visible;"><li>Pou&#x17e;&#xed;t JS knihovnu (v Angular.js sv&#x11b;t&#x11b;) je mnohem jednodu&#x161;&#x161;&#xed; ne&#x17e; v Vaadinu</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_9" class="foldclosed" onClick="show_folder('1_9')" style="POSITION: absolute">+</span> <span id="hide1_9" class="foldopened" onClick="hide_folder('1_9')">-</span>
+Zden&#x11b;k Merta - Event Sourcing</span>
+<ul id="fold1_9" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_9_1" class="foldclosed" onClick="show_folder('1_9_1')" style="POSITION: absolute">+</span> <span id="hide1_9_1" class="foldopened" onClick="hide_folder('1_9_1')">-</span>
+Zp&#x16f;sob ulo&#x17e;en&#xed; stavu aplikace</span>
+<ul id="fold1_9_1" style="POSITION: relative; VISIBILITY: visible;"><li>Alternativa k tradici - ulo&#x17e;en&#xed; jen aktu&#xe1;ln&#xed;ho stavu</span>
+
+</li>
+<li>Ukl&#xe1;d&#xe1; v&#x161;echny zm&#x11b;ny, kter&#xe9; k aktu&#xe1;ln&#xed;mu stavu vedou</span>
+
+</li>
+<li><span id="show1_9_1_1" class="foldclosed" onClick="show_folder('1_9_1_1')" style="POSITION: absolute">+</span> <span id="hide1_9_1_1" class="foldopened" onClick="hide_folder('1_9_1_1')">-</span>
+Zm&#x11b;na = ud&#xe1;lost/fakt</span>
+<ul id="fold1_9_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>N&#x11b;co, co se stalo v minulosti a m&#xe1; dopad na business</span>
+
+</li>
+<li>Je nem&#x11b;niteln&#xe1; (v minulosti)</span>
+
+</li>
+<li><span id="show1_9_1_1_1" class="foldclosed" onClick="show_folder('1_9_1_1_1')" style="POSITION: absolute">+</span> <span id="hide1_9_1_1_1" class="foldopened" onClick="hide_folder('1_9_1_1_1')">-</span>
+Ukl&#xe1;d&#xe1; se do streamu ud&#xe1;lost&#xed;</span>
+<ul id="fold1_9_1_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Se&#x159;azen&#xe9; dle &#x10d;asu vzniku</span>
+
+</li>
+<li>Jedin&#xe1; operace - append</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>Stav objektu se z&#xed;sk&#xe1; p&#x159;ehr&#xe1;n&#xed;m v&#x161;ech ud&#xe1;lost&#xed;</span>
+
+</li>
+<li>P&#x159;&#xed;klad - finan&#x10d;n&#xed; &#x17e;urn&#xe1;l v&#xfd;voje &#x10d;&#xe1;stky na &#xfa;&#x10d;tu</span>
+
+</li>
+<li><span id="show1_9_2" class="foldclosed" onClick="show_folder('1_9_2')" style="POSITION: absolute">+</span> <span id="hide1_9_2" class="foldopened" onClick="hide_folder('1_9_2')">-</span>
+V&#xfd;hoda</span>
+<ul id="fold1_9_2" style="POSITION: relative; VISIBILITY: visible;"><li>Super zdroj dat pro business anal&#xfd;zu</span>
+
+</li>
+<li>Integrace s jin&#xfd;mi syst&#xe9;my, kter&#xe9; pot&#x159;ebuj&#xed; na ud&#xe1;losti reagovat</span>
+
+</li>
+<li><span id="show1_9_2_1" class="foldclosed" onClick="show_folder('1_9_2_1')" style="POSITION: absolute">+</span> <span id="hide1_9_2_1" class="foldopened" onClick="hide_folder('1_9_2_1')">-</span>
+Flexibilita</span>
+<ul id="fold1_9_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>Lze vytv&#xe1;&#x159;et jin&#xe9; pohledy na streamy ud&#xe1;lost&#xed;</span>
+
+</li>
+<li><span id="show1_9_2_1_1" class="foldclosed" onClick="show_folder('1_9_2_1_1')" style="POSITION: absolute">+</span> <span id="hide1_9_2_1_1" class="foldopened" onClick="hide_folder('1_9_2_1_1')">-</span>
+tzv. materializovan&#xe9; pohledy (obdoba view)</span>
+<ul id="fold1_9_2_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>P&#x159;&#xed;klad: sledov&#xe1;n&#xed; &#xfa;&#x10d;t&#x16f; s &#x10d;&#xe1;stkou nad 10 000 000</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>Perfect audit log</span>
+
+</li>
+<li><span id="show1_9_2_2" class="foldclosed" onClick="show_folder('1_9_2_2')" style="POSITION: absolute">+</span> <span id="hide1_9_2_2" class="foldopened" onClick="hide_folder('1_9_2_2')">-</span>
+Super debugov&#xe1;n&#xed;</span>
+<ul id="fold1_9_2_2" style="POSITION: relative; VISIBILITY: visible;"><li>P&#x159;enesen&#xed; ud&#xe1;lost&#xed; z produkce na testovac&#xed; prost&#x159;ed&#xed;</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_9_2_3" class="foldclosed" onClick="show_folder('1_9_2_3')" style="POSITION: absolute">+</span> <span id="hide1_9_2_3" class="foldopened" onClick="hide_folder('1_9_2_3')">-</span>
+Super testov&#xe1;n&#xed;</span>
+<ul id="fold1_9_2_3" style="POSITION: relative; VISIBILITY: visible;"><li>V&#xfd;sledek operace = vyvolan&#xe9; ud&#xe1;losti</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_9_3" class="foldclosed" onClick="show_folder('1_9_3')" style="POSITION: absolute">+</span> <span id="hide1_9_3" class="foldopened" onClick="hide_folder('1_9_3')">-</span>
+Nepou&#x17e;&#xed;vat</span>
+<ul id="fold1_9_3" style="POSITION: relative; VISIBILITY: visible;"><li>CRUD aplikace, jednoduch&#xe9; dom&#xe9;ny</span>
+
+</li>
+<li>v dom&#xe9;n&#xe1;ch, kde historick&#xe1; data nemaji hodnotu</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_9_4" class="foldclosed" onClick="show_folder('1_9_4')" style="POSITION: absolute">+</span> <span id="hide1_9_4" class="foldopened" onClick="hide_folder('1_9_4')">-</span>
+Rolling snapshot</span>
+<ul id="fold1_9_4" style="POSITION: relative; VISIBILITY: visible;"><li>Ukl&#xe1;d&#xe1;m si periodicky kompletn&#xed; stav, abych u&#x161;et&#x159;il v&#xfd;kon</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_9_5" class="foldclosed" onClick="show_folder('1_9_5')" style="POSITION: absolute">+</span> <span id="hide1_9_5" class="foldopened" onClick="hide_folder('1_9_5')">-</span>
+N&#xe1;stroje</span>
+<ul id="fold1_9_5" style="POSITION: relative; VISIBILITY: visible;"><li>EventStore opensource</span>
+
+</li>
+<li>Apache Kavka - ne p&#x159;&#xed;li&#x161; vhodn&#xe1;</span>
+
+</li>
+<li>Akka - modul pro event store</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_10" class="foldclosed" onClick="show_folder('1_10')" style="POSITION: absolute">+</span> <span id="hide1_10" class="foldopened" onClick="hide_folder('1_10')">-</span>
+Ond&#x159;ej David - behavior&#xe1;ln&#xed; anal&#xfd;za na Androidu s podporou hardware</span>
+<ul id="fold1_10" style="POSITION: relative; VISIBILITY: visible;"><li>Beh. anal&#xfd;za - vlastnost procesoru, kdy se monitoruj&#xed; podez&#x159;el&#xe9; operace</span>
+
+</li>
+<li><span id="show1_10_1" class="foldclosed" onClick="show_folder('1_10_1')" style="POSITION: absolute">+</span> <span id="hide1_10_1" class="foldopened" onClick="hide_folder('1_10_1')">-</span>
+Dovol&#xed; antiviru vid&#x11b;t i to, co d&#x11b;laj&#xed; ostatn&#xed; izolovan&#xe9; aplikace v mobilu</span>
+<ul id="fold1_10_1" style="POSITION: relative; VISIBILITY: visible;"><li>Aktivita malware se sleduje pomoc&#xed; tzv. hooks</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_10_2" class="foldclosed" onClick="show_folder('1_10_2')" style="POSITION: absolute">+</span> <span id="hide1_10_2" class="foldopened" onClick="hide_folder('1_10_2')">-</span>
+Co pot&#x159;ebujeme detekovat v mobilu</span>
+<ul id="fold1_10_2" style="POSITION: relative; VISIBILITY: visible;"><li>
+    <p>
+      pos&#237;l&#225;n&#237; SMS na pozad&#237;
+    </p>
+  </span>
+
+</li>
+<li>zobrazov&#xe1;n&#xed; Pop-up oken</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_11" class="foldclosed" onClick="show_folder('1_11')" style="POSITION: absolute">+</span> <span id="hide1_11" class="foldopened" onClick="hide_folder('1_11')">-</span>
+David Ond&#x159;ich - ViM 8.0</span>
+<ul id="fold1_11" style="POSITION: relative; VISIBILITY: visible;"><li>Hodn&#x11b; klon&#x16f;</span>
+
+</li>
+<li><span id="show1_11_1" class="foldclosed" onClick="show_folder('1_11_1')" style="POSITION: absolute">+</span> <span id="hide1_11_1" class="foldopened" onClick="hide_folder('1_11_1')">-</span>
+V&#xfd;hody</span>
+<ul id="fold1_11_1" style="POSITION: relative; VISIBILITY: visible;"><li>Existuje v&#x161;ude</span>
+
+</li>
+<li>Lze ovl&#xe1;dat zvenku jako p&#x159;echroust&#xe1;tor dat</span>
+
+</li>
+<li>Mraky funkc&#xed;, plugin&#x16f;, syntax highlighting</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_11_2" class="foldclosed" onClick="show_folder('1_11_2')" style="POSITION: absolute">+</span> <span id="hide1_11_2" class="foldopened" onClick="hide_folder('1_11_2')">-</span>
+Zm&#x11b;na 8.0</span>
+<ul id="fold1_11_2" style="POSITION: relative; VISIBILITY: visible;"><li>Asynchron&#xed; komunikace s procesem/socketem</span>
+
+</li>
+<li>&#x10d;asova&#x10d;</span>
+
+</li>
+<li><span id="show1_11_2_1" class="foldclosed" onClick="show_folder('1_11_2_1')" style="POSITION: absolute">+</span> <span id="hide1_11_2_1" class="foldopened" onClick="hide_folder('1_11_2_1')">-</span>
+lambdy (na transforma&#x10d;n&#xed; funkce)</span>
+<ul id="fold1_11_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>D&#x11b;d&#xed; stack prom&#x11b;nn&#xfd;ch ze scope</span>
+
+</li>
+<li>daj&#xed; se p&#x159;i&#x159;azovat do prom&#x11b;nn&#xfd;ch, v&#x10d;. stacku</span>
+
+</li>
+
+</ul>
+</li>
+<li>Ctrl-A - v&#x161;echna &#x10d;&#xed;sla v ozna&#x10d;en&#xe9;m textu zv&#x11b;t&#x161;&#xed; o 1</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_12" class="foldclosed" onClick="show_folder('1_12')" style="POSITION: absolute">+</span> <span id="hide1_12" class="foldopened" onClick="hide_folder('1_12')">-</span>
+Tom&#xe1;&#x161; L&#xe1;tal - Bobril</span>
+    <p>
+      GMC
+    </p>
+  
+<ul id="fold1_12" style="POSITION: relative; VISIBILITY: visible;"><li>Framework pro tvorbu single page aplikac&#xed;</span>
+
+</li>
+<li>OpenSource v TightScriptu (typovost)</span>
+
+</li>
+<li><span id="show1_12_1" class="foldclosed" onClick="show_folder('1_12_1')" style="POSITION: absolute">+</span> <span id="hide1_12_1" class="foldopened" onClick="hide_folder('1_12_1')">-</span>
+Motivace</span>
+<ul id="fold1_12_1" style="POSITION: relative; VISIBILITY: visible;"><li>Kdy&#x17e; nesta&#x10d;il Angular 1.js, zobrazen&#xed; na mobilu p&#x159;&#xed;li&#x161; pomal&#xe9;</span>
+
+</li>
+<li><span id="show1_12_1_1" class="foldclosed" onClick="show_folder('1_12_1_1')" style="POSITION: absolute">+</span> <span id="hide1_12_1_1" class="foldopened" onClick="hide_folder('1_12_1_1')">-</span>
+Co d&#xe1;l?</span>
+<ul id="fold1_12_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Angular 2</span>
+
+</li>
+<li>React (pou&#x17e;&#xed;v&#xe1; Virtual DOM VDOM a je komponentn&#xed;)</span>
+
+</li>
+<li><span id="show1_12_1_1_1" class="foldclosed" onClick="show_folder('1_12_1_1_1')" style="POSITION: absolute">+</span> <span id="hide1_12_1_1_1" class="foldopened" onClick="hide_folder('1_12_1_1_1')">-</span>
+Bobril</span>
+<ul id="fold1_12_1_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Tak&#xe9; VDOM a kompomenty</span>
+
+</li>
+<li>Inspirov&#xe1;n Mithrilem</span>
+
+</li>
+<li><span id="show1_12_1_1_1_1" class="foldclosed" onClick="show_folder('1_12_1_1_1_1')" style="POSITION: absolute">+</span> <span id="hide1_12_1_1_1_1" class="foldopened" onClick="hide_folder('1_12_1_1_1_1')">-</span>
+D&#x16f;raz na rychlost (na mobilu)</span>
+<ul id="fold1_12_1_1_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Lep&#x161;&#xed; VDOM porovn&#xe1;n&#xed;</span>
+
+</li>
+<li>Shlukov&#xe1;n&#xed; p&#x159;ekreslov&#xe1;n&#xed;</span>
+
+</li>
+<li>O 40% pomalej&#x161;&#xed; ne&#x17e; plain JS, oproti Angular 2x rychlej&#x161;&#xed;</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_12_1_1_1_2" class="foldclosed" onClick="show_folder('1_12_1_1_1_2')" style="POSITION: absolute">+</span> <span id="hide1_12_1_1_1_2" class="foldopened" onClick="hide_folder('1_12_1_1_1_2')">-</span>
+P&#x159;enesen&#xe1; data</span>
+<ul id="fold1_12_1_1_1_2" style="POSITION: relative; VISIBILITY: visible;"><li>140kB angular</span>
+
+</li>
+<li>128 React.js</span>
+
+</li>
+<li>40 Bobril</span>
+
+</li>
+<li>17kB Bobril GZIP</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_12_2" class="foldclosed" onClick="show_folder('1_12_2')" style="POSITION: absolute">+</span> <span id="hide1_12_2" class="foldopened" onClick="hide_folder('1_12_2')">-</span>
+Features</span>
+<ul id="fold1_12_2" style="POSITION: relative; VISIBILITY: visible;"><li>G11N</span>
+
+</li>
+<li>SVG</span>
+
+</li>
+<li>IE9+, Android 4.1</span>
+
+</li>
+<li>CSS jako sou&#x10d;&#xe1;st k&#xf3;du</span>
+
+</li>
+<li><span id="show1_12_2_1" class="foldclosed" onClick="show_folder('1_12_2_1')" style="POSITION: absolute">+</span> <span id="hide1_12_2_1" class="foldopened" onClick="hide_folder('1_12_2_1')">-</span>
+Normalizace mouse & touch ud&#xe1;lost&#xed;</span>
+<ul id="fold1_12_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>V&#xfd;voj&#xe1;&#x159; ne&#x159;e&#x161;&#xed;, je-li na desktopu nebo mobilu</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_12_2_2" class="foldclosed" onClick="show_folder('1_12_2_2')" style="POSITION: absolute">+</span> <span id="hide1_12_2_2" class="foldopened" onClick="hide_folder('1_12_2_2')">-</span>
+Build system</span>
+<ul id="fold1_12_2_2" style="POSITION: relative; VISIBILITY: visible;"><li>Development mode</span>
+
+</li>
+<li><span id="show1_12_2_2_1" class="foldclosed" onClick="show_folder('1_12_2_2_1')" style="POSITION: absolute">+</span> <span id="hide1_12_2_2_1" class="foldopened" onClick="hide_folder('1_12_2_2_1')">-</span>
+Production mode</span>
+<ul id="fold1_12_2_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>Minimalization js</span>
+
+</li>
+<li><span id="show1_12_2_2_1_1" class="foldclosed" onClick="show_folder('1_12_2_2_1_1')" style="POSITION: absolute">+</span> <span id="hide1_12_2_2_1_1" class="foldopened" onClick="hide_folder('1_12_2_2_1_1')">-</span>
+Sprite generation</span>
+<ul id="fold1_12_2_2_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Jeden velk&#xfd; obr&#xe1;zek poskl&#xe1;dan&#xfd; z v&#x161;ech obr&#xe1;zk&#x16f; webu</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>Vykresluje komponenty na klientovi pomoc&#xed; Javascriptu</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_12_3" class="foldclosed" onClick="show_folder('1_12_3')" style="POSITION: absolute">+</span> <span id="hide1_12_3" class="foldopened" onClick="hide_folder('1_12_3')">-</span>
+Kamar&#xe1;tk&#xe9; projekty</span>
+<ul id="fold1_12_3" style="POSITION: relative; VISIBILITY: visible;"><li>Bobrilstrap</span>
+
+</li>
+<li>Bobril-M</span>
+
+</li>
+<li>ngBobril</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_13" class="foldclosed" onClick="show_folder('1_13')" style="POSITION: absolute">+</span> <span id="hide1_13" class="foldopened" onClick="hide_folder('1_13')">-</span>
+Dan Kvasni&#x10d;ka - ELM327 & OBD2</span>
+<ul id="fold1_13" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_13_1" class="foldclosed" onClick="show_folder('1_13_1')" style="POSITION: absolute">+</span> <span id="hide1_13_1" class="foldopened" onClick="hide_folder('1_13_1')">-</span>
+OBD2 - standard pro diagnostiku aut</span>
+<ul id="fold1_13_1" style="POSITION: relative; VISIBILITY: visible;"><li>Definuje tvar konektoru</span>
+
+</li>
+<li>Zp&#x16f;sob nap&#xe1;jen&#xed;</span>
+
+</li>
+<li><span id="show1_13_1_1" class="foldclosed" onClick="show_folder('1_13_1_1')" style="POSITION: absolute">+</span> <span id="hide1_13_1_1" class="foldopened" onClick="hide_folder('1_13_1_1')">-</span>
+Sada parameter ids</span>
+<ul id="fold1_13_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>&#x17d;&#xe1;dosti o data</span>
+
+</li>
+<li>Ot&#xe1;&#x10d;ky motoru, ...</span>
+
+</li>
+<li>&#xda;daje o emis&#xed;ch</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_13_2" class="foldclosed" onClick="show_folder('1_13_2')" style="POSITION: absolute">+</span> <span id="hide1_13_2" class="foldopened" onClick="hide_folder('1_13_2')">-</span>
+ELM327</span>
+<ul id="fold1_13_2" style="POSITION: relative; VISIBILITY: visible;"><li>p&#x159;ekl&#xe1;d&#xe1; &#xfa;daje z OBD2 na n&#x11b;co, s &#x10d;&#xed;m se d&#xe1; pracovat</span>
+
+</li>
+<li>Dnes cena kol. 200,300 K&#x10d;</span>
+
+</li>
+<li>Nejlep&#x161;&#xed; verze p&#x159;es Wifi - vyrob&#xed; to HotSpot</span>
+
+</li>
+<li><span id="show1_13_2_1" class="foldclosed" onClick="show_folder('1_13_2_1')" style="POSITION: absolute">+</span> <span id="hide1_13_2_1" class="foldopened" onClick="hide_folder('1_13_2_1')">-</span>
+mobiln&#xed; apka</span>
+<ul id="fold1_13_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>DashCommand iOS - 20&#x20ac;</span>
+
+</li>
+<li>ThorPro Android</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>Od roku 2001 v EU</span>
+
+</li>
+<li><span id="show1_13_3" class="foldclosed" onClick="show_folder('1_13_3')" style="POSITION: absolute">+</span> <span id="hide1_13_3" class="foldopened" onClick="hide_folder('1_13_3')">-</span>
+Rocket</span>
+<ul id="fold1_13_3" style="POSITION: relative; VISIBILITY: visible;"><li>V&#xfd;vojov&#xe9; prost&#x159;ed&#xed;</span>
+
+</li>
+<li>Um&#xed; generovat 3D grafy</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_14" class="foldclosed" onClick="show_folder('1_14')" style="POSITION: absolute">+</span> <span id="hide1_14" class="foldopened" onClick="hide_folder('1_14')">-</span>
+Jarda &#x160;najdr - Rust</span>
+<ul id="fold1_14" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_14_1" class="foldclosed" onClick="show_folder('1_14_1')" style="POSITION: absolute">+</span> <span id="hide1_14_1" class="foldopened" onClick="hide_folder('1_14_1')">-</span>
+Ambice nahradit C, C++</span>
+<ul id="fold1_14_1" style="POSITION: relative; VISIBILITY: visible;"><li>Narozd&#xed;l od nich je Rust safe p&#x159;i pr&#xe1;ci s pam&#x11b;t&#xed;</span>
+
+</li>
+<li><span id="show1_14_1_1" class="foldclosed" onClick="show_folder('1_14_1_1')" style="POSITION: absolute">+</span> <span id="hide1_14_1_1" class="foldopened" onClick="hide_folder('1_14_1_1')">-</span>
+Pro frustrovan&#xe9; v&#xfd;voj&#xe1;&#x159;e C/C++</span>
+<ul id="fold1_14_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Vzniklo v Mozille (FF je naps&#xe1;n v C++)</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_14_2" class="foldclosed" onClick="show_folder('1_14_2')" style="POSITION: absolute">+</span> <span id="hide1_14_2" class="foldopened" onClick="hide_folder('1_14_2')">-</span>
+Bezpe&#x10d;n&#xfd; jazyk pro syst&#xe9;mov&#xe9; programov&#xe1;n&#xed;</span>
+<ul id="fold1_14_2" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_14_2_1" class="foldclosed" onClick="show_folder('1_14_2_1')" style="POSITION: absolute">+</span> <span id="hide1_14_2_1" class="foldopened" onClick="hide_folder('1_14_2_1')">-</span>
+P&#x159;&#xed;m&#xe1; kontrola nad HW</span>
+<ul id="fold1_14_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>Kontrola in-memory layoutu dat. struktur</span>
+
+</li>
+<li>Nem&#xe1; GC, kontrola nad alokac&#xed;/dealokac&#xed;</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_14_3" class="foldclosed" onClick="show_folder('1_14_3')" style="POSITION: absolute">+</span> <span id="hide1_14_3" class="foldopened" onClick="hide_folder('1_14_3')">-</span>
+Pou&#x17e;it&#xfd; v Servo</span>
+<ul id="fold1_14_3" style="POSITION: relative; VISIBILITY: visible;"><li>Rendering engine browseru</span>
+
+</li>
+<li>Maxim&#xe1;ln&#xed; paralelizace renderov&#xe1;n&#xed; do v&#xed;cejader</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_15" class="foldclosed" onClick="show_folder('1_15')" style="POSITION: absolute">+</span> <span id="hide1_15" class="foldopened" onClick="hide_folder('1_15')">-</span>
+Ond&#x159;ej Nekola - testov&#xe1;n&#xed;</span>
+<ul id="fold1_15" style="POSITION: relative; VISIBILITY: visible;"><li>Obdobn&#xe1; my&#x161;lenka jako podvojn&#xe9; &#xfa;&#x10d;tov&#xe1;n&#xed;</span>
+
+</li>
+<li><span id="show1_15_1" class="foldclosed" onClick="show_folder('1_15_1')" style="POSITION: absolute">+</span> <span id="hide1_15_1" class="foldopened" onClick="hide_folder('1_15_1')">-</span>
+Spock</span>
+<ul id="fold1_15_1" style="POSITION: relative; VISIBILITY: visible;"><li>given, when, then</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_15_2" class="foldclosed" onClick="show_folder('1_15_2')" style="POSITION: absolute">+</span> <span id="hide1_15_2" class="foldopened" onClick="hide_folder('1_15_2')">-</span>
+Genesis</span>
+<ul id="fold1_15_2" style="POSITION: relative; VISIBILITY: visible;"><li>Nadstavba nad Spock</span>
+
+</li>
+<li>P&#x159;&#xed;prava testovac&#xed;ch dat - gener&#xe1;tory</span>
+
+</li>
+<li>Gen.type(Person, ... Gen.character("MFTU"))</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_16" class="foldclosed" onClick="show_folder('1_16')" style="POSITION: absolute">+</span> <span id="hide1_16" class="foldopened" onClick="hide_folder('1_16')">-</span>
+Jaroslav Hola&#x148; - techniky pr&#xe1;ce</span>
+    <p>
+      TopMonksGen.character(&quot;MFTU&quot;)
+    </p>
+  
+<ul id="fold1_16" style="POSITION: relative; VISIBILITY: visible;"><li>Future of work konference</span>
+
+</li>
+<li><span id="show1_16_1" class="foldclosed" onClick="show_folder('1_16_1')" style="POSITION: absolute">+</span> <span id="hide1_16_1" class="foldopened" onClick="hide_folder('1_16_1')">-</span>
+Kniha Hlubok&#xe1; pr&#xe1;ce</span>
+<ul id="fold1_16_1" style="POSITION: relative; VISIBILITY: visible;"><li>V rozt&#x11b;kan&#xe9;m sv&#x11b;t&#x11b;</span>
+
+</li>
+<li>U&#x10d;&#xed;, jak dostat mozek do flow</span>
+
+</li>
+<li><span id="show1_16_1_1" class="foldclosed" onClick="show_folder('1_16_1_1')" style="POSITION: absolute">+</span> <span id="hide1_16_1_1" class="foldopened" onClick="hide_folder('1_16_1_1')">-</span>
+Hlubok&#xe1; pr&#xe1;ce</span>
+<ul id="fold1_16_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>V tom vznik&#xe1; nejkvalitn&#x11b;j&#x161;&#xed; znalostn&#xed; pr&#xe1;ce</span>
+
+</li>
+<li>D&#xed;t&#x11b; 1 hod, dosp&#x11b;l&#xed; max. 4 hodiny</span>
+
+</li>
+<li><span id="show1_16_1_1_1" class="foldclosed" onClick="show_folder('1_16_1_1_1')" style="POSITION: absolute">+</span> <span id="hide1_16_1_1_1" class="foldopened" onClick="hide_folder('1_16_1_1_1')">-</span>
+Kdy&#x17e; vy&#x10d;erp&#xe1;me 4 hodiny</span>
+<ul id="fold1_16_1_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Je mo&#x17e;n&#xe9; &#x159;e&#x161;it v nev&#x11b;dom&#xe9;m my&#x161;len&#xed;</span>
+
+</li>
+<li><span id="show1_16_1_1_1_1" class="foldclosed" onClick="show_folder('1_16_1_1_1_1')" style="POSITION: absolute">+</span> <span id="hide1_16_1_1_1_1" class="foldopened" onClick="hide_folder('1_16_1_1_1_1')">-</span>
+Mozek pro nev&#x11b;dom&#xe9; my&#x161;len&#xed; m&#xe1; v&#xed;ce neuron&#x16f;</span>
+<ul id="fold1_16_1_1_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>&#x158;e&#x161;en&#xed; m&#x16f;&#x17e;e b&#xfd;t lep&#x161;&#xed;</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_16_1_2" class="foldclosed" onClick="show_folder('1_16_1_2')" style="POSITION: absolute">+</span> <span id="hide1_16_1_2" class="foldopened" onClick="hide_folder('1_16_1_2')">-</span>
+M&#x11b;lk&#xe1; pr&#xe1;ce</span>
+<ul id="fold1_16_1_2" style="POSITION: relative; VISIBILITY: visible;"><li>Meetingy</span>
+
+</li>
+<li>Maily</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_16_1_3" class="foldclosed" onClick="show_folder('1_16_1_3')" style="POSITION: absolute">+</span> <span id="hide1_16_1_3" class="foldopened" onClick="hide_folder('1_16_1_3')">-</span>
+Rady</span>
+<ul id="fold1_16_1_3" style="POSITION: relative; VISIBILITY: visible;"><li>M&#x11b;lk&#xe1; pr&#xe1;ce - ne cel&#xfd; den tro&#x161;ku, ale 1x denn&#x11b;</span>
+
+</li>
+
+</ul>
+</li>
+<li>Kvalitn&#xed; pracovn&#xed; v&#xfd;stup = str&#xe1;ven&#xfd; &#x10d;as * intenzita soust&#x159;ed&#x11b;n&#xed;</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_16_2" class="foldclosed" onClick="show_folder('1_16_2')" style="POSITION: absolute">+</span> <span id="hide1_16_2" class="foldopened" onClick="hide_folder('1_16_2')">-</span>
+Kniha Inov&#xe1;to&#x159;i - Walter Isaacson</span>
+<ul id="fold1_16_2" style="POSITION: relative; VISIBILITY: visible;"><li>"Abyste vymysleli inovaci, mus&#xed;te se setk&#xe1;vat s lidmi mimo v&#xe1;&#x161; obor"</span>
+
+</li>
+<li>V bellov&#xfd;ch laborato&#x159;&#xed;ch m&#x11b;li dlouh&#xe9; chodby, aby se v&#x11b;dci setk&#xe1;vali</span>
+
+</li>
+
+</ul>
+</li>
+<li>"Stupid dreams are the beginning of amazing stories"</span>
+
+</li>
+<li><span id="show1_16_3" class="foldclosed" onClick="show_folder('1_16_3')" style="POSITION: absolute">+</span> <span id="hide1_16_3" class="foldopened" onClick="hide_folder('1_16_3')">-</span>
+Kniha The Zen Programmer</span>
+<ul id="fold1_16_3" style="POSITION: relative; VISIBILITY: visible;"><li>Nejlep&#x161;&#xed; posledn&#xed; t&#x159;etina</span>
+
+</li>
+<li><span id="show1_16_3_1" class="foldclosed" onClick="show_folder('1_16_3_1')" style="POSITION: absolute">+</span> <span id="hide1_16_3_1" class="foldopened" onClick="hide_folder('1_16_3_1')">-</span>
+Desatero pro program&#xe1;tora</span>
+<ul id="fold1_16_3_1" style="POSITION: relative; VISIBILITY: visible;"><li>Meditujte</span>
+
+</li>
+
+</ul>
+</li>
+<li>Princip mysli za&#x10d;&#xe1;te&#x10d;n&#xed;ka</span>
+
+</li>
+<li><span id="show1_16_3_2" class="foldclosed" onClick="show_folder('1_16_3_2')" style="POSITION: absolute">+</span> <span id="hide1_16_3_2" class="foldopened" onClick="hide_folder('1_16_3_2')">-</span>
+Discover the power of meditation - calm.com</span>
+<ul id="fold1_16_3_2" style="POSITION: relative; VISIBILITY: visible;"><li>Android Appka</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_17" class="foldclosed" onClick="show_folder('1_17')" style="POSITION: absolute">+</span> <span id="hide1_17" class="foldopened" onClick="hide_folder('1_17')">-</span>
+Josef Cacek - Sunstone pro cloud</span>
+<ul id="fold1_17" style="POSITION: relative; VISIBILITY: visible;"><li>Knihovna, github</span>
+
+</li>
+<li><span id="show1_17_1" class="foldclosed" onClick="show_folder('1_17_1')" style="POSITION: absolute">+</span> <span id="hide1_17_1" class="foldopened" onClick="hide_folder('1_17_1')">-</span>
+&#x17e;ivotn&#xed; cyklus virtu&#xe1;ln&#xed;ch box&#x16f; na cloudu</span>
+<ul id="fold1_17_1" style="POSITION: relative; VISIBILITY: visible;"><li>Docker containery</span>
+
+</li>
+<li><span id="show1_17_1_1" class="foldclosed" onClick="show_folder('1_17_1_1')" style="POSITION: absolute">+</span> <span id="hide1_17_1_1" class="foldopened" onClick="hide_folder('1_17_1_1')">-</span>
+P&#xe1;r z&#xe1;kladn&#xed;ch cloud&#x16f;</span>
+<ul id="fold1_17_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Azure</span>
+
+</li>
+<li>Amazon</span>
+
+</li>
+<li>OpenStack</span>
+
+</li>
+<li>Unix servery p&#x159;es SSH (simulace cloudu)</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>Zjednodu&#x161;uje testov&#xe1;n&#xed; jBossu</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_18" class="foldclosed" onClick="show_folder('1_18')" style="POSITION: absolute">+</span> <span id="hide1_18" class="foldopened" onClick="hide_folder('1_18')">-</span>
+Martin Strejc - agiln&#xed; t&#xfd;m i k&#xf3;d</span>
+<ul id="fold1_18" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_18_1" class="foldclosed" onClick="show_folder('1_18_1')" style="POSITION: absolute">+</span> <span id="hide1_18_1" class="foldopened" onClick="hide_folder('1_18_1')">-</span>
+&#xda;skal&#xed; agile</span>
+<ul id="fold1_18_1" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_18_1_1" class="foldclosed" onClick="show_folder('1_18_1_1')" style="POSITION: absolute">+</span> <span id="hide1_18_1_1" class="foldopened" onClick="hide_folder('1_18_1_1')">-</span>
+Nestihnu story ve sprintu</span>
+<ul id="fold1_18_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Nedod&#xe1;m nic</span>
+
+</li>
+
+</ul>
+</li>
+<li>"Agiln&#xed; vodop&#xe1;d"</span>
+
+</li>
+<li>Tester nem&#xe1; polovinu Sprintu co testovat</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_18_2" class="foldclosed" onClick="show_folder('1_18_2')" style="POSITION: absolute">+</span> <span id="hide1_18_2" class="foldopened" onClick="hide_folder('1_18_2')">-</span>
+Jak to d&#x11b;lat</span>
+<ul id="fold1_18_2" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_18_2_1" class="foldclosed" onClick="show_folder('1_18_2_1')" style="POSITION: absolute">+</span> <span id="hide1_18_2_1" class="foldopened" onClick="hide_folder('1_18_2_1')">-</span>
+Mob programming</span>
+  
+<ul id="fold1_18_2_1" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_18_2_1_1" class="foldclosed" onClick="show_folder('1_18_2_1_1')" style="POSITION: absolute">+</span> <span id="hide1_18_2_1_1" class="foldopened" onClick="hide_folder('1_18_2_1_1')">-</span>
+V&#x161;ichni pracuj&#xed; spolu</span>
+<ul id="fold1_18_2_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>V zaseda&#x10d;ce</span>
+
+</li>
+<li>U stolu</span>
+
+</li>
+
+</ul>
+</li>
+<li>Jeden sed&#xed; u PC, ostatn&#xed; p&#x159;em&#xfd;&#x161;l&#xed;</span>
+
+</li>
+<li>Vy&#x17e;aduje zm&#x11b;nu my&#x161;len&#xed;</span>
+
+</li>
+<li>Ne cel&#xfd; den, jen tak 4 hodiny</span>
+
+</li>
+<li>Zbytek dne - domluv&#xed; se, co d&#xe1;l</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_18_2_2" class="foldclosed" onClick="show_folder('1_18_2_2')" style="POSITION: absolute">+</span> <span id="hide1_18_2_2" class="foldopened" onClick="hide_folder('1_18_2_2')">-</span>
+Z&#xe1;sady psan&#xed;</span>
+<ul id="fold1_18_2_2" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_18_2_2_1" class="foldclosed" onClick="show_folder('1_18_2_2_1')" style="POSITION: absolute">+</span> <span id="hide1_18_2_2_1" class="foldopened" onClick="hide_folder('1_18_2_2_1')">-</span>
+Inkrement&#xe1;ln&#xed; k&#xf3;d</span>
+<ul id="fold1_18_2_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>Nap&#x159;. na formul&#xe1;&#x159;i ud&#x11b;l&#xe1;m jen jeden field</span>
+
+</li>
+<li>V&#x161;echno, co jde, omockuju</span>
+
+</li>
+<li>Umo&#x17e;n&#xed; co nejd&#x159;&#xed;ve z&#xed;skat proof of concept</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_19" class="foldclosed" onClick="show_folder('1_19')" style="POSITION: absolute">+</span> <span id="hide1_19" class="foldopened" onClick="hide_folder('1_19')">-</span>
+Maryna - Test heuristics in agile</span>
+<ul id="fold1_19" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_19_1" class="foldclosed" onClick="show_folder('1_19_1')" style="POSITION: absolute">+</span> <span id="hide1_19_1" class="foldopened" onClick="hide_folder('1_19_1')">-</span>
+QA</span>
+<ul id="fold1_19_1" style="POSITION: relative; VISIBILITY: visible;"><li>1. t&#xfd;den - p&#x159;&#xed;prava</span>
+
+</li>
+<li>2. t&#xfd;den - dostane se ke k&#xf3;du a za&#x10d;ne hl&#xe1;sit chyby</span>
+
+</li>
+<li>Probl&#xe9;m - chyb&#xed; synchronizace QA a DEV t&#xfd;mu</span>
+
+</li>
+
+</ul>
+</li>
+<li>Zru&#x161;ili jsme rozd&#x11b;len&#xed; QA a Dev</span>
+
+</li>
+<li><span id="show1_19_2" class="foldclosed" onClick="show_folder('1_19_2')" style="POSITION: absolute">+</span> <span id="hide1_19_2" class="foldopened" onClick="hide_folder('1_19_2')">-</span>
+Exploratory testing</span>
+<ul id="fold1_19_2" style="POSITION: relative; VISIBILITY: visible;"><li>Nepou&#x17e;&#xed;vaj&#xed; se test cases</span>
+
+</li>
+<li>Co se d&#xe1; otestovat se ur&#x10d;uje podle heuristik</span>
+
+</li>
+<li>ExploreIt kniha</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_19_3" class="foldclosed" onClick="show_folder('1_19_3')" style="POSITION: absolute">+</span> <span id="hide1_19_3" class="foldopened" onClick="hide_folder('1_19_3')">-</span>
+V n&#x11b;jakou f&#xe1;zi se cel&#xfd; t&#xfd;m sejde</span>
+<ul id="fold1_19_3" style="POSITION: relative; VISIBILITY: visible;"><li>V dob&#x11b;, kdy v&#xed;me, co m&#xe1; k&#xf3;d d&#x11b;lat, ale nev&#xed;me jak</span>
+
+</li>
+<li><span id="show1_19_3_1" class="foldclosed" onClick="show_folder('1_19_3_1')" style="POSITION: absolute">+</span> <span id="hide1_19_3_1" class="foldopened" onClick="hide_folder('1_19_3_1')">-</span>
+Vezmeme testovac&#xed; heuristiky a d&#x11b;l&#xe1;me brainstorming</span>
+<ul id="fold1_19_3_1" style="POSITION: relative; VISIBILITY: visible;"><li>Co jsme mohli novou story rozb&#xed;t?</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_19_3_2" class="foldclosed" onClick="show_folder('1_19_3_2')" style="POSITION: absolute">+</span> <span id="hide1_19_3_2" class="foldopened" onClick="hide_folder('1_19_3_2')">-</span>
+Z brainstormingu zjist&#xed;me, co chceme testovat</span>
+<ul id="fold1_19_3_2" style="POSITION: relative; VISIBILITY: visible;"><li>Seznam test&#x16f; pro danou story</span>
+
+</li>
+<li><span id="show1_19_3_2_1" class="foldclosed" onClick="show_folder('1_19_3_2_1')" style="POSITION: absolute">+</span> <span id="hide1_19_3_2_1" class="foldopened" onClick="hide_folder('1_19_3_2_1')">-</span>
+Ur&#x10d;&#xed;me formu test&#x16f;</span>
+<ul id="fold1_19_3_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>Integra&#x10d;n&#xed; test</span>
+
+</li>
+<li>End-to-end test</span>
+
+</li>
+<li>Manu&#xe1;ln&#xed; test</span>
+
+</li>
+<li>Unit testy</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_20" class="foldclosed" onClick="show_folder('1_20')" style="POSITION: absolute">+</span> <span id="hide1_20" class="foldopened" onClick="hide_folder('1_20')">-</span>
+Luk&#xe1;&#x161; K&#x159;e&#x10d;an - new Java Literals for the brave and True</span>
+<ul id="fold1_20" style="POSITION: relative; VISIBILITY: visible;"><li>Java 1.8 - definice pomoc&#xed; -></span>
+
+</li>
+<li>Map<String, String> map = new map(&#xa;key1 -> value1,&#xa;key2 -> value2&#xa;)</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_21" class="foldclosed" onClick="show_folder('1_21')" style="POSITION: absolute">+</span> <span id="hide1_21" class="foldopened" onClick="hide_folder('1_21')">-</span>
+Petr J&#x16f;za - CleverBus</span>
+<ul id="fold1_21" style="POSITION: relative; VISIBILITY: visible;"><li>EBS made by developers for developers</span>
+
+</li>
+<li>"Apache camel on steroids"</span>
+
+</li>
+<li><span id="show1_21_1" class="foldclosed" onClick="show_folder('1_21_1')" style="POSITION: absolute">+</span> <span id="hide1_21_1" class="foldopened" onClick="hide_folder('1_21_1')">-</span>
+vyu&#x17e;&#xed;v&#xe1;</span>
+<ul id="fold1_21_1" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_21_1_1" class="foldclosed" onClick="show_folder('1_21_1_1')" style="POSITION: absolute">+</span> <span id="hide1_21_1_1" class="foldopened" onClick="hide_folder('1_21_1_1')">-</span>
+Apache camel</span>
+<ul id="fold1_21_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>
+    <p>
+      implementuje z&#225;kladn&#237; integra&#269;n&#237; patterny
+    </p>
+  </span>
+
+</li>
+<li>Lze pou&#x17e;&#xed;t n&#xe1;stroje pro camel (Hawito)</span>
+
+</li>
+
+</ul>
+</li>
+<li>Spring</span>
+
+</li>
+<li>PostgreSQL</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_21_2" class="foldclosed" onClick="show_folder('1_21_2')" style="POSITION: absolute">+</span> <span id="hide1_21_2" class="foldopened" onClick="hide_folder('1_21_2')">-</span>
+Vlastnosti</span>
+<ul id="fold1_21_2" style="POSITION: relative; VISIBILITY: visible;"><li>ESB</span>
+
+</li>
+<li>sou&#x10d;&#xe1;st aplikace</span>
+
+</li>
+<li>security proxy</span>
+
+</li>
+<li>Mobiln&#xed; gateway</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_21_3" class="foldclosed" onClick="show_folder('1_21_3')" style="POSITION: absolute">+</span> <span id="hide1_21_3" class="foldopened" onClick="hide_folder('1_21_3')">-</span>
+Feutures</span>
+<ul id="fold1_21_3" style="POSITION: relative; VISIBILITY: visible;"><li>Obsolete messages</span>
+
+</li>
+<li>omezen&#xed; toku dat (komponenta Funnel)</span>
+
+</li>
+<li>Monitoring & Logging</span>
+
+</li>
+<li>Error handling</span>
+
+</li>
+<li>Automatick&#xe9; alerty</span>
+
+</li>
+<li>Admin GUI</span>
+
+</li>
+<li>Throttling - obrana proti DOS &#xfa;tok&#x16f;m</span>
+
+</li>
+
+</ul>
+</li>
+<li>Stabiln&#xed; a prov&#x11b;&#x159;en&#xe9; - pou&#x17e;&#xed;vaj&#xed; velc&#xed; oper&#xe1;to&#x159;i</span>
+
+</li>
+<li>Lightweight, DB agnostic</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_22" class="foldclosed" onClick="show_folder('1_22')" style="POSITION: absolute">+</span> <span id="hide1_22" class="foldopened" onClick="hide_folder('1_22')">-</span>
+Pavel Lahoda - Do you like buzzwords (Server 2.0)?</span>
+<ul id="fold1_22" style="POSITION: relative; VISIBILITY: visible;"><li>Loginaut authentication projekt</span>
+
+</li>
+<li><span id="show1_22_1" class="foldclosed" onClick="show_folder('1_22_1')" style="POSITION: absolute">+</span> <span id="hide1_22_1" class="foldopened" onClick="hide_folder('1_22_1')">-</span>
+Loginaut server</span>
+<ul id="fold1_22_1" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_22_1_1" class="foldclosed" onClick="show_folder('1_22_1_1')" style="POSITION: absolute">+</span> <span id="hide1_22_1_1" class="foldopened" onClick="hide_folder('1_22_1_1')">-</span>
+Probl&#xe9;my</span>
+<ul id="fold1_22_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>&#x160;k&#xe1;lovatelnost</span>
+
+</li>
+<li>Bezpe&#x10d;nost</span>
+
+</li>
+<li><span id="show1_22_1_1_1" class="foldclosed" onClick="show_folder('1_22_1_1_1')" style="POSITION: absolute">+</span> <span id="hide1_22_1_1_1" class="foldopened" onClick="hide_folder('1_22_1_1_1')">-</span>
+Transparentnost</span>
+<ul id="fold1_22_1_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Jak lidi p&#x159;esv&#x11b;d&#x10d;it, &#x17e;e jejich data nejsou zneu&#x17e;it&#xe1;</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_22_1_2" class="foldclosed" onClick="show_folder('1_22_1_2')" style="POSITION: absolute">+</span> <span id="hide1_22_1_2" class="foldopened" onClick="hide_folder('1_22_1_2')">-</span>
+&#x158;e&#x161;en&#xed; - blockchain</span>
+<ul id="fold1_22_1_2" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_22_1_2_1" class="foldclosed" onClick="show_folder('1_22_1_2_1')" style="POSITION: absolute">+</span> <span id="hide1_22_1_2_1" class="foldopened" onClick="hide_folder('1_22_1_2_1')">-</span>
+Pou&#x17e;&#xed;v&#xe1; bitcoin</span>
+<ul id="fold1_22_1_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>Pro pos&#xed;l&#xe1;n&#xed; pen&#x11b;z</span>
+
+</li>
+
+</ul>
+</li>
+<li>Nepot&#x159;ebuje centr&#xe1;ln&#xed; autoritu</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_22_1_3" class="foldclosed" onClick="show_folder('1_22_1_3')" style="POSITION: absolute">+</span> <span id="hide1_22_1_3" class="foldopened" onClick="hide_folder('1_22_1_3')">-</span>
+Smart contracts</span>
+<ul id="fold1_22_1_3" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_22_1_3_1" class="foldclosed" onClick="show_folder('1_22_1_3_1')" style="POSITION: absolute">+</span> <span id="hide1_22_1_3_1" class="foldopened" onClick="hide_folder('1_22_1_3_1')">-</span>
+Hyperledger</span>
+<ul id="fold1_22_1_3_1" style="POSITION: relative; VISIBILITY: visible;"><li>Implementace smart contracts (POC)</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_22_1_3_2" class="foldclosed" onClick="show_folder('1_22_1_3_2')" style="POSITION: absolute">+</span> <span id="hide1_22_1_3_2" class="foldopened" onClick="hide_folder('1_22_1_3_2')">-</span>
+Ethereum</span>
+<ul id="fold1_22_1_3_2" style="POSITION: relative; VISIBILITY: visible;"><li>Funguje podobn&#x11b; jako bitcoin</span>
+
+</li>
+<li><span id="show1_22_1_3_2_1" class="foldclosed" onClick="show_folder('1_22_1_3_2_1')" style="POSITION: absolute">+</span> <span id="hide1_22_1_3_2_1" class="foldopened" onClick="hide_folder('1_22_1_3_2_1')">-</span>
+Dva typy &#xfa;&#x10d;t&#x16f;</span>
+<ul id="fold1_22_1_3_2_1" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_22_1_3_2_1_1" class="foldclosed" onClick="show_folder('1_22_1_3_2_1_1')" style="POSITION: absolute">+</span> <span id="hide1_22_1_3_2_1_1" class="foldopened" onClick="hide_folder('1_22_1_3_2_1_1')">-</span>
+Extern&#x11b; vlastn&#x11b;n&#xfd; &#xfa;&#x10d;et</span>
+<ul id="fold1_22_1_3_2_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Pou&#x17e;&#xed;v&#xe1;n&#xed; Ethereum m&#x11b;ny</span>
+
+</li>
+<li><span id="show1_22_1_3_2_1_1_1" class="foldclosed" onClick="show_folder('1_22_1_3_2_1_1_1')" style="POSITION: absolute">+</span> <span id="hide1_22_1_3_2_1_1_1" class="foldopened" onClick="hide_folder('1_22_1_3_2_1_1_1')">-</span>
+Tvorba transakc&#xed;</span>
+<ul id="fold1_22_1_3_2_1_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Data</span>
+
+</li>
+<li>Placen&#xe1; &#x10d;&#xe1;stka</span>
+
+</li>
+<li><span id="show1_22_1_3_2_1_1_1_1" class="foldclosed" onClick="show_folder('1_22_1_3_2_1_1_1_1')" style="POSITION: absolute">+</span> <span id="hide1_22_1_3_2_1_1_1_1" class="foldopened" onClick="hide_folder('1_22_1_3_2_1_1_1_1')">-</span>
+EVM spustiteln&#xfd; k&#xf3;d</span>
+<ul id="fold1_22_1_3_2_1_1_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>existuje cena, za prov&#xe1;d&#x11b;n&#xed; dan&#xe9;ho k&#xf3;du</span>
+
+</li>
+<li>Pokud je to moc slo&#x17e;it&#xfd; (p&#x159;&#xed;li&#x161; hodn&#x11b; smy&#x10d;ek), k&#xf3;d se zastav&#xed;</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_22_1_3_2_1_2" class="foldclosed" onClick="show_folder('1_22_1_3_2_1_2')" style="POSITION: absolute">+</span> <span id="hide1_22_1_3_2_1_2" class="foldopened" onClick="hide_folder('1_22_1_3_2_1_2')">-</span>
+&#xda;&#x10d;ty chytr&#xfd;ch transakc&#xed;</span>
+<ul id="fold1_22_1_3_2_1_2" style="POSITION: relative; VISIBILITY: visible;"><li>Maj&#xed; balance v hal&#xed;&#x159;&#xed;ch</span>
+
+</li>
+<li><span id="show1_22_1_3_2_1_2_1" class="foldclosed" onClick="show_folder('1_22_1_3_2_1_2_1')" style="POSITION: absolute">+</span> <span id="hide1_22_1_3_2_1_2_1" class="foldopened" onClick="hide_folder('1_22_1_3_2_1_2_1')">-</span>
+Ka&#x17e;d&#xfd; stav m&#xe1;</span>
+<ul id="fold1_22_1_3_2_1_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>
+    <p>
+      persistentn&#237; storage key/value
+    </p>
+  </span>
+
+</li>
+<li>k&#xf3;d, kter&#xfd; se m&#x16f;&#x17e;e spustit, kdy&#x17e; tam p&#x159;ijde transakce</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_22_1_3_2_2" class="foldclosed" onClick="show_folder('1_22_1_3_2_2')" style="POSITION: absolute">+</span> <span id="hide1_22_1_3_2_2" class="foldopened" onClick="hide_folder('1_22_1_3_2_2')">-</span>
+EVM - ethereum virtual machine</span>
+<ul id="fold1_22_1_3_2_2" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_22_1_3_2_2_1" class="foldclosed" onClick="show_folder('1_22_1_3_2_2_1')" style="POSITION: absolute">+</span> <span id="hide1_22_1_3_2_2_1" class="foldopened" onClick="hide_folder('1_22_1_3_2_2_1')">-</span>
+Distribuovan&#xe1; platforma</span>
+<ul id="fold1_22_1_3_2_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>
+    <p>
+      b&#283;&#382;&#237; na mili&#243;nech po&#269;&#237;ta&#269;&#367;
+    </p>
+  </span>
+
+</li>
+<li>Ka&#x17e;d&#xe9; PC pak vyd&#x11b;l&#xe1;v&#xe1; spou&#x161;t&#x11b;n&#xed;m EVM k&#xf3;d&#x16f;</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_22_1_3_2_2_2" class="foldclosed" onClick="show_folder('1_22_1_3_2_2_2')" style="POSITION: absolute">+</span> <span id="hide1_22_1_3_2_2_2" class="foldopened" onClick="hide_folder('1_22_1_3_2_2_2')">-</span>
+Programovac&#xed; jazyk podobn&#xfd; javascriptu</span>
+<ul id="fold1_22_1_3_2_2_2" style="POSITION: relative; VISIBILITY: visible;"><li>Kompiluje se do bytecode</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_22_1_3_3" class="foldclosed" onClick="show_folder('1_22_1_3_3')" style="POSITION: absolute">+</span> <span id="hide1_22_1_3_3" class="foldopened" onClick="hide_folder('1_22_1_3_3')">-</span>
+Aplikace</span>
+<ul id="fold1_22_1_3_3" style="POSITION: relative; VISIBILITY: visible;"><li>Politick&#xe1; strana by do kontraktu mohla d&#xe1;t svoje p&#x159;edvolebn&#xed; sliby</span>
+
+</li>
+<li>K&#xf3;d je s&#xe1;m sob&#x11b; z&#xe1;rukou, nepot&#x159;ebuje centr&#xe1;ln&#xed; autoritu</span>
+
+</li>
+<li>Je tak mo&#x17e;n&#xe9; zalogovat n&#x11b;jak&#xe1; data, a pak u&#x17e; je nijak nelze zp&#x11b;tn&#x11b; zm&#x11b;nit (zfal&#x161;ovat)</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_23" class="foldclosed" onClick="show_folder('1_23')" style="POSITION: absolute">+</span> <span id="hide1_23" class="foldopened" onClick="hide_folder('1_23')">-</span>
+Ji&#x159;&#xed; Kr&#x16f;&#x10d;ek - continuous improvement</span>
+<ul id="fold1_23" style="POSITION: relative; VISIBILITY: visible;"><li>Not about to be best, but be better than yesterday</span>
+
+</li>
+<li>Kai (Change) + Zen (Good) = KaiZen</span>
+
+</li>
+<li><span id="show1_23_1" class="foldclosed" onClick="show_folder('1_23_1')" style="POSITION: absolute">+</span> <span id="hide1_23_1" class="foldopened" onClick="hide_folder('1_23_1')">-</span>
+Principy</span>
+<ul id="fold1_23_1" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_23_1_1" class="foldclosed" onClick="show_folder('1_23_1_1')" style="POSITION: absolute">+</span> <span id="hide1_23_1_1" class="foldopened" onClick="hide_folder('1_23_1_1')">-</span>
+Idea management</span>
+<ul id="fold1_23_1_1" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_23_1_1_1" class="foldclosed" onClick="show_folder('1_23_1_1_1')" style="POSITION: absolute">+</span> <span id="hide1_23_1_1_1" class="foldopened" onClick="hide_folder('1_23_1_1_1')">-</span>
+Feedback box on the wall</span>
+<ul id="fold1_23_1_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>
+    <p>
+      nefungoval
+    </p>
+  </span>
+
+</li>
+<li>Anonymn&#xed;</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_23_1_1_2" class="foldclosed" onClick="show_folder('1_23_1_1_2')" style="POSITION: absolute">+</span> <span id="hide1_23_1_1_2" class="foldopened" onClick="hide_folder('1_23_1_1_2')">-</span>
+Hromadn&#xfd; sb&#x11b;r n&#xe1;pad&#x16f; p&#x159;es Jira</span>
+<ul id="fold1_23_1_1_2" style="POSITION: relative; VISIBILITY: visible;"><li>Hlasov&#xe1;n&#xed;</span>
+
+</li>
+<li>Koment&#xe1;&#x159;e</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_23_1_2" class="foldclosed" onClick="show_folder('1_23_1_2')" style="POSITION: absolute">+</span> <span id="hide1_23_1_2" class="foldopened" onClick="hide_folder('1_23_1_2')">-</span>
+happiness at work</span>
+<ul id="fold1_23_1_2" style="POSITION: relative; VISIBILITY: visible;"><li>Fotb&#xe1;lek, liga o poh&#xe1;r</span>
+
+</li>
+
+</ul>
+</li>
+<li>Improvement MNG</span>
+
+</li>
+<li><span id="show1_23_1_3" class="foldclosed" onClick="show_folder('1_23_1_3')" style="POSITION: absolute">+</span> <span id="hide1_23_1_3" class="foldopened" onClick="hide_folder('1_23_1_3')">-</span>
+information communication</span>
+<ul id="fold1_23_1_3" style="POSITION: relative; VISIBILITY: visible;"><li>blogs</span>
+
+</li>
+<li>Newsletters</span>
+
+</li>
+<li><span id="show1_23_1_3_1" class="foldclosed" onClick="show_folder('1_23_1_3_1')" style="POSITION: absolute">+</span> <span id="hide1_23_1_3_1" class="foldopened" onClick="hide_folder('1_23_1_3_1')">-</span>
+Dashboards</span>
+<ul id="fold1_23_1_3_1" style="POSITION: relative; VISIBILITY: visible;"><li>dashing.io</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_23_1_4" class="foldclosed" onClick="show_folder('1_23_1_4')" style="POSITION: absolute">+</span> <span id="hide1_23_1_4" class="foldopened" onClick="hide_folder('1_23_1_4')">-</span>
+Knowledge sharing</span>
+<ul id="fold1_23_1_4" style="POSITION: relative; VISIBILITY: visible;"><li>Confluence Wiki</span>
+
+</li>
+<li><span id="show1_23_1_4_1" class="foldclosed" onClick="show_folder('1_23_1_4_1')" style="POSITION: absolute">+</span> <span id="hide1_23_1_4_1" class="foldopened" onClick="hide_folder('1_23_1_4_1')">-</span>
+DevHour</span>
+<ul id="fold1_23_1_4_1" style="POSITION: relative; VISIBILITY: visible;"><li>1x per week</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_23_1_4_2" class="foldclosed" onClick="show_folder('1_23_1_4_2')" style="POSITION: absolute">+</span> <span id="hide1_23_1_4_2" class="foldopened" onClick="hide_folder('1_23_1_4_2')">-</span>
+Internal IT conferences</span>
+<ul id="fold1_23_1_4_2" style="POSITION: relative; VISIBILITY: visible;"><li>Across dev. and operations</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_23_1_5" class="foldclosed" onClick="show_folder('1_23_1_5')" style="POSITION: absolute">+</span> <span id="hide1_23_1_5" class="foldopened" onClick="hide_folder('1_23_1_5')">-</span>
+People got extra time outside their project duties, where they can</span>
+<ul id="fold1_23_1_5" style="POSITION: relative; VISIBILITY: visible;"><li>Code review</span>
+
+</li>
+<li>Talk about technogies</span>
+
+</li>
+<li>Train others</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_23_1_6" class="foldclosed" onClick="show_folder('1_23_1_6')" style="POSITION: absolute">+</span> <span id="hide1_23_1_6" class="foldopened" onClick="hide_folder('1_23_1_6')">-</span>
+Books</span>
+<ul id="fold1_23_1_6" style="POSITION: relative; VISIBILITY: visible;"><li>Happy hour is 9 to 5</span>
+
+</li>
+<li>Team geek</span>
+
+</li>
+<li>Lean enterprise</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_24" class="foldclosed" onClick="show_folder('1_24')" style="POSITION: absolute">+</span> <span id="hide1_24" class="foldopened" onClick="hide_folder('1_24')">-</span>
+Jakub Fojtl - code your architecture</span>
+<ul id="fold1_24" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_24_1" class="foldclosed" onClick="show_folder('1_24_1')" style="POSITION: absolute">+</span> <span id="hide1_24_1" class="foldopened" onClick="hide_folder('1_24_1')">-</span>
+N&#xe1;stroje</span>
+<ul id="fold1_24_1" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_24_1_1" class="foldclosed" onClick="show_folder('1_24_1_1')" style="POSITION: absolute">+</span> <span id="hide1_24_1_1" class="foldopened" onClick="hide_folder('1_24_1_1')">-</span>
+Android - Office Lens mobiln&#xed; aplikace</span>
+<ul id="fold1_24_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Vyhlad&#xed; kresbu rukou</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_24_1_2" class="foldclosed" onClick="show_folder('1_24_1_2')" style="POSITION: absolute">+</span> <span id="hide1_24_1_2" class="foldopened" onClick="hide_folder('1_24_1_2')">-</span>
+structurizr</span>
+<ul id="fold1_24_1_2" style="POSITION: relative; VISIBILITY: visible;"><li>Pro kreslen&#xed; diagram&#x16f;</span>
+
+</li>
+<li><span id="show1_24_1_2_1" class="foldclosed" onClick="show_folder('1_24_1_2_1')" style="POSITION: absolute">+</span> <span id="hide1_24_1_2_1" class="foldopened" onClick="hide_folder('1_24_1_2_1')">-</span>
+Varianty z&#xe1;pisu</span>
+<ul id="fold1_24_1_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>Pou&#x17e;&#xed;v&#xe1; Javu pro popis diagram&#x16f;</span>
+
+</li>
+<li>Mo&#x17e;nost pou&#x17e;&#xed;t freetext pro UML diagramy</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_24_1_3" class="foldclosed" onClick="show_folder('1_24_1_3')" style="POSITION: absolute">+</span> <span id="hide1_24_1_3" class="foldopened" onClick="hide_folder('1_24_1_3')">-</span>
+C4 framework</span>
+<ul id="fold1_24_1_3" style="POSITION: relative; VISIBILITY: visible;"><li>Pro popis statick&#xe9; &#x10d;&#xe1;sti architektury</span>
+
+</li>
+<li>Exporty do statick&#xe9; HTML str&#xe1;nky</span>
+
+</li>
+<li><span id="show1_24_1_3_1" class="foldclosed" onClick="show_folder('1_24_1_3_1')" style="POSITION: absolute">+</span> <span id="hide1_24_1_3_1" class="foldopened" onClick="hide_folder('1_24_1_3_1')">-</span>
+4 &#xfa;rovn&#x11b; diagram&#x16f;</span>
+<ul id="fold1_24_1_3_1" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_24_1_3_1_1" class="foldclosed" onClick="show_folder('1_24_1_3_1_1')" style="POSITION: absolute">+</span> <span id="hide1_24_1_3_1_1" class="foldopened" onClick="hide_folder('1_24_1_3_1_1')">-</span>
+Context diagram</span>
+<ul id="fold1_24_1_3_1_1" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_24_1_3_1_1_1" class="foldclosed" onClick="show_folder('1_24_1_3_1_1_1')" style="POSITION: absolute">+</span> <span id="hide1_24_1_3_1_1_1" class="foldopened" onClick="hide_folder('1_24_1_3_1_1_1')">-</span>
+Zobraz&#xed; syst&#xe9;m, a kdo s n&#xed;m interaguje</span>
+<ul id="fold1_24_1_3_1_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>U&#x17e;ivatel&#xe9;</span>
+
+</li>
+<li>Extern&#xed; syst&#xe9;my</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_24_1_3_1_2" class="foldclosed" onClick="show_folder('1_24_1_3_1_2')" style="POSITION: absolute">+</span> <span id="hide1_24_1_3_1_2" class="foldopened" onClick="hide_folder('1_24_1_3_1_2')">-</span>
+Containers</span>
+<ul id="fold1_24_1_3_1_2" style="POSITION: relative; VISIBILITY: visible;"><li>Spustiteln&#xe9; &#x10d;&#xe1;sti, z nich&#x17e; se S skl&#xe1;d&#xe1;</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_24_1_3_1_3" class="foldclosed" onClick="show_folder('1_24_1_3_1_3')" style="POSITION: absolute">+</span> <span id="hide1_24_1_3_1_3" class="foldopened" onClick="hide_folder('1_24_1_3_1_3')">-</span>
+Components</span>
+<ul id="fold1_24_1_3_1_3" style="POSITION: relative; VISIBILITY: visible;"><li>Z nich se skl&#xe1;daj&#xed; containers, projekty, moduly</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_24_1_3_1_4" class="foldclosed" onClick="show_folder('1_24_1_3_1_4')" style="POSITION: absolute">+</span> <span id="hide1_24_1_3_1_4" class="foldopened" onClick="hide_folder('1_24_1_3_1_4')">-</span>
+Classes</span>
+<ul id="fold1_24_1_3_1_4" style="POSITION: relative; VISIBILITY: visible;"><li>Class diagram komponenty</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_24_1_3_2" class="foldclosed" onClick="show_folder('1_24_1_3_2')" style="POSITION: absolute">+</span> <span id="hide1_24_1_3_2" class="foldopened" onClick="hide_folder('1_24_1_3_2')">-</span>
+Super v&#xfd;hoda</span>
+<ul id="fold1_24_1_3_2" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_24_1_3_2_1" class="foldclosed" onClick="show_folder('1_24_1_3_2_1')" style="POSITION: absolute">+</span> <span id="hide1_24_1_3_2_1" class="foldopened" onClick="hide_folder('1_24_1_3_2_1')">-</span>
+
+    <p>
+      diff v CSV
+    </p>
+  </span>
+<ul id="fold1_24_1_3_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>To v kresl&#xed;tk&#xe1;ch s netextov&#xfd;m form&#xe1;tem nem&#xe1;m</span>
+
+</li>
+
+</ul>
+</li>
+<li>Decision log = git message log</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_24_1_4" class="foldclosed" onClick="show_folder('1_24_1_4')" style="POSITION: absolute">+</span> <span id="hide1_24_1_4" class="foldopened" onClick="hide_folder('1_24_1_4')">-</span>
+clj-structurizr</span>
+<ul id="fold1_24_1_4" style="POSITION: relative; VISIBILITY: visible;"><li>Teprve v po&#x10d;&#xe1;tku</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_25" class="foldclosed" onClick="show_folder('1_25')" style="POSITION: absolute">+</span> <span id="hide1_25" class="foldopened" onClick="hide_folder('1_25')">-</span>
+Pavel Jetensk&#xfd; - p&#x159;&#xed;prava rela&#x10d;n&#xed;ch dat pro test & No more Mr. Nice Guy</span>
+<ul id="fold1_25" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_25_1" class="foldclosed" onClick="show_folder('1_25_1')" style="POSITION: absolute">+</span> <span id="hide1_25_1" class="foldopened" onClick="hide_folder('1_25_1')">-</span>
+Jak p&#x159;ipravit komplexn&#xed; (rela&#x10d;n&#xed;) testovac&#xed; data?</span>
+<ul id="fold1_25_1" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_25_1_1" class="foldclosed" onClick="show_folder('1_25_1_1')" style="POSITION: absolute">+</span> <span id="hide1_25_1_1" class="foldopened" onClick="hide_folder('1_25_1_1')">-</span>
+Zp&#x16f;sob nahr&#xe1;n&#xed; dat</span>
+<ul id="fold1_25_1_1" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_25_1_1_1" class="foldclosed" onClick="show_folder('1_25_1_1_1')" style="POSITION: absolute">+</span> <span id="hide1_25_1_1_1" class="foldopened" onClick="hide_folder('1_25_1_1_1')">-</span>
+P&#x159;edp&#x159;ipravit p&#x159;&#xed;mo v datab&#xe1;zi</span>
+<ul id="fold1_25_1_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Subset produk&#x10d;n&#xed;ch dat (dump)</span>
+
+</li>
+<li>Kdy&#x17e; se zm&#x11b;n&#xed; aplikace, mus&#xed; se aktualizovat</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_25_1_1_2" class="foldclosed" onClick="show_folder('1_25_1_1_2')" style="POSITION: absolute">+</span> <span id="hide1_25_1_1_2" class="foldopened" onClick="hide_folder('1_25_1_1_2')">-</span>
+Data si vyrob&#xed; test</span>
+<ul id="fold1_25_1_1_2" style="POSITION: relative; VISIBILITY: visible;"><li>Spu&#x161;t&#x11b;n&#xed; SQL - WTF?</span>
+
+</li>
+<li><span id="show1_25_1_1_2_1" class="foldclosed" onClick="show_folder('1_25_1_1_2_1')" style="POSITION: absolute">+</span> <span id="hide1_25_1_1_2_1" class="foldopened" onClick="hide_folder('1_25_1_1_2_1')">-</span>
+Zavol&#xe1;n&#xed; API</span>
+<ul id="fold1_25_1_1_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>Aktualizuje se spolu s k&#xf3;dem</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_25_1_1_2_2" class="foldclosed" onClick="show_folder('1_25_1_1_2_2')" style="POSITION: absolute">+</span> <span id="hide1_25_1_1_2_2" class="foldopened" onClick="hide_folder('1_25_1_1_2_2')">-</span>
+Test data factory</span>
+<ul id="fold1_25_1_1_2_2" style="POSITION: relative; VISIBILITY: visible;"><li>Minimalizuje duplicitu k&#xf3;du pro p&#x159;&#xed;pravu dat</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_25_1_2" class="foldclosed" onClick="show_folder('1_25_1_2')" style="POSITION: absolute">+</span> <span id="hide1_25_1_2" class="foldopened" onClick="hide_folder('1_25_1_2')">-</span>
+Spring JPA & Groovy</span>
+    <p>
+      Test data factory jako jedin&#225; t&#345;&#237;da
+    </p>
+  
+<ul id="fold1_25_1_2" style="POSITION: relative; VISIBILITY: visible;"><li>Rozd&#x11b;l a panuj</span>
+
+</li>
+<li>Princip lze pou&#x17e;&#xed;t i u manu&#xe1;ln&#xed;ho popisu jak p&#x159;ipravit data</span>
+
+</li>
+<li>Demo</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_25_2" class="foldclosed" onClick="show_folder('1_25_2')" style="POSITION: absolute">+</span> <span id="hide1_25_2" class="foldopened" onClick="hide_folder('1_25_2')">-</span>
+No More Mr. Nice Guy</span>
+    <p>
+      (Infekce)
+    </p>
+  
+<ul id="fold1_25_2" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_25_2_1" class="foldclosed" onClick="show_folder('1_25_2_1')" style="POSITION: absolute">+</span> <span id="hide1_25_2_1" class="foldopened" onClick="hide_folder('1_25_2_1')">-</span>
+P&#x159;e&#x10d;t&#x11b;te si knihu</span>
+<ul id="fold1_25_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>R&#xe1;dce prav&#xe9;ho mu&#x17e;e</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_25_2_2" class="foldclosed" onClick="show_folder('1_25_2_2')" style="POSITION: absolute">+</span> <span id="hide1_25_2_2" class="foldopened" onClick="hide_folder('1_25_2_2')">-</span>
+Jsem taky infikov&#xe1;n?</span>
+<ul id="fold1_25_2_2" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_25_2_2_1" class="foldclosed" onClick="show_folder('1_25_2_2_1')" style="POSITION: absolute">+</span> <span id="hide1_25_2_2_1" class="foldopened" onClick="hide_folder('1_25_2_2_1')">-</span>
+if (plnimPredstavy() && skryvamNedostatky())</span>
+<ul id="fold1_25_2_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>def whatIGet = whatIGet();</span>
+
+</li>
+<li>assert whatIGet == {</span>
+
+</li>
+<li>  Laska,</span>
+
+</li>
+<li>  NaplneniPotreb,</span>
+
+</li>
+<li>  BezproblemovyZivot</span>
+
+</li>
+<li><span id="show1_25_2_2_1_1" class="foldclosed" onClick="show_folder('1_25_2_2_1_1')" style="POSITION: absolute">+</span> <span id="hide1_25_2_2_1_1" class="foldopened" onClick="hide_folder('1_25_2_2_1_1')">-</span>
+}</span>
+<ul id="fold1_25_2_2_1_1" style="POSITION: relative; VISIBILITY: visible;"><li></span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li></span>
+
+</li>
+<li><span id="show1_25_2_2_2" class="foldclosed" onClick="show_folder('1_25_2_2_2')" style="POSITION: absolute">+</span> <span id="hide1_25_2_2_2" class="foldopened" onClick="hide_folder('1_25_2_2_2')">-</span>
+Navenek</span>
+<ul id="fold1_25_2_2_2" style="POSITION: relative; VISIBILITY: visible;"><li>Pomoc ostatn&#xed;m</span>
+
+</li>
+<li><span id="show1_25_2_2_2_1" class="foldclosed" onClick="show_folder('1_25_2_2_2_1')" style="POSITION: absolute">+</span> <span id="hide1_25_2_2_2_1" class="foldopened" onClick="hide_folder('1_25_2_2_2_1')">-</span>
+&#x160;t&#x11b;st&#xed; partnerky</span>
+<ul id="fold1_25_2_2_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>"St&#x11b;hov&#xe1;ci"</span>
+
+</li>
+
+</ul>
+</li>
+<li>&#x17d;&#xe1;dn&#xe9; konflikty</span>
+
+</li>
+<li><span id="show1_25_2_2_2_2" class="foldclosed" onClick="show_folder('1_25_2_2_2_2')" style="POSITION: absolute">+</span> <span id="hide1_25_2_2_2_2" class="foldopened" onClick="hide_folder('1_25_2_2_2_2')">-</span>
+&#x10c;estn&#xed; ho&#x161;i</span>
+<ul id="fold1_25_2_2_2_2" style="POSITION: relative; VISIBILITY: visible;"><li> bez chyb</span>
+
+</li>
+<li>nejsou na obt&#xed;&#x17e;</span>
+
+</li>
+<li>bez vlastn&#xed;ch pot&#x159;eb</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_25_2_2_3" class="foldclosed" onClick="show_folder('1_25_2_2_3')" style="POSITION: absolute">+</span> <span id="hide1_25_2_2_3" class="foldopened" onClick="hide_folder('1_25_2_2_3')">-</span>
+Pod pokli&#x10d;kou</span>
+<ul id="fold1_25_2_2_3" style="POSITION: relative; VISIBILITY: visible;"><li>Nerovnov&#xe1;ha M&#xe1; d&#xe1;ti / Dal</span>
+
+</li>
+<li>M&#xe1;lo &#x10d;asu (pro sebe)</span>
+
+</li>
+<li>Nespokojenost, deprese</span>
+
+</li>
+<li>Potla&#x10d;ov&#xe1;n&#xed; emoc&#xed; (vztek)</span>
+
+</li>
+<li>Neup&#x159;&#xed;mnost, manipulace</span>
+
+</li>
+<li>Osam&#x11b;lost, izolace</span>
+
+</li>
+<li>Nenapl&#x148;uj&#xed;c&#xed;/&#x17e;&#xe1;dn&#xfd; sex</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_25_2_3" class="foldclosed" onClick="show_folder('1_25_2_3')" style="POSITION: absolute">+</span> <span id="hide1_25_2_3" class="foldopened" onClick="hide_folder('1_25_2_3')">-</span>
+P&#x159;&#xed;&#x10d;iny</span>
+<ul id="fold1_25_2_3" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_25_2_3_1" class="foldclosed" onClick="show_folder('1_25_2_3_1')" style="POSITION: absolute">+</span> <span id="hide1_25_2_3_1" class="foldopened" onClick="hide_folder('1_25_2_3_1')">-</span>
+Nenapln&#x11b;n&#xed; pot&#x159;eb v d&#x11b;tstv&#xed;</span>
+<ul id="fold1_25_2_3_1" style="POSITION: relative; VISIBILITY: visible;"><li>Nep&#x159;&#xed;tomn&#xed; rodi&#x10d;e</span>
+
+</li>
+<li>Kriti&#x10d;t&#xed; rodi&#x10d;e</span>
+
+</li>
+<li>Dlouhodob&#x11b; ne&#x161;&#x165;astn&#xed; rodi&#x10d;e</span>
+
+</li>
+<li>Role syn/matka</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_25_2_3_2" class="foldclosed" onClick="show_folder('1_25_2_3_2')" style="POSITION: absolute">+</span> <span id="hide1_25_2_3_2" class="foldopened" onClick="hide_folder('1_25_2_3_2')">-</span>
+Historick&#xe9; souvislosti</span>
+<ul id="fold1_25_2_3_2" style="POSITION: relative; VISIBILITY: visible;"><li>V&#xe1;lka</span>
+
+</li>
+<li>Vzd&#x11b;l&#xe1;vac&#xed; syst&#xe9;m</span>
+
+</li>
+
+</ul>
+</li>
+<li>TOXIC SHAME</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_25_2_4" class="foldclosed" onClick="show_folder('1_25_2_4')" style="POSITION: absolute">+</span> <span id="hide1_25_2_4" class="foldopened" onClick="hide_folder('1_25_2_4')">-</span>
+&#x158;e&#x161;en&#xed;</span>
+<ul id="fold1_25_2_4" style="POSITION: relative; VISIBILITY: visible;"><li>Kdo je odpov&#x11b;dn&#xfd; za napln&#x11b;n&#xed; m&#xfd;ch pot&#x159;eb?</span>
+
+</li>
+<li>Kdo prvn&#xed; m&#x11b; m&#xe1; d&#xe1;t l&#xe1;sku?</span>
+
+</li>
+<li>Kdo m&#xe1; nastavit m&#x16f;j &#x17e;ivot, abych byl &#x161;&#x165;astn&#xfd;?</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_26" class="foldclosed" onClick="show_folder('1_26')" style="POSITION: absolute">+</span> <span id="hide1_26" class="foldopened" onClick="hide_folder('1_26')">-</span>
+Luk&#xe1;&#x161; Vl&#x10d;ek - microservice for Java Developers</span>
+<ul id="fold1_26" style="POSITION: relative; VISIBILITY: visible;"><li>Velk&#xe1; aplikace rozbit&#xe1; na malinkat&#xe9; pidiaplikace</span>
+
+</li>
+<li><span id="show1_26_1" class="foldclosed" onClick="show_folder('1_26_1')" style="POSITION: absolute">+</span> <span id="hide1_26_1" class="foldopened" onClick="hide_folder('1_26_1')">-</span>
+Ka&#x17e;d&#xe1; pidiaplikace je samostatn&#x11b; deployovateln&#xe1;</span>
+<ul id="fold1_26_1" style="POSITION: relative; VISIBILITY: visible;"><li>V redhat b&#x11b;&#x17e;&#xed; v dockeru</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_26_2" class="foldclosed" onClick="show_folder('1_26_2')" style="POSITION: absolute">+</span> <span id="hide1_26_2" class="foldopened" onClick="hide_folder('1_26_2')">-</span>
+Wildfly swarm</span>
+<ul id="fold1_26_2" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_26_2_1" class="foldclosed" onClick="show_folder('1_26_2_1')" style="POSITION: absolute">+</span> <span id="hide1_26_2_1" class="foldopened" onClick="hide_folder('1_26_2_1')">-</span>
+Kousky aplika&#x10d;n&#xed;ho serveru se obal&#xed; kolem microservice</span>
+<ul id="fold1_26_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>Lze vybrat komponenty, kter&#xe9; tam maj&#xed; b&#xfd;t</span>
+
+</li>
+<li>Jax-rs, CDI, JTA, JPA, Messaging, Undertow (static web content)</span>
+
+</li>
+
+</ul>
+</li>
+<li>Spustiteln&#xe9; jako java jar</span>
+
+</li>
+
+</ul>
+</li>
+<li>OpenShift od Redhatu</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_27" class="foldclosed" onClick="show_folder('1_27')" style="POSITION: absolute">+</span> <span id="hide1_27" class="foldopened" onClick="hide_folder('1_27')">-</span>
+Filip &#x160;taffa - Jak vyvinout testovac&#xed; framework</span>
+<ul id="fold1_27" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_27_1" class="foldclosed" onClick="show_folder('1_27_1')" style="POSITION: absolute">+</span> <span id="hide1_27_1" class="foldopened" onClick="hide_folder('1_27_1')">-</span>
+Verze 2.0</span>
+<ul id="fold1_27_1" style="POSITION: relative; VISIBILITY: visible;"><li>FileSystem je vlastn&#x11b; UnitTest</span>
+
+</li>
+<li>Extern&#xed; syst&#xe9;my jsou v&#x161;echny mockov&#xe1;ny</span>
+
+</li>
+<li>Vstupy definov&#xe1;ny pomoc&#xed; servisn&#xed;ch kontrakt&#x16f;</span>
+
+</li>
+<li>Probl&#xe9;m - kdy&#x17e; se servisn&#xed; kontrakty zm&#x11b;nily, testy jsme mohli zahodit</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_27_2" class="foldclosed" onClick="show_folder('1_27_2')" style="POSITION: absolute">+</span> <span id="hide1_27_2" class="foldopened" onClick="hide_folder('1_27_2')">-</span>
+Sou&#x10d;asn&#xe1; verze - best practices</span>
+<ul id="fold1_27_2" style="POSITION: relative; VISIBILITY: visible;"><li>Stejn&#xfd; runtime/codebase jako k&#xf3;d aplikace</span>
+
+</li>
+<li><span id="show1_27_2_1" class="foldclosed" onClick="show_folder('1_27_2_1')" style="POSITION: absolute">+</span> <span id="hide1_27_2_1" class="foldopened" onClick="hide_folder('1_27_2_1')">-</span>
+Vlastn&#xed; DSL pro psan&#xed; test&#x16f;</span>
+<ul id="fold1_27_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>V F# - &#x10d;iteln&#x11b;j&#x161;&#xed; ne&#x17e; C#, Java</span>
+
+</li>
+<li>Test je definovan&#xfd; jako lambda funkce, kter&#xe1; bere jako parametr nastaven&#xed; syst&#xe9;mu/prost&#x159;ed&#xed;</span>
+
+</li>
+<li>&#x160;lo by p&#x159;ev&#xe9;st na fluent API</span>
+
+</li>
+
+</ul>
+</li>
+<li>Jedna definice testovac&#xed;ch sc&#xe9;n&#xe1;&#x159;&#x16f; pro r&#x16f;zn&#xe9; &#xfa;rovn&#x11b; test&#x16f;</span>
+
+</li>
+<li><span id="show1_27_2_2" class="foldclosed" onClick="show_folder('1_27_2_2')" style="POSITION: absolute">+</span> <span id="hide1_27_2_2" class="foldopened" onClick="hide_folder('1_27_2_2')">-</span>
+Anonymn&#xed; data a paralelizace</span>
+<ul id="fold1_27_2_2" style="POSITION: relative; VISIBILITY: visible;"><li>Nutn&#xe9; pro paraleln&#xed; pou&#x161;t&#x11b;n&#xed; dat</span>
+
+</li>
+<li>Data nesm&#xed; spolu kolidovat</span>
+
+</li>
+<li>Pro data se nastav&#xed; jen to, co je relevantn&#xed;</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_28" class="foldclosed" onClick="show_folder('1_28')" style="POSITION: absolute">+</span> <span id="hide1_28" class="foldopened" onClick="hide_folder('1_28')">-</span>
+David Bedn&#xe1;&#x159; - jak rychle vyrobit a deploynout Microservice</span>
+<ul id="fold1_28" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_28_1" class="foldclosed" onClick="show_folder('1_28_1')" style="POSITION: absolute">+</span> <span id="hide1_28_1" class="foldopened" onClick="hide_folder('1_28_1')">-</span>
+Spring boot command line utility</span>
+<ul id="fold1_28_1" style="POSITION: relative; VISIBILITY: visible;"><li>spring init -build gradle -l groovy -g xxx ...</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_28_2" class="foldclosed" onClick="show_folder('1_28_2')" style="POSITION: absolute">+</span> <span id="hide1_28_2" class="foldopened" onClick="hide_folder('1_28_2')">-</span>
+sdkman.io</span>
+<ul id="fold1_28_2" style="POSITION: relative; VISIBILITY: visible;"><li>Utilitka pro instalaci v&#x161;ech d&#x16f;le&#x17e;it&#xfd;ch Java n&#xe1;stroj&#x16f;</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_28_3" class="foldclosed" onClick="show_folder('1_28_3')" style="POSITION: absolute">+</span> <span id="hide1_28_3" class="foldopened" onClick="hide_folder('1_28_3')">-</span>
+Hal Browser</span>
+<ul id="fold1_28_3" style="POSITION: relative; VISIBILITY: visible;"><li>Slou&#x17e;&#xed; pro proch&#xe1;zen&#xed; API endpoint&#x16f;</span>
+
+</li>
+<li><a href="http://docs.spring.io/spring-data/rest/docs/current/reference/html/#_the_hal_browser" target="_blank">http://docs.spring.io/spring-data/rest/docs/current/reference/html/#_the_hal_browser</a>
+</span>
+
+</li>
+<li>compile 'org.springframework.data:spring-data-rest-hal-browser'</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_28_4" class="foldclosed" onClick="show_folder('1_28_4')" style="POSITION: absolute">+</span> <span id="hide1_28_4" class="foldopened" onClick="hide_folder('1_28_4')">-</span>
+Vystav&#xed;me na heroku</span>
+<ul id="fold1_28_4" style="POSITION: relative; VISIBILITY: visible;"><li>heroku push ...</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_29" class="foldclosed" onClick="show_folder('1_29')" style="POSITION: absolute">+</span> <span id="hide1_29" class="foldopened" onClick="hide_folder('1_29')">-</span>
+Zden&#x11b;k Henek - Jopenspace 3000</span>
+<ul id="fold1_29" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_29_1" class="foldclosed" onClick="show_folder('1_29_1')" style="POSITION: absolute">+</span> <span id="hide1_29_1" class="foldopened" onClick="hide_folder('1_29_1')">-</span>
+Ot&#xe1;zky</span>
+<ul id="fold1_29_1" style="POSITION: relative; VISIBILITY: visible;"><li>Jak financovat?</span>
+
+</li>
+<li><span id="show1_29_1_1" class="foldclosed" onClick="show_folder('1_29_1_1')" style="POSITION: absolute">+</span> <span id="hide1_29_1_1" class="foldopened" onClick="hide_folder('1_29_1_1')">-</span>
+Jak vyb&#xed;rat &#xfa;&#x10d;astn&#xed;ky?</span>
+<ul id="fold1_29_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Losov&#xe1;n&#xed;</span>
+
+</li>
+<li>Hlasov&#xe1;n&#xed; o nejlep&#x161;&#xed; talk</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_29_1_2" class="foldclosed" onClick="show_folder('1_29_1_2')" style="POSITION: absolute">+</span> <span id="hide1_29_1_2" class="foldopened" onClick="hide_folder('1_29_1_2')">-</span>
+Co bychom mohli ud&#x11b;lat pro partnery?</span>
+<ul id="fold1_29_1_2" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_29_1_2_1" class="foldclosed" onClick="show_folder('1_29_1_2_1')" style="POSITION: absolute">+</span> <span id="hide1_29_1_2_1" class="foldopened" onClick="hide_folder('1_29_1_2_1')">-</span>
+Digit&#xe1;ln&#xed; otisk</span>
+<ul id="fold1_29_1_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>Blogy</span>
+
+</li>
+<li>Tweety</span>
+
+</li>
+<li></span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_30" class="foldclosed" onClick="show_folder('1_30')" style="POSITION: absolute">+</span> <span id="hide1_30" class="foldopened" onClick="hide_folder('1_30')">-</span>
+Ond&#x159;ej Havel - Integrace JIRA s bitbucket</span>
+<ul id="fold1_30" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_30_1" class="foldclosed" onClick="show_folder('1_30_1')" style="POSITION: absolute">+</span> <span id="hide1_30_1" class="foldopened" onClick="hide_folder('1_30_1')">-</span>
+Tohle funguje na bitbucket.org</span>
+<ul id="fold1_30_1" style="POSITION: relative; VISIBILITY: visible;"><li>Nebo si koupit JIRU, a doinstalovat si bitbucket.org plugin</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_30_2" class="foldclosed" onClick="show_folder('1_30_2')" style="POSITION: absolute">+</span> <span id="hide1_30_2" class="foldopened" onClick="hide_folder('1_30_2')">-</span>
+V Jira - pole development</span>
+<ul id="fold1_30_2" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_30_2_1" class="foldclosed" onClick="show_folder('1_30_2_1')" style="POSITION: absolute">+</span> <span id="hide1_30_2_1" class="foldopened" onClick="hide_folder('1_30_2_1')">-</span>
+Create branch</span>
+<ul id="fold1_30_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>Tla&#x10d;&#xed;tko v JIRA p&#x159;&#xed;mo tvo&#x159;&#xed; git branch</span>
+
+</li>
+<li><span id="show1_30_2_1_1" class="foldclosed" onClick="show_folder('1_30_2_1_1')" style="POSITION: absolute">+</span> <span id="hide1_30_2_1_1" class="foldopened" onClick="hide_folder('1_30_2_1_1')">-</span>
+V&#xfd;hoda</span>
+<ul id="fold1_30_2_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>
+    <p>
+      unifikovan&#253; zp&#367;sob tvorby branch
+    </p>
+  </span>
+
+</li>
+<li>Propojen&#xed; gitu s konkr&#xe9;tn&#xed;m issue (n&#xe1;zev branch, souvisej&#xed;c&#xed; commity)</span>
+
+</li>
+<li>Mo&#x17e;nost zobrazen&#xed; commit&#x16f; z Jiry</span>
+
+</li>
+<li>Commit msg se p&#x159;id&#xe1;vaj&#xed; jako koment&#xe1;&#x159;e</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_30_2_2" class="foldclosed" onClick="show_folder('1_30_2_2')" style="POSITION: absolute">+</span> <span id="hide1_30_2_2" class="foldopened" onClick="hide_folder('1_30_2_2')">-</span>
+Commit msg</span>
+<ul id="fold1_30_2_2" style="POSITION: relative; VISIBILITY: visible;"><li>
+    <p>
+      &#160;mus&#237; za&#269;&#237;nat issue id
+    </p>
+  </span>
+
+</li>
+<li>m&#x16f;&#x17e;e obsahovat odprac. &#x10d;as</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_30_3" class="foldclosed" onClick="show_folder('1_30_3')" style="POSITION: absolute">+</span> <span id="hide1_30_3" class="foldopened" onClick="hide_folder('1_30_3')">-</span>
+Create pull request</span>
+<ul id="fold1_30_3" style="POSITION: relative; VISIBILITY: visible;"><li>Ozna&#x10d;&#xed;m lidi, po kter&#xfd;ch chci code review</span>
+
+</li>
+<li>Pokud je k&#xf3;d schv&#xe1;len, provede se merge branch se zm&#x11b;nou</span>
+
+</li>
+<li>Provede e-mail notifikace</span>
+
+</li>
+
+</ul>
+</li>
+<li>Alternativn&#xed; produkt - UpSource od IntelliJ Idea</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_31" class="foldclosed" onClick="show_folder('1_31')" style="POSITION: absolute">+</span> <span id="hide1_31" class="foldopened" onClick="hide_folder('1_31')">-</span>
+David Vo&#x148;ka - Kotlin 4ever</span>
+<ul id="fold1_31" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_31_1" class="foldclosed" onClick="show_folder('1_31_1')" style="POSITION: absolute">+</span> <span id="hide1_31_1" class="foldopened" onClick="hide_folder('1_31_1')">-</span>
+Standardn&#xed; stack web aplikace</span>
+<ul id="fold1_31_1" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_31_1_1" class="foldclosed" onClick="show_folder('1_31_1_1')" style="POSITION: absolute">+</span> <span id="hide1_31_1_1" class="foldopened" onClick="hide_folder('1_31_1_1')">-</span>
+Pou&#x17e;&#xed;van&#xe9; vrstvy</span>
+<ul id="fold1_31_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Java</span>
+
+</li>
+<li>Rela&#x10d;n&#xed; datab&#xe1;ze</span>
+
+</li>
+<li>Templatovac&#xed; jazyk</span>
+
+</li>
+<li>Javascript</span>
+
+</li>
+<li>CSS</span>
+
+</li>
+
+</ul>
+</li>
+<li>Probl&#xe9;m - spousta duplicity p&#x159;i p&#x159;ed&#xe1;v&#xe1;n&#xed; dat mezi vrstvami</span>
+
+</li>
+<li><span id="show1_31_1_2" class="foldclosed" onClick="show_folder('1_31_1_2')" style="POSITION: absolute">+</span> <span id="hide1_31_1_2" class="foldopened" onClick="hide_folder('1_31_1_2')">-</span>
+Co hled&#xe1;m?</span>
+<ul id="fold1_31_1_2" style="POSITION: relative; VISIBILITY: visible;"><li>Napsat celou aplikaci v jednom jazyce</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_31_2" class="foldclosed" onClick="show_folder('1_31_2')" style="POSITION: absolute">+</span> <span id="hide1_31_2" class="foldopened" onClick="hide_folder('1_31_2')">-</span>
+Kotlin</span>
+<ul id="fold1_31_2" style="POSITION: relative; VISIBILITY: visible;"><li>Jedna z c&#xed;lov&#xfd;ch platform je Javascript</span>
+
+</li>
+<li>"Mix" mezi Javou a pythonem</span>
+
+</li>
+<li><span id="show1_31_2_1" class="foldclosed" onClick="show_folder('1_31_2_1')" style="POSITION: absolute">+</span> <span id="hide1_31_2_1" class="foldopened" onClick="hide_folder('1_31_2_1')">-</span>
+P&#x159;&#xed;stup k datab&#xe1;zi pomoc&#xed; Objektov&#xe9;ho API</span>
+<ul id="fold1_31_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>Je&#x161;t&#x11b; ne &#xfa;pln&#x11b; dod&#x11b;lan&#xe9; ;)</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_31_2_2" class="foldclosed" onClick="show_folder('1_31_2_2')" style="POSITION: absolute">+</span> <span id="hide1_31_2_2" class="foldopened" onClick="hide_folder('1_31_2_2')">-</span>
+HTML templating</span>
+<ul id="fold1_31_2_2" style="POSITION: relative; VISIBILITY: visible;"><li>metody h2, p</span>
+
+</li>
+<li>h2("Welcome to Kara")</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_31_2_3" class="foldclosed" onClick="show_folder('1_31_2_3')" style="POSITION: absolute">+</span> <span id="hide1_31_2_3" class="foldopened" onClick="hide_folder('1_31_2_3')">-</span>
+CSS templating</span>
+<ul id="fold1_31_2_3" style="POSITION: relative; VISIBILITY: visible;"><li>Definice CSS pomoc&#xed; Kotlin API</span>
+
+</li>
+
+</ul>
+</li>
+<li>Javascript definice</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_31_3" class="foldclosed" onClick="show_folder('1_31_3')" style="POSITION: absolute">+</span> <span id="hide1_31_3" class="foldopened" onClick="hide_folder('1_31_3')">-</span>
+Alternativn&#xed; produkt - Vaadin</span>
+<ul id="fold1_31_3" style="POSITION: relative; VISIBILITY: visible;"><li>Tam taky v&#xfd;voj&#xe1;&#x159; vol&#xe1; jen Java API pro tvorbu komponent</span>
+
+</li>
+<li>Z komponent se skl&#xe1;d&#xe1; view</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_32" class="foldclosed" onClick="show_folder('1_32')" style="POSITION: absolute">+</span> <span id="hide1_32" class="foldopened" onClick="hide_folder('1_32')">-</span>
+Jakub Ko&#x10d;&#xed; - ClojureScript</span>
+<ul id="fold1_32" style="POSITION: relative; VISIBILITY: visible;"><li>Budgetbakers</span>
+
+</li>
+<li><span id="show1_32_1" class="foldclosed" onClick="show_folder('1_32_1')" style="POSITION: absolute">+</span> <span id="hide1_32_1" class="foldopened" onClick="hide_folder('1_32_1')">-</span>
+ClojureScript</span>
+<ul id="fold1_32_1" style="POSITION: relative; VISIBILITY: visible;"><li>Subset clojure, jen nap&#x159;. neobsahuje pr&#xe1;ci s vl&#xe1;kny (proto&#x17e;e to nen&#xed; v JS pot&#x159;eba)</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_32_2" class="foldclosed" onClick="show_folder('1_32_2')" style="POSITION: absolute">+</span> <span id="hide1_32_2" class="foldopened" onClick="hide_folder('1_32_2')">-</span>
+Co je ClojureScript?</span>
+<ul id="fold1_32_2" style="POSITION: relative; VISIBILITY: visible;"><li>Funkcion&#xe1;ln&#xed; jazyk zalo&#x17e;en&#xfd; na Lispu</span>
+
+</li>
+<li>Hostovan&#xfd;, b&#x11b;&#x17e;&#xed; v JVM, nebo .NET</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_32_3" class="foldclosed" onClick="show_folder('1_32_3')" style="POSITION: absolute">+</span> <span id="hide1_32_3" class="foldopened" onClick="hide_folder('1_32_3')">-</span>
+Syntaxe</span>
+<ul id="fold1_32_3" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_32_3_1" class="foldclosed" onClick="show_folder('1_32_3_1')" style="POSITION: absolute">+</span> <span id="hide1_32_3_1" class="foldopened" onClick="hide_folder('1_32_3_1')">-</span>
+Lze p&#x159;istupovat k js objekt&#x16f;m</span>
+<ul id="fold1_32_3_1" style="POSITION: relative; VISIBILITY: visible;"><li>.log js/console "Hello world"</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_32_4" class="foldclosed" onClick="show_folder('1_32_4')" style="POSITION: absolute">+</span> <span id="hide1_32_4" class="foldopened" onClick="hide_folder('1_32_4')">-</span>
+Vlastnosti</span>
+<ul id="fold1_32_4" style="POSITION: relative; VISIBILITY: visible;"><li>Funkce pro p&#x159;evod z/do JSON</span>
+
+</li>
+<li>P&#x159;&#xed;stup k DOM objekt&#x16f;m</span>
+
+</li>
+<li><span id="show1_32_4_1" class="foldclosed" onClick="show_folder('1_32_4_1')" style="POSITION: absolute">+</span> <span id="hide1_32_4_1" class="foldopened" onClick="hide_folder('1_32_4_1')">-</span>
+Metoda POST</span>
+<ul id="fold1_32_4_1" style="POSITION: relative; VISIBILITY: visible;"><li>errorHandler</span>
+
+</li>
+<li>parametry</span>
+
+</li>
+<li>...</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_32_4_2" class="foldclosed" onClick="show_folder('1_32_4_2')" style="POSITION: absolute">+</span> <span id="hide1_32_4_2" class="foldopened" onClick="hide_folder('1_32_4_2')">-</span>
+Obsahuje Google closure library</span>
+<ul id="fold1_32_4_2" style="POSITION: relative; VISIBILITY: visible;"><li>Nad t&#xed;m b&#x11b;&#x17e;&#xed; gmail, google maps, ...</span>
+
+</li>
+<li>pou&#x17e;&#xed;v&#xe1;  google closure compiler</span>
+
+</li>
+
+</ul>
+</li>
+<li>Nen&#xed; nutn&#xe9; ps&#xe1;t HTML ani CSS</span>
+
+</li>
+<li>Immutable data</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_32_5" class="foldclosed" onClick="show_folder('1_32_5')" style="POSITION: absolute">+</span> <span id="hide1_32_5" class="foldopened" onClick="hide_folder('1_32_5')">-</span>
+Roz&#x161;&#xed;&#x159;en&#xed;</span>
+<ul id="fold1_32_5" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_32_5_1" class="foldclosed" onClick="show_folder('1_32_5_1')" style="POSITION: absolute">+</span> <span id="hide1_32_5_1" class="foldopened" onClick="hide_folder('1_32_5_1')">-</span>
+Figwheel</span>
+<ul id="fold1_32_5_1" style="POSITION: relative; VISIBILITY: visible;"><li>Plugin, vygenerov&#xe1;n&#xed; kostry projektu</span>
+
+</li>
+<li>Hot-reload (d&#xed;ky Figwheel)</span>
+
+</li>
+
+</ul>
+</li>
+<li>Material.UI</span>
+
+</li>
+<li><span id="show1_32_5_2" class="foldclosed" onClick="show_folder('1_32_5_2')" style="POSITION: absolute">+</span> <span id="hide1_32_5_2" class="foldopened" onClick="hide_folder('1_32_5_2')">-</span>
+Om Next</span>
+<ul id="fold1_32_5_2" style="POSITION: relative; VISIBILITY: visible;"><li>Obdoba GraphQL</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_32_6" class="foldclosed" onClick="show_folder('1_32_6')" style="POSITION: absolute">+</span> <span id="hide1_32_6" class="foldopened" onClick="hide_folder('1_32_6')">-</span>
+Knihovny</span>
+<ul id="fold1_32_6" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_32_6_1" class="foldclosed" onClick="show_folder('1_32_6_1')" style="POSITION: absolute">+</span> <span id="hide1_32_6_1" class="foldopened" onClick="hide_folder('1_32_6_1')">-</span>
+Reagent</span>
+<ul id="fold1_32_6_1" style="POSITION: relative; VISIBILITY: visible;"><li>Obdoba reactu, vnit&#x159;n&#x11b; ho pou&#x17e;&#xed;v&#xe1;</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_32_6_2" class="foldclosed" onClick="show_folder('1_32_6_2')" style="POSITION: absolute">+</span> <span id="hide1_32_6_2" class="foldopened" onClick="hide_folder('1_32_6_2')">-</span>
+Reframe</span>
+<ul id="fold1_32_6_2" style="POSITION: relative; VISIBILITY: visible;"><li>Funkce na registr, tah&#xe1;n&#xed; informac&#xed; ze stavu</span>
+
+</li>
+<li>Obdoba redux</span>
+
+</li>
+<li>HTML lze ps&#xe1;t ve vektorech</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_32_7" class="foldclosed" onClick="show_folder('1_32_7')" style="POSITION: absolute">+</span> <span id="hide1_32_7" class="foldopened" onClick="hide_folder('1_32_7')">-</span>
+React Native</span>
+<ul id="fold1_32_7" style="POSITION: relative; VISIBILITY: visible;"><li>Psan&#xed; mobiln&#xed;ch aplikac&#xed; pomoc&#xed; ClojureScript</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_32_8" class="foldclosed" onClick="show_folder('1_32_8')" style="POSITION: absolute">+</span> <span id="hide1_32_8" class="foldopened" onClick="hide_folder('1_32_8')">-</span>
+Probl&#xe9;my</span>
+<ul id="fold1_32_8" style="POSITION: relative; VISIBILITY: visible;"><li>Kryptick&#xe9; chybov&#xe9; hl&#xe1;&#x161;ky, proto&#x17e;e jde o kompilovan&#xfd; JS</span>
+
+</li>
+
+</ul>
+</li>
+<li>P&#x159;edn&#xe1;&#x161;ka: Darek Slager - Closure for sceptics</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_33" class="foldclosed" onClick="show_folder('1_33')" style="POSITION: absolute">+</span> <span id="hide1_33" class="foldopened" onClick="hide_folder('1_33')">-</span>
+Petr Hamern&#xed;k - Textov&#xe1; analytika a jej&#xed; aplikace</span>
+<ul id="fold1_33" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_33_1" class="foldclosed" onClick="show_folder('1_33_1')" style="POSITION: absolute">+</span> <span id="hide1_33_1" class="foldopened" onClick="hide_folder('1_33_1')">-</span>
+NLP - natural language processing</span>
+<ul id="fold1_33_1" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_33_1_1" class="foldclosed" onClick="show_folder('1_33_1_1')" style="POSITION: absolute">+</span> <span id="hide1_33_1_1" class="foldopened" onClick="hide_folder('1_33_1_1')">-</span>
+Extrakce informac&#xed; z textu</span>
+<ul id="fold1_33_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Relace mezi lidmi</span>
+
+</li>
+<li>P&#x159;&#xed;vlastky</span>
+
+</li>
+<li>Rozd&#x11b;len&#xed; dokumentu do kategori&#xed;</span>
+
+</li>
+<li><span id="show1_33_1_1_1" class="foldclosed" onClick="show_folder('1_33_1_1_1')" style="POSITION: absolute">+</span> <span id="hide1_33_1_1_1" class="foldopened" onClick="hide_folder('1_33_1_1_1')">-</span>
+Anal&#xfd;za sentimentu pisatele</span>
+<ul id="fold1_33_1_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Na&#x161;tvanost</span>
+
+</li>
+<li>Spokojenost</span>
+
+</li>
+<li>N&#xe1;lada</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_33_1_2" class="foldclosed" onClick="show_folder('1_33_1_2')" style="POSITION: absolute">+</span> <span id="hide1_33_1_2" class="foldopened" onClick="hide_folder('1_33_1_2')">-</span>
+Dal&#x161;&#xed; discipl&#xed;ny</span>
+<ul id="fold1_33_1_2" style="POSITION: relative; VISIBILITY: visible;"><li>Porovn&#xe1;v&#xe1;n&#xed; dokument&#x16f;</span>
+
+</li>
+<li>Korekce text&#x16f;</span>
+
+</li>
+<li>Chatbots</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_33_1_3" class="foldclosed" onClick="show_folder('1_33_1_3')" style="POSITION: absolute">+</span> <span id="hide1_33_1_3" class="foldopened" onClick="hide_folder('1_33_1_3')">-</span>
+Probl&#xe9;m k &#x159;e&#x161;en&#xed;</span>
+<ul id="fold1_33_1_3" style="POSITION: relative; VISIBILITY: visible;"><li>Poznat kde za&#x10d;&#xed;n&#xe1; a kon&#x10d;&#xed; v&#x11b;ta.</span>
+
+</li>
+<li><span id="show1_33_1_3_1" class="foldclosed" onClick="show_folder('1_33_1_3_1')" style="POSITION: absolute">+</span> <span id="hide1_33_1_3_1" class="foldopened" onClick="hide_folder('1_33_1_3_1')">-</span>
+Tokenizace - rozd&#x11b;len&#xed; v&#x11b;ty do &#x10d;&#xe1;st&#xed;</span>
+<ul id="fold1_33_1_3_1" style="POSITION: relative; VISIBILITY: visible;"><li>B&#xfd;t konzistentn&#xed;</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_33_1_3_2" class="foldclosed" onClick="show_folder('1_33_1_3_2')" style="POSITION: absolute">+</span> <span id="hide1_33_1_3_2" class="foldopened" onClick="hide_folder('1_33_1_3_2')">-</span>
+Lemmatization</span>
+<ul id="fold1_33_1_3_2" style="POSITION: relative; VISIBILITY: visible;"><li>P&#x159;ev&#xe9;st slova v r&#x16f;zn&#xfd;ch tvarech na tvar ve slovn&#xed;ku</span>
+
+</li>
+<li>Seda&#x10d;ek -> Seda&#x10d;ka</span>
+
+</li>
+<li>Z&#xe1;pory nezdrav&#xfd; = NOT(zdrav&#xfd;)</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_33_1_3_3" class="foldclosed" onClick="show_folder('1_33_1_3_3')" style="POSITION: absolute">+</span> <span id="hide1_33_1_3_3" class="foldopened" onClick="hide_folder('1_33_1_3_3')">-</span>
+Rozpozn&#xe1;v&#xe1;n&#xed; (extrakce) entity</span>
+<ul id="fold1_33_1_3_3" style="POSITION: relative; VISIBILITY: visible;"><li>Gymn&#xe1;zium Gregora Tajovsk&#xe9;ho - nen&#xed; o Gregoru tajovsk&#xe9;m</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_33_1_3_4" class="foldclosed" onClick="show_folder('1_33_1_3_4')" style="POSITION: absolute">+</span> <span id="hide1_33_1_3_4" class="foldopened" onClick="hide_folder('1_33_1_3_4')">-</span>
+Koreference</span>
+<ul id="fold1_33_1_3_4" style="POSITION: relative; VISIBILITY: visible;"><li>On je pot&#x159;eba spojit s v&#xfd;skytem Milo&#x161; Zeman v p&#x159;edchoz&#xed;m textu</span>
+
+</li>
+
+</ul>
+</li>
+<li>"&#x17d;enu hol&#xed; stroj"</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_33_2" class="foldclosed" onClick="show_folder('1_33_2')" style="POSITION: absolute">+</span> <span id="hide1_33_2" class="foldopened" onClick="hide_folder('1_33_2')">-</span>
+NLG - opa&#x10d;n&#xfd; proces</span>
+<ul id="fold1_33_2" style="POSITION: relative; VISIBILITY: visible;"><li>Strukturovan&#xe1; data -> Text</span>
+
+</li>
+<li>Nap&#x159;. z ud&#xe1;lost&#xed; b&#x11b;hem z&#xe1;pasu vygeneruje &#x10d;l&#xe1;nek.</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_33_3" class="foldclosed" onClick="show_folder('1_33_3')" style="POSITION: absolute">+</span> <span id="hide1_33_3" class="foldopened" onClick="hide_folder('1_33_3')">-</span>
+Analyz&#xe1;tor Geneea</span>
+<ul id="fold1_33_3" style="POSITION: relative; VISIBILITY: visible;"><li>Copy paste text</span>
+
+</li>
+<li>Najde keywordy, datumy, osoby</span>
+
+</li>
+<li><span id="show1_33_3_1" class="foldclosed" onClick="show_folder('1_33_3_1')" style="POSITION: absolute">+</span> <span id="hide1_33_3_1" class="foldopened" onClick="hide_folder('1_33_3_1')">-</span>
+Lze proklepnout &#x10d;lov&#x11b;k vyfiltrov&#xe1;n&#xed;m &#x10d;l&#xe1;nk&#x16f;</span>
+<ul id="fold1_33_3_1" style="POSITION: relative; VISIBILITY: visible;"><li>Vid&#xed;m, s jak&#xfd;mi lidmi se o n&#x11b;m p&#xed;&#x161;e</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_33_4" class="foldclosed" onClick="show_folder('1_33_4')" style="POSITION: absolute">+</span> <span id="hide1_33_4" class="foldopened" onClick="hide_folder('1_33_4')">-</span>
+Geneea Droid</span>
+<ul id="fold1_33_4" style="POSITION: relative; VISIBILITY: visible;"><li>Zad&#xe1;m v&#x11b;tu a n&#x11b;co to vr&#xe1;t&#xed;</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_33_5" class="foldclosed" onClick="show_folder('1_33_5')" style="POSITION: absolute">+</span> <span id="hide1_33_5" class="foldopened" onClick="hide_folder('1_33_5')">-</span>
+Rest API</span>
+<ul id="fold1_33_5" style="POSITION: relative; VISIBILITY: visible;"><li>api.geneea.com</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_33_6" class="foldclosed" onClick="show_folder('1_33_6')" style="POSITION: absolute">+</span> <span id="hide1_33_6" class="foldopened" onClick="hide_folder('1_33_6')">-</span>
+Knihovny</span>
+<ul id="fold1_33_6" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_33_6_1" class="foldclosed" onClick="show_folder('1_33_6_1')" style="POSITION: absolute">+</span> <span id="hide1_33_6_1" class="foldopened" onClick="hide_folder('1_33_6_1')">-</span>
+OpenLP</span>
+<ul id="fold1_33_6_1" style="POSITION: relative; VISIBILITY: visible;"><li>Nen&#xed; dobr&#xe1;</span>
+
+</li>
+
+</ul>
+</li>
+<li>V produkci nepou&#x17e;&#xed;v&#xe1;me neuronov&#xe9; s&#xed;t&#x11b;</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_34" class="foldclosed" onClick="show_folder('1_34')" style="POSITION: absolute">+</span> <span id="hide1_34" class="foldopened" onClick="hide_folder('1_34')">-</span>
+Radim Kubacki - Big Data</span>
+<ul id="fold1_34" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_34_1" class="foldclosed" onClick="show_folder('1_34_1')" style="POSITION: absolute">+</span> <span id="hide1_34_1" class="foldopened" onClick="hide_folder('1_34_1')">-</span>
+Hadoop</span>
+<ul id="fold1_34_1" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_34_1_1" class="foldclosed" onClick="show_folder('1_34_1_1')" style="POSITION: absolute">+</span> <span id="hide1_34_1_1" class="foldopened" onClick="hide_folder('1_34_1_1')">-</span>
+Best practices</span>
+<ul id="fold1_34_1_1" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_34_1_1_1" class="foldclosed" onClick="show_folder('1_34_1_1_1')" style="POSITION: absolute">+</span> <span id="hide1_34_1_1_1" class="foldopened" onClick="hide_folder('1_34_1_1_1')">-</span>
+Columnar storage format</span>
+<ul id="fold1_34_1_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Parquet, ORC</span>
+
+</li>
+<li><span id="show1_34_1_1_1_1" class="foldclosed" onClick="show_folder('1_34_1_1_1_1')" style="POSITION: absolute">+</span> <span id="hide1_34_1_1_1_1" class="foldopened" onClick="hide_folder('1_34_1_1_1_1')">-</span>
+Differs from relational DB</span>
+<ul id="fold1_34_1_1_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Relational DB stores into rows, speed up using indices</span>
+
+</li>
+<li>Must read whole row</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_34_1_1_1_2" class="foldclosed" onClick="show_folder('1_34_1_1_1_2')" style="POSITION: absolute">+</span> <span id="hide1_34_1_1_1_2" class="foldopened" onClick="hide_folder('1_34_1_1_1_2')">-</span>
+How it works</span>
+<ul id="fold1_34_1_1_1_2" style="POSITION: relative; VISIBILITY: visible;"><li>Divide data into blocks</span>
+
+</li>
+<li>Save data per columns</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_34_1_1_1_3" class="foldclosed" onClick="show_folder('1_34_1_1_1_3')" style="POSITION: absolute">+</span> <span id="hide1_34_1_1_1_3" class="foldopened" onClick="hide_folder('1_34_1_1_1_3')">-</span>
++</span>
+<ul id="fold1_34_1_1_1_3" style="POSITION: relative; VISIBILITY: visible;"><li>Great ZIP ratio of the data</span>
+
+</li>
+<li>I can read only those columns, that I am interested in</span>
+
+</li>
+<li>Because of timestamps, I can skip time non-relevant data</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_34_1_1_1_4" class="foldclosed" onClick="show_folder('1_34_1_1_1_4')" style="POSITION: absolute">+</span> <span id="hide1_34_1_1_1_4" class="foldopened" onClick="hide_folder('1_34_1_1_1_4')">-</span>
+-</span>
+<ul id="fold1_34_1_1_1_4" style="POSITION: relative; VISIBILITY: visible;"><li>High load when uncompressing the data</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_34_1_1_2" class="foldclosed" onClick="show_folder('1_34_1_1_2')" style="POSITION: absolute">+</span> <span id="hide1_34_1_1_2" class="foldopened" onClick="hide_folder('1_34_1_1_2')">-</span>
+MRv1 -> YARN</span>
+<ul id="fold1_34_1_1_2" style="POSITION: relative; VISIBILITY: visible;"><li>YARN has better scheduler than MapReduce</span>
+
+</li>
+<li>Better throughput</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>Long, sequential read from FS</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_34_2" class="foldclosed" onClick="show_folder('1_34_2')" style="POSITION: absolute">+</span> <span id="hide1_34_2" class="foldopened" onClick="hide_folder('1_34_2')">-</span>
+Spark + Parquet lessons</span>
+<ul id="fold1_34_2" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_34_2_1" class="foldclosed" onClick="show_folder('1_34_2_1')" style="POSITION: absolute">+</span> <span id="hide1_34_2_1" class="foldopened" onClick="hide_folder('1_34_2_1')">-</span>
+Preemptive killing + Spark 1.5 = collapse</span>
+<ul id="fold1_34_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>Fixed in 1.6</span>
+
+</li>
+
+</ul>
+</li>
+<li>Reduce output size: partition by userId, sort by timestamp</span>
+
+</li>
+<li>Even if job takes longer time, it may actually be cheaper to execute on cloud (regarding CPU time)</span>
+
+</li>
+<li><span id="show1_34_2_2" class="foldclosed" onClick="show_folder('1_34_2_2')" style="POSITION: absolute">+</span> <span id="hide1_34_2_2" class="foldopened" onClick="hide_folder('1_34_2_2')">-</span>
+Java/Python/Scala - what to choose?</span>
+<ul id="fold1_34_2_2" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_34_2_2_1" class="foldclosed" onClick="show_folder('1_34_2_2_1')" style="POSITION: absolute">+</span> <span id="hide1_34_2_2_1" class="foldopened" onClick="hide_folder('1_34_2_2_1')">-</span>
+Python great for prototyping</span>
+<ul id="fold1_34_2_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>Python notebooks - creates spark context, in interactive mode</span>
+
+</li>
+<li><span id="show1_34_2_2_1_1" class="foldclosed" onClick="show_folder('1_34_2_2_1_1')" style="POSITION: absolute">+</span> <span id="hide1_34_2_2_1_1" class="foldopened" onClick="hide_folder('1_34_2_2_1_1')">-</span>
+Bad for production</span>
+<ul id="fold1_34_2_2_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>On boundary between Python & Spark - must be converted into Scala structures</span>
+
+</li>
+<li>This is expensive</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>Real (production) implementation in Scala or Java</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>Petr Fleishman - GraphQL rest API 2.0</span>
+<ul><li><span id="show1_35" class="foldclosed" onClick="show_folder('1_35')" style="POSITION: absolute">+</span> <span id="hide1_35" class="foldopened" onClick="hide_folder('1_35')">-</span>
+GraphQL</span>
+<ul id="fold1_35" style="POSITION: relative; VISIBILITY: visible;"><li>Standard od FB</span>
+
+</li>
+<li><span id="show1_35_1" class="foldclosed" onClick="show_folder('1_35_1')" style="POSITION: absolute">+</span> <span id="hide1_35_1" class="foldopened" onClick="hide_folder('1_35_1')">-</span>
+&#x159;e&#x161;&#xed; probl&#xe9;m, &#x17e;e</span>
+<ul id="fold1_35_1" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_35_1_1" class="foldclosed" onClick="show_folder('1_35_1_1')" style="POSITION: absolute">+</span> <span id="hide1_35_1_1" class="foldopened" onClick="hide_folder('1_35_1_1')">-</span>
+Chceme minimalizovat latency dotaz&#x16f; = po&#x10d;et dotaz&#x16f; na data na serveru</span>
+<ul id="fold1_35_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>hlavn&#x11b; pro single-page aplikace</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_35_1_2" class="foldclosed" onClick="show_folder('1_35_1_2')" style="POSITION: absolute">+</span> <span id="hide1_35_1_2" class="foldopened" onClick="hide_folder('1_35_1_2')">-</span>
+Pot&#x159;ebujeme seskupit v&#xed;ce dotaz&#x16f; do jednoho</span>
+<ul id="fold1_35_1_2" style="POSITION: relative; VISIBILITY: visible;"><li>V restu se to &#x159;e&#x161;&#xed; pomoc&#xed; multi-get request&#x16f;</span>
+
+</li>
+
+</ul>
+</li>
+<li>Pot&#x159;ebujeme stanovit, jak&#xe1; data ze serveru pot&#x159;ebujeme</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_35_2" class="foldclosed" onClick="show_folder('1_35_2')" style="POSITION: absolute">+</span> <span id="hide1_35_2" class="foldopened" onClick="hide_folder('1_35_2')">-</span>
+V dotazu definujeme, co se m&#xe1; vr&#xe1;tit</span>
+<ul id="fold1_35_2" style="POSITION: relative; VISIBILITY: visible;"><li>Ze serveru se vr&#xe1;t&#xed; jenom ta data, kter&#xe1; zad&#xe1;me v dotazu</span>
+
+</li>
+<li>user(id: 22524) {&#xa;  name,&#xa;  friends {id, name}&#xa;}</span>
+
+</li>
+
+</ul>
+</li>
+<li>Pom&#xe1;h&#xe1; udr&#x17e;ovat zp&#x11b;tnou kompatibility</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_36" class="foldclosed" onClick="show_folder('1_36')" style="POSITION: absolute">+</span> <span id="hide1_36" class="foldopened" onClick="hide_folder('1_36')">-</span>
+Knihovna Rellay (?) od FB</span>
+<ul id="fold1_36" style="POSITION: relative; VISIBILITY: visible;"><li>Ka&#x17e;d&#xe1; komponenta si &#x159;ekne, jak&#xe1; data pot&#x159;ebuje</span>
+
+</li>
+<li>Po&#x17e;adavky se posb&#xed;raj&#xed;, a po&#x161;lou jako jeden request na server</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_37" class="foldclosed" onClick="show_folder('1_37')" style="POSITION: absolute">+</span> <span id="hide1_37" class="foldopened" onClick="hide_folder('1_37')">-</span>
+Dataloader od FB</span>
+<ul id="fold1_37" style="POSITION: relative; VISIBILITY: visible;"><li>Vyu&#x17e;&#xed;v&#xe1; eventloop a asynchronicity JS</span>
+
+</li>
+<li>Sb&#xed;r&#xe1; si requesty na server dat, ale hned je neprov&#xe1;d&#xed;</span>
+
+</li>
+<li>Jednou za &#x10d;as je po&#x161;le jako multirequest na server</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_38" class="foldclosed" onClick="show_folder('1_38')" style="POSITION: absolute">+</span> <span id="hide1_38" class="foldopened" onClick="hide_folder('1_38')">-</span>
+GraphQL.js</span>
+<ul id="fold1_38" style="POSITION: relative; VISIBILITY: visible;"><li>Pro node.js</span>
+
+</li>
+
+</ul>
+</li>
+<li>Component</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>Workshops</span>
+<ul><li>Peter Cipov - Funkcion&#xe1;ln&#xed; programov&#xe1;n&#xed;</span>
+<ul><li>Samotn&#xe1; hodnota se nem&#x11b;n&#xed;</span>
+
+</li>
+<li>Prom&#x11b;nn&#xe1; nab&#xfd;v&#xe1; stavu</span>
+
+</li>
+<li>Operace p&#x159;i&#x159;azen&#xed; (=) je neobl&#xed;ben&#xe1;</span>
+
+</li>
+<li>Identita</span>
+<ul><li>M&#x11b;li by zm&#x11b;nit stav na jinou hodnotu, jenom je-li to nezbytn&#xe9;</span>
+<ul><li>Kdy&#x17e; u&#x17e; se to d&#x11b;l&#xe1;, tak v bloku dosync</span>
+<ul><li>dosync chr&#xe1;n&#xed; p&#x159;ed ur&#x10d;it&#xfd;m typem chyb</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>nap&#x159;. kdy&#x17e; p&#x159;id&#xe1;me hodnotu do pole, zkop&#xed;ruje se pole a vytvo&#x159;&#xed; nov&#xe9; s count+1</span>
+
+</li>
+
+</ul>
+</li>
+<li>pure funkce</span>
+<ul><li>Funkce m&#xe1; vstup a v&#xfd;stup</span>
+
+</li>
+<li>Je mo&#x17e;n&#xe9; je paralelizovat</span>
+
+</li>
+<li>V ka&#x17e;d&#xe9;m &#x10d;ase vrac&#xed; stejn&#xfd; v&#xfd;stup pro dan&#xfd; vstup</span>
+
+</li>
+<li>maj&#xed; vlastnost idenpotence</span>
+
+</li>
+<li>p&#x159;&#xed;klad nepure funkce</span>
+<ul><li>zap&#xed;&#x161;e do logu/console</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>Pro&#x10d;?</span>
+<ul><li>Asynchronn&#xed; programov&#xe1;n&#xed; je jedin&#xfd; zn&#xe1;m&#xfd; zp&#x16f;sob, jak &#x161;k&#xe1;lovat na v&#xed;ce jadern&#xfd;ch procesorech.</span>
+
+</li>
+
+</ul>
+</li>
+<li>Callback hell</span>
+<ul><li>Asynchronn&#xed; prg, kter&#xe9; pou&#x17e;&#xed;v&#xe1; callbacks, nen&#xed; intuitivn&#x11b; pochopiteln&#xe9;</span>
+
+</li>
+<li>Jak &#x159;e&#x161;&#xed; Javascript callback hell?</span>
+<ul><li>Promise</span>
+
+</li>
+<li>Async</span>
+
+</li>
+
+</ul>
+</li>
+<li>Pou&#x17e;&#xed;v&#xe1;n&#xed; callback&#x16f; navy&#x161;uje komplexicitu v k&#xf3;du</span>
+
+</li>
+
+</ul>
+</li>
+<li>Observables</span>
+<ul><li>Podlo&#x17e;en&#xe9; matematickou teori&#xed; mon&#xe1;d</span>
+
+</li>
+<li>Mon&#xe1;d</span>
+<ul><li>Mus&#xed; m&#xed;t identity funkci</span>
+<ul><li>Obdoba Arrays.asList</span>
+
+</li>
+<li>Str&#x10d;&#xed;me do funkce prvek, a vr&#xe1;t&#xed; se Observable dan&#xe9;ho prvku</span>
+
+</li>
+
+</ul>
+</li>
+<li>Mus&#xed;me m&#xed;t funkci (flatmap), kter&#xe1; pracuje nad observable, a vrac&#xed; n&#xe1;m jin&#xfd; observable</span>
+
+</li>
+<li>Slou&#x17e;&#xed; pro z&#x159;et&#x11b;zovan&#xe9; asynchronn&#x11b; prov&#xe1;d&#x11b;n&#xe9; transformace</span>
+<ul><li>Metafora/analogie trubek</span>
+<ul><li>N&#x11b;kde je zdroj dat - do trubky te&#x10d;e voda</span>
+
+</li>
+<li>Po cest&#x11b; se voda val&#xed; trubkama</span>
+
+</li>
+<li>Voda se r&#x16f;zn&#x11b; transformuje p&#x159;i pr&#x16f;chodu trubkama</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>API observable</span>
+<ul><li>subscribe()</span>
+
+</li>
+<li>onNext()</span>
+
+</li>
+<li>onNext()</span>
+
+</li>
+<li>onCompleted()</span>
+
+</li>
+
+</ul>
+</li>
+<li>Dal&#x161;&#xed; mo&#x17e;nosti</span>
+<ul><li>Throttling</span>
+<ul><li>&#x160;krt&#xed;c&#xed; kohout na trubce</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>Obdoba iter&#xe1;toru, ale asynchronn&#x11b; se vol&#xe1; onNext() z observable</span>
+
+</li>
+
+</ul>
+</li>
+<li>JS Knihovna reactiveX</span>
+<ul><li>Interval Observable</span>
+<ul><li>Po&#x161;le ka&#x17e;d&#xfd;ch x millis. po&#x161;le &#x10d;&#xed;slo</span>
+
+</li>
+<li>k n&#x11b;mu se subscribnu</span>
+
+</li>
+<li>ReactX.interval(...).subscribe(new function() {})</span>
+
+</li>
+
+</ul>
+</li>
+<li>subject</span>
+<ul><li>podobn&#xe9; jako observable, ale lze na n&#x11b;m volat onNext()</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>Maryna - Testovac&#xed; heuristika v agiln&#xed;m v&#xfd;voji</span>
+<ul><li>Maryna - facilit&#xe1;tor</span>
+
+</li>
+<li>Martin - story owner</span>
+
+</li>
+<li>Brainstorming</span>
+<ul><li>Krok 1 - uv&#x11b;domit si, co chceme testovat</span>
+<ul><li>Jede se podle heuristik</span>
+
+</li>
+<li>Heuristika</span>
+<ul><li>Nightmare scenario - s t&#xed;m se za&#x10d;ne</span>
+<ul><li>L&#xe9;ka&#x159; se nedozv&#xed; o objedn&#xe1;n&#xed; zv&#xed;&#x159;ete</span>
+<ul><li>Zv&#xed;&#x159;&#xe1;tko zem&#x159;e</span>
+
+</li>
+
+</ul>
+</li>
+<li>Sma&#x17e;e se datab&#xe1;ze</span>
+
+</li>
+
+</ul>
+</li>
+<li>Co story nesm&#xed; nikdy d&#x11b;lat</span>
+
+</li>
+<li>Co story mus&#xed; v&#x17e;dycky d&#x11b;lat</span>
+
+</li>
+<li>Beggining, middle, end</span>
+<ul><li>Bude se chovat OK, kdy&#x17e; se operace provede</span>
+<ul><li>Na za&#x10d;&#xe1;tku?</span>
+
+</li>
+<li>V prost&#x159;ed seznamu?</span>
+
+</li>
+<li>Nakonec seznamu?</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>Moc mal&#xe1;/velk&#xe1; heuristika</span>
+
+</li>
+<li>Zero, one, many</span>
+<ul><li>Pro testov&#xe1;n&#xed; multi-choice list&#x16f;</span>
+
+</li>
+
+</ul>
+</li>
+<li>Interrupt</span>
+<ul><li>Co kdy&#x17e; se nedokon&#x10d;&#xed;, co se za&#x10d;alo</span>
+
+</li>
+
+</ul>
+</li>
+<li>...</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul><SCRIPT type="text/javascript">
+fold_document();
+</SCRIPT>
+</body>
+</html>
