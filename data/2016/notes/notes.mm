@@ -2,7 +2,7 @@
 <!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
 <node TEXT="jOpenSpace" FOLDED="false" ID="ID_1525942565" CREATED="1475910417790" MODIFIED="1475943034387" LINK="menuitem:_$addons.roan.presentation_menuAction_on_single_node$0" STYLE="oval">
 <font SIZE="18"/>
-<hook NAME="MapStyle" zoom="2.0">
+<hook NAME="MapStyle" zoom="0.848">
     <properties show_icon_for_attributes="true" fit_to_viewport="false;"/>
 
 <map_styles>
@@ -462,7 +462,7 @@
 <node TEXT="zobrazov&#xe1;n&#xed; Pop-up oken" ID="ID_1215760933" CREATED="1475919988639" MODIFIED="1475919994787"/>
 </node>
 </node>
-<node TEXT="David Ond&#x159;ich - ViM 8.0" ID="ID_680893572" CREATED="1475920632286" MODIFIED="1476006871821">
+<node TEXT="David Ond&#x159;ich - ViM 8.0" FOLDED="true" ID="ID_680893572" CREATED="1475920632286" MODIFIED="1476006871821">
 <node TEXT="Hodn&#x11b; klon&#x16f;" ID="ID_1228877919" CREATED="1475920841886" MODIFIED="1475920845854"/>
 <node TEXT="V&#xfd;hody" ID="ID_1922638027" CREATED="1475920877077" MODIFIED="1475920879692">
 <node TEXT="Existuje v&#x161;ude" ID="ID_1204702806" CREATED="1475920849573" MODIFIED="1475920871436"/>
@@ -1077,7 +1077,7 @@
 </node>
 </node>
 </node>
-<node TEXT="David Bedn&#xe1;&#x159; - jak rychle vyrobit a deploynout Microservice" ID="ID_1055085348" CREATED="1475943531754" MODIFIED="1476006871898">
+<node TEXT="Martin Bedn&#xe1;&#x159; - jak rychle vyrobit a deploynout Microservice" ID="ID_1055085348" CREATED="1475943531754" MODIFIED="1476086144253">
 <node TEXT="Spring boot command line utility" ID="ID_245486799" CREATED="1475943562837" MODIFIED="1475943571146">
 <node TEXT="spring init -build gradle -l groovy -g xxx ..." ID="ID_1090519710" CREATED="1475943604091" MODIFIED="1475943652166"/>
 </node>
