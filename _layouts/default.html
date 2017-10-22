@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <section>
+
+      <div class="vw">
+        <div id="preContent">
+          <h2>se uskutečnila 13. - 15. října 2017</h2>
+          <p>v <a href="http://www.hotel-farma.cz/" target="_blank">Hotelu Farma</a> v Pelhřimově</p>
+        </div>
+
+        <div id="topContent">
+
+          <div class="twoCols clr">
+            <div class="fl">
+              {% include about.html %}
+            </div>
+            <div class="fr">
+              {% include partners.html %}
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="mapCanvas"></div>
+
+      {% include archive.html class="bottomContent" %}
+
+    </section>
+
+    {% include footer.html %}
+
+  </body>
+</html>

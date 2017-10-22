@@ -1,0 +1,39 @@
+# Plugins
+gems:             ['jekyll-paginate', 'jekyll-gist', 'jekyll-github-metadata']
+
+# Dependencies
+highlighter:      rouge
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            jOpenSpace - vývojářská ne-konference
+tagline:          designed by FG Forrest, a.s.
+description:      Informace o aktuálním ročníku vývojářské ne-konference jOpenSpace (místo, čas, program) a archív materiálů z předchozích ročníků (podcasty, prezentace).
+url:              https://www.jopenspace.cz
+baseurl:
+
+defaults:
+  - scope:
+      path: ""
+      type: archive
+    values:
+      layout: archive
+
+collections:
+  archive:
+    output: true
+    permalink: /:name
+
+author:
+  name:           'FG Forrest, a.s.'
+  url:            https://www.fg.cz
+
+paginate:         5
+
+# Custom vars
+version:          1.0.1
+
+github:
+  repo:           https://github.com/novoj/jOpenSpace

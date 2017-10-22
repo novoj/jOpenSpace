@@ -1,0 +1,15 @@
+<div class="vw" id="bottomContentCnt">
+	<div id="{{ include.class }}">
+		<div id="bottomContentSwitch">
+			<h2 id="media">Přednášky a záznamy</h2>
+			<ul class="nav clr years">
+				{% for item in site.archive %}
+				<li><a href="{{ item.year }}.html" data-tab="year{{ item.year }}" {% if page.year == item.year %}class="current"{% endif %}>{{ item.year }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div id="archive" class="list-wrap">
+			{{ content }}
+		</div>
+	</div>
+</div>

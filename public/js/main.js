@@ -11,6 +11,7 @@ var recalculateColumns = function() {
         $('#topContent .twoCols > *').each(function () {
             var height = $(this).outerHeight(false);
             topContentHeightArr.push(height);
+            console.log(height);
         });
         if(topContentHeightArr[1] < topContentHeightArr[0]) {
             $('#topContent .twoCols > .fr').css({'height': topContentHeightArr[0] + 'px'});
@@ -20,9 +21,12 @@ var recalculateColumns = function() {
             $('#topContent .twoCols > .fl').css({'height': topContentHeightArr[1] + 'px'});
         }
     }
-}
+};
 
 $(document).ready(function() {
+
+	/* topContent - výška pravého sloupce stejná jako levého */
+	setTimeout(recalculateColumns, 100);
 
     /* podcasty a videa - jiné zobrazení při jedné a více než dvou položkách */
     $('.articleMedia').each(function() {
@@ -44,9 +48,6 @@ $(document).ready(function() {
         }, 500);
     });
 
-    /* topContent - výška pravého sloupce stejná jako levého */
-    recalculateColumns();
-
     /* mapka */
     $('#mapCanvas').gmap().bind('init', function(ev, map) {
 
@@ -57,7 +58,7 @@ $(document).ready(function() {
     });
 
     /* přepínání tabů */
-    $("#bottomContent").organicTabs();
+    $("#bottomContentCnt").organicTabs();
 
     /* galerie */
     $(document).on('click', '.highslide', function() {
@@ -74,38 +75,7 @@ $(document).ready(function() {
         return false;
     };
 
-    /* zobrazení tabu, pokud přijde jako hash */
-    $('#bottomContent').each(function() {
-        var hash = window.location.hash;
-        detectHashChange(hash);
-    });
-
-    /* detekce eventu history.back */
-    var hashChangeSource = '';
-    $(document).on('click', 'a', function(e) {
-        hashChangeSource = 'click';
-    });
-
-    $(window).on('hashchange', function(event){
-        if ( hashChangeSource != 'click' ) {
-            var hash = window.location.hash;
-            detectHashChange(hash);
-        }
-        hashChangeSource = '';
-    });
-
 });
-
-function detectHashChange (hash) {
-    $('#bottomContentSwitch ul li a').each(function() {
-        if ($(this).attr('href') == hash) {
-            $('#bottomContentSwitch ul li a').removeClass('current');
-            $('.list-wrap > div').addClass('hide').css({'position' : 'relative', 'top' : '0px', 'left' : '0px', 'display' : 'none'});
-            $(this).addClass('current');
-            $('.list-wrap > div' + hash).removeClass('hide').addClass('hide').removeAttr('style');
-        }
-    });
-}
 
 function stirSponsors(ul) {
     ul.hide();
