@@ -12,7 +12,7 @@ title:            jOpenSpace - vývojářská ne-konference
 tagline:          designed by FG Forrest, a.s.
 description:      Informace o aktuálním ročníku vývojářské ne-konference jOpenSpace (místo, čas, program) a archív materiálů z předchozích ročníků (podcasty, prezentace).
 url:              https://www.jopenspace.cz
-baseurl:
+baseurl:          /
 
 defaults:
   - scope:
