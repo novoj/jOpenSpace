@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: page
 title: jOpenSpace - partnerský program
 ---
 
