@@ -167,6 +167,10 @@ ul.centered > li { display: inline-block; list-style: none; vertical-align: midd
 .highslide-previous:hover { opacity: .95;}
 .closebutton:hover { opacity: .95;}
 
+/* ostatní stránky */
+#pageContent { background-color: #fff; padding: 2em; }
+#pageContent ul { margin: 2em }
+
 /* patička */
 footer { margin-bottom: 30px;}
 
