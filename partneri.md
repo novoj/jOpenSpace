@@ -14,22 +14,26 @@ ne-konference za námi, nemůžeme si být nikdy jisti.
 
 ## Historie jOpenSpace
 
-jOpenSpace vznikla v roce 2008 nápadem Michala Šrajera (Inmite, Avast, Happiness at work) a, s výjimkou jednoho roku, se na ní setkává vždy od 20 do 42 účastníků. S každým rokem
+jOpenSpace vznikla v roce 2008 nápadem Michala Šrajera (Inmite, Avast, Happiness at work) a, s výjimkou jednoho roku, se na ní setkává vždy od 20 do 42 účastníků.
+Maximální počet účastníků do budoucna je 42. S každým rokem
 je o konferenci větší a větší zájem. Posuďte sami:
 
 - 2017: 42 účastníků, 1 žena
-- 2016: 38 účastníků, 1 žena
+TODO uvádět kolik z účastníků jsou ženy?
+- 2016: 38 účastníků, 2 ženy
 - 2015: 22 účastníků (tady jsme bohužel měli souběh s WebExpo konferencí)
 - 2014: 31 účastníků
 - 2013: 29 účastníků
 
-Na ne-konferenci se tradičně setkávají zajímaví lidé čekého IT průmyslu - bloggeři, podcasteři, zakládající členové
-startupové scény, seniorní programátoři - jednoduše lidé, které stojí za to potkat.  
+Na ne-konferenci se tradičně setkávají zajímaví lidé českého IT průmyslu - bloggeři, podcasteři, zakládající členové
+startupové scény, programátoři, které programování baví - jednoduše lidé, které stojí za to potkat.  
 
 ## Typy partnerství
 
 Na základě předchozích zkušeností a očekávání partnerů jsme se rozhodli vypsat různé úrovně partnerství, abyste měli
 dopředu představu, na kolik by vás partnerství vyšlo a jaké výhody by Vám z toho plynuly.
+
+TODO kdyz nad tim vic a vic premyslim, je toto rozdeleni partneru ne-konferencni?
 
 ### Zlaté partnerství
 **Částka: 25000,- Kč**
@@ -39,7 +43,7 @@ dopředu představu, na kolik by vás partnerství vyšlo a jaké výhody by Vá
 - logo v pravém sloupci [www.jopenspace.cz](http://www.jopenspace.cz)
 - tweet z účtu [@jopenspace](https://twitter.com/jopenspace)
 - osobní poděkování na uvítacím večeru jOpenSpace
-- láhev archivního moravského vína pro kontaktní osobu partnera
+- malý dárek pro kontaktní osobu partnera
 - velké logo ve videozáznamech z ne-konference
 
 ### Stříbrné partnerství
@@ -50,7 +54,7 @@ dopředu představu, na kolik by vás partnerství vyšlo a jaké výhody by Vá
 - logo v pravém sloupci [www.jopenspace.cz](http://www.jopenspace.cz)
 - tweet z účtu [@jopenspace](https://twitter.com/jopenspace)
 - osobní poděkování na uvítacím večeru jOpenSpace
-- láhev archivního moravského vína pro kontaktní osobu partnera
+- malý dárek pro kontaktní osobu partnera
 - střední logo ve videozáznamech z ne-konference
 
 ### Bronzové partnerství
@@ -59,7 +63,7 @@ dopředu představu, na kolik by vás partnerství vyšlo a jaké výhody by Vá
 - logo v pravém sloupci [www.jopenspace.cz](http://www.jopenspace.cz)
 - tweet z účtu [@jopenspace](https://twitter.com/jopenspace)
 - osobní poděkování na uvítacím večeru jOpenSpace
-- láhev archivního moravského vína pro kontaktní osobu partnera
+- malý dárek pro kontaktní osobu partnera
 - malé logo ve videozáznamech z ne-konference
 
 ## Organizační informace
@@ -80,4 +84,4 @@ Následně proběhne:
 - natočení medailonku a zveřenění na [www.jopenspace.cz](http://www.jopenspace.cz) před akcí, zároveň jako úvodník jednoho z následujících
   dílů [Kafemlejnek.tv](https://kafemlejnek.TV)
 - tweetnutí partnerství v období 1-3 týdny před akcí
-- po akci obdržíte kompletní rozpočet akce, odkazy na články, twitter feed, fotografie z akce
+- po akci obdržíte přehled jakým způsobem jsem využili peníze získané od partnerů i účastníků, odkazy na články, twitter feed, fotografie z akce
