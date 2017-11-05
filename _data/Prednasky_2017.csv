@@ -1,60 +1,59 @@
 Prednasejici,Nazev,Bio,Anotace,Url,
 Zdenek Henek,Jak Gradle zrychlí váš build,https://twitter.com/zdenekhenek,"Gradle se za léta neuvěřitelně zlepšil. Nyní můžete počítat s paralelními buildy, inkrementální kompilací, nástroji pro profilování vašeho buildu.",https://docs.google.com/presentation/d/1QAlJPNjfbpn24LHOLUfg70avlx7ihfR7d8_IhFtB6r8/edit,
-Luboš Račanský,Proč se učit Groovy,,,https://drive.google.com/file/d/0B6ylaVVmlHYHOW15bGpYVlh3UHc/view?usp=sharing,
-Jan Vondrouš,"Jak a proč psát utility v Gradlu
-
-Díky Gradlu lze snadno napsat utilitu/program, který
+Luboš Račanský,Proč se učit Groovy,https://twitter.com/banterCZ,Proč byste se měli učit Groovy a kde všude ho pak můžete použít.,https://drive.google.com/file/d/0B6ylaVVmlHYHOW15bGpYVlh3UHc/view?usp=sharing,
+Jan Vondrouš,Jak a proč psát utility v Gradlu,https://twitter.com/jvondrous,"Díky Gradlu lze snadno napsat utilitu/program, který
   - se spustí kdekoliv
   - lze libovolně modifikovat bez nutnosti kompilace
   - lze používat libovolné maven závoslosti
-  - lze psat v Groovy, Javě, Kotlinu ...",,,https://goo.gl/MUFHCw,
-Filip Štaffa,Typescript,,,https://gitpitch.com/fstaffa/jopenspace-2017-typescript,
-Jakub Kočí,Univerzální technologie,,,https://www.slideshare.net/jakubkoci/universaltechnology,
-Víťa Plšek,Single Page Applications,https://twitter.com/vitaplsek,"SPA jako technologie je hype, ale prochází díky tomu deziluzí. Vracíme se zpět k tvorbě tlustých klientů, jen běží v browseru a proto používejte SPA s rozmyslem.",https://docs.google.com/presentation/d/1_TWRmHJ227DX-cbsDx9jnkgJ5pIZxaF2aPUUMAgCi6U/edit#slide=id.g27f72f387c_0_4,
-Leoš Přikryl,Kotlin,,,https://docs.google.com/presentation/d/1PZkLtIe-XNe0Yq2oeX42LUVKvwR-_KbH_R9JyZKNJLQ/edit?usp=sharing,
-František Řezáč,Smart karty - svatý grál digitální bezpečnosti,,,,
-Kamil Ševeček,Ženy v IT. Czechitas,,,http://www.tomcat.cloud/Zeny%20v%20IT.pdf,
-Ondřej Chaloupka,"Saga transactions a přístup, který volí transakční manager Narayana. Specifikace transakčního zpracování pro REST (https://github.com/jbosstm/microprofile-sandbox/blob/0009-LRA/proposals/0009-LRA/0009-LRA.md).",,,http://chalda.cz/saga/saga.html,
-Tomáš Zvěřina,"Dart pro Javisty - proč je Dart pro javistu nejlepší cesta na frontend (Angular Dart pro web, Flutter pro Android a iOS).
-",,,https://docs.google.com/presentation/d/1bh5HurKdNQ5ChFzsqf4vcqRBWTFWYge01IOnCuAsyKw/edit?usp=sharing,
+  - lze psat v Groovy, Javě, Kotlinu ...",https://goo.gl/MUFHCw,
+Filip Štaffa,Typescript,https://twitter.com/filip_staffa,,https://gitpitch.com/fstaffa/jopenspace-2017-typescript,
+Jakub Kočí,Univerzální technologie,https://twitter.com/jakubkoci,,https://www.slideshare.net/jakubkoci/universaltechnology,
+Víťa Plšek,Single Page Applications,https://twitter.com/vitaplsek,"SPA jsou dnes považovány v oblasti webu téměř za architektonický standard, je to ale stav ve kterém chceme být? ",https://docs.google.com/presentation/d/1_TWRmHJ227DX-cbsDx9jnkgJ5pIZxaF2aPUUMAgCi6U/edit#slide=id.g27f72f387c_0_4,
+Leoš Přikryl,Kotlin,https://twitter.com/leos_prikryl,"Java se bohužel vyvíjí příliš pomalu, což nás nutí rozhlížet se po alternativních jazycích běžících nad JVM. Kotlin je jedna z nejschůdnějších možností. Je to moderní jazyk plně interoperabilní s Javou, který se Java vývojář dokáže velmi rychle naučit.",https://docs.google.com/presentation/d/1PZkLtIe-XNe0Yq2oeX42LUVKvwR-_KbH_R9JyZKNJLQ/edit?usp=sharing,
+František Řezáč,Smart karty - svatý grál digitální bezpečnosti,https://twitter.com/calaverainfo,,,
+Kamil Ševeček,Ženy v IT. Czechitas,http://www.sevecek.net/,,http://www.tomcat.cloud/Zeny%20v%20IT.pdf,
+Ondřej Chaloupka,"Saga transactions a přístup, který volí transakční manager Narayana. Specifikace transakčního zpracování pro REST (https://github.com/jbosstm/microprofile-sandbox/blob/0009-LRA/proposals/0009-LRA/0009-LRA.md).",https://twitter.com/_chalda,"Co jsou to Saga transakce, proč jsou vhodné pro použití v microservice architecture a jaký je jejich rozdíl od XA transakcí. (LRA)[https://github.com/jbosstm/microprofile-sandbox/blob/0009-LRA/proposals/0009-LRA/0009-LRA.md] (long running actions) implementace Sagy v Narayana transakčního manageru.",http://chalda.cz/saga/saga.html,
+Tomáš Zvěřina,Dart pro Javisty,,"Proč je Dart pro javistu nejlepší cesta na frontend (Angular Dart pro web, Flutter pro Android a iOS).",https://docs.google.com/presentation/d/1bh5HurKdNQ5ChFzsqf4vcqRBWTFWYge01IOnCuAsyKw/edit?usp=sharing,
 Filip Procházka,Kotlin a Android,,,https://docs.google.com/presentation/d/1_NitWpWQSQewhs_CYS6XgdHHPDploVV_lV2ds-_Ik28/edit?usp=sharing,
-Pavel Jetenský,OpenCV a Java - jak na to,,,,
+Pavel Jetenský,OpenCV a Java - jak na to,http://jetensky.net/mind/jos2017/,,,
 Martin Strejc,Service Virtualization,,,https://docs.google.com/presentation/d/1JnhmqPl31QZNyZMJccrTAm5_3L5QVWZOU4DcQpQqbc4/edit?usp=sharing,
-David Voňka,pravděpodobně TestContainers,,,https://docs.google.com/presentation/d/1Vr1E0MtRBIP4G7fQggf-MNX7l-woKWRYR-x0uf1eyak/edit?usp=sharing,
-Ondrej David,Asi neco ohledne dockeru a unit testovani,,,https://docs.google.com/presentation/d/1UKjZkU39myDjX3Sbumh-WuFiX5qXVzAyt100A1Q93ko/edit?usp=sharing,
-Jaroslav Holaň,Consumer Driven Contract testing,,,https://docs.google.com/presentation/d/1awAzUuI9da30QQr1Z3FtryrTmjIsJQlJOSy3u-Qtrx8/edit?usp=sharing, 
+David Voňka,TestContainers,https://www.linkedin.com/in/vonkad/,TestContainer umožňují snadné používání databází a Selenia v integračních testech,https://docs.google.com/presentation/d/1Vr1E0MtRBIP4G7fQggf-MNX7l-woKWRYR-x0uf1eyak/edit?usp=sharing,
+Ondrej David,Docker nejen v CI,,Výhody buildování projektu v Dockeru. Jak na build a testování v Dockeru pro CI (Continuous Integration) a jak využít Docker-in-Docker pro testy v rámci buildu.,https://docs.google.com/presentation/d/1UKjZkU39myDjX3Sbumh-WuFiX5qXVzAyt100A1Q93ko/edit?usp=sharing,
+Jaroslav Holaň,Consumer Driven Contract testing,https://twitter.com/jaroslavholan,Lehký úvod do kontraktového testování pomocí Pact.io,https://docs.google.com/presentation/d/1awAzUuI9da30QQr1Z3FtryrTmjIsJQlJOSy3u-Qtrx8/edit?usp=sharing, 
 Tomas Latal,Elm - snadna cesta do funkcionalniho sveta,,,,
-Jan Horalík,Bezpečnostní skenery webových aplikací v cloudu,,,https://www.slideshare.net/secret/A3jYf4xonXqGqt,
-Martin Stiborský,Terraform - infrastruktura je taky kód,,,https://docs.google.com/presentation/d/1RGm2znGOkoJAUoy58kJ2B5JYOG17EOG_lDq_Ao5qQoU/edit?usp=sharing,
+Jan Horalík,Bezpečnostní skenery webových aplikací v cloudu,https://www.linkedin.com/in/janhoralik/,"Porovnání několika cloudových skennerů webových aplikací, jejich výhody a nevýhody.",https://www.slideshare.net/secret/A3jYf4xonXqGqt,
+Martin Stiborský,Terraform - infrastruktura je taky kód,https://twitter.com/stibi,,https://docs.google.com/presentation/d/1RGm2znGOkoJAUoy58kJ2B5JYOG17EOG_lDq_Ao5qQoU/edit?usp=sharing,
 Filip Sedlák,"IoT platforma pro neuronové sítě snadno a rychle
 
-Jak se dá v prostředí startupu, kde je na všechno málo času, spravovat malá zařízení na nepřístupných místech? Povím vám o tom, jak se dá takové zařízení rychle a automatizovaně oživit a poté jej připojit přes WiFi, LTE nebo Ethernet. Také o tom udělat na dálku hromadně update softwaru, získávat ze zařízení automaticky data a bezpečně se na něj připojit a debugovat. To všechno za pomoci open source technologií a tak, že jednotlivé části lze vyměnit, když vzrostou nároky na platformu.",,,https://docs.google.com/presentation/d/1mw1OVNiKsr6JEWd9PoULwwrbkCWijMs2067l_YW2T_Y/edit?usp=sharing,
-David Ondřich,"Perl 6, MoarVM, budoucnost – má smysl se učit „nový“ Perl?",,,https://www.slideshare.net/dondrich/perl-6-jopenspacecz-2017,
+Jak se dá v prostředí startupu, kde je na všechno málo času, spravovat malá zařízení na nepřístupných místech? Povím vám o tom, jak se dá takové zařízení rychle a automatizovaně oživit a poté jej připojit přes WiFi, LTE nebo Ethernet. Také o tom udělat na dálku hromadně update softwaru, získávat ze zařízení automaticky data a bezpečně se na něj připojit a debugovat. To všechno za pomoci open source technologií a tak, že jednotlivé části lze vyměnit, když vzrostou nároky na platformu.",http://www.sedlakovi.org/,,https://docs.google.com/presentation/d/1mw1OVNiKsr6JEWd9PoULwwrbkCWijMs2067l_YW2T_Y/edit?usp=sharing,
+David Ondřich,"Perl 6, MoarVM, budoucnost – má smysl se učit „nový“ Perl?",http://dond.cz/,"Základní vlastnosti Perlu 6 a důvody, proč se zabývat obskurním skriptovacím jazykem, který „nemá budoucnost“",https://www.slideshare.net/dondrich/perl-6-jopenspacecz-2017,
 Vladimír Oraný,"Excel in Java
 
-Generování Excelů v Javě nemusí být utrpení.",,,http://slides.com/musketyr/exceluj-v-jave,
-Radim Kubacki,Not Invented Here syndrom,,,https://docs.google.com/presentation/d/1Ci1eGn9CocR2cPnZsXtrilWjb9aTI5m7enl64fv-9Nc/edit?usp=sharing,
-Ivo Musil,"Dobře volte technologie, zanedlouho totiž budou ""legacy""",,,,
-Petr Hamerník,Generování textu (natural language generation - NLG),,,https://www.dropbox.com/s/17et4h38ahs3xkl/2017-10-jOpenSpace-NLG-PetrHamernik.ppt?dl=0,
-Tomáš Hubálek,Pět tipů pro monetizaci mobilních aplikací,,,https://docs.google.com/presentation/d/1Gt8tj_FYlq0imEXOMHVViPt2CLEA4pybp85IY1flwUg/edit?usp=sharing,
-MIlan Lempera,"něco o jazycích jako takových, typových systémech, paradigmatech a mýtech okolo nich.",,,https://drive.google.com/file/d/0Bwx2-KV3tgkMMnhTTTBZSHlGWnM/view?usp=sharing,
-Roman Pichlik,Neco technickeho nebo o leadershipu pripadne sportovni tema,,,https://drive.google.com/file/d/0B77zOXbegofYamZsSjBwRTdyb0k/view?usp=sharing,
+Generování Excelů v Javě nemusí být utrpení.",http://www.orany.cz/,,http://slides.com/musketyr/exceluj-v-jave,
+Radim Kubacki,Not Invented Here syndrom,https://twitter.com/radimk,,https://docs.google.com/presentation/d/1Ci1eGn9CocR2cPnZsXtrilWjb9aTI5m7enl64fv-9Nc/edit?usp=sharing,
+Ivo Musil,"Dobře volte technologie, zanedlouho totiž budou ""legacy""",https://twitter.com/ivoshm,,,
+Petr Hamerník,Generování textů v přirozeném jazyce,https://twitter.com/PetrHamernik,"Jak vytvořit systém, který ze strukturovaných dat generuje texty v přirozeném jazyce. Ukážu možnou architekturu takového systému i na konkrétním projektu: systém pro tvorbu novinových článků popisující jednotlivá sportovní utkání (společný projekt Geneea a nakladatelství Economia). Články jsou generovány na základě strukturovaných dat o událostech na hřišti a dat v databázích, jakou je například znalostní báze Wikidata. V této fázi projektu jde pouze o fotbalové zápasy, ale v blízké budoucnosti bude systém rozšířen na další sporty a výhledově také na zprávy o počasí a zprávy z burzy.",https://www.dropbox.com/s/17et4h38ahs3xkl/2017-10-jOpenSpace-NLG-PetrHamernik.ppt?dl=0,
+Tomáš Hubálek,Pět tipů pro monetizaci mobilních aplikací,https://www.linkedin.com/in/thubalek/,Jak přistupovat chytře k monetizace vaší aplikace na Google Play.,https://docs.google.com/presentation/d/1Gt8tj_FYlq0imEXOMHVViPt2CLEA4pybp85IY1flwUg/edit?usp=sharing,
+MIlan Lempera,Jazyky a typy,https://twitter.com/milanlempera,"Programátoři mají často sklon vnímat některé aspekty programovacích jazyků černobíle. Jedním z typických příkladů jsou typové systémy programovacích jazyků. Pojďme se na problematicku podívat více věcně a ukázat si pár vlastností, podle kterých můžeme typovost jazyků snadno kategorizovat.",https://drive.google.com/file/d/0Bwx2-KV3tgkMMnhTTTBZSHlGWnM/view?usp=sharing,
+Roman Pichlik,"
+Proč jsem přestal programovat a nelituji s podtitulem lead or follow",https://dagblog.cz/,"Proč jsem nechtěl býti krouhačem, který si optimalizuje své kruhadlo a drátěné rukavice, když produkt stojí za starou bačkoru. K čemu kupy zelí, když si knedlo zelo vepřo nikdo nekoupí. Jsem příliš stár, abych dělal svojí stopadesátou třetí implementaci data access vrstvy. A že až se tu sejdeme za deset let, po programátorech toho věku (50) už neštěkne ani pes.",https://drive.google.com/file/d/0B77zOXbegofYamZsSjBwRTdyb0k/view?usp=sharing,
 Jan Novotný,Neuralink,https://blog.novoj.net,"Co pro nás chystá Elon Musk se svým novým projektem Neuralink? Jaká je jeho motivace se společnostmi Tesla, SpaceX a další? Jak by mohla vypadat naše budoucnost se zařízeními od Neuralinku? To vše se dozvíte v mojí přednášce.",http://novoj.github.io/reveal.js/index.html,
-Ladislav Prskavec,JAMStack,,,"https://speakerdeck.com/abtris/jamstack, https://blog.prskavec.net/blog/2017/10/jopenspace-2017-a-moje-p%C5%99edn%C3%A1%C5%A1ka-o-jamstacku/",
-Anastázie Sedláková,ccccccgerbiljnljctltbchcrkgrrvbddtcjbuevccif,,,https://docs.google.com/presentation/d/1tA1QnIuVJ7X31jXywpjQdZ1HCzUlFxZmmBYQZfwLl-0/edit#slide=id.p,
-Alois Holub,"Návštěva v Google, Facebook, Apple",,,https://docs.google.com/presentation/d/1vf7LZOTn9yzbBQ4tuMC_Y5tFK4jQION6cpGBeteSQ6I/edit?usp=sharing,
-Jiri Fabian,,,,,
-Michal Těhník,6 weeks cycles,,,https://docs.google.com/presentation/d/1ZWNWdCjI-3LHHzG1ne8I1ZR3Hhl2hZO7pSaHNHiK_hU/edit,
-Lukáš Křečan,Theory of Constraints pro zelenáče,,,https://drive.google.com/file/d/0BxY-qaWoIbe5NlV3LUtsZEJua00/view?usp=sharing,
-Ondra Nekola,"Scala (Java 8, Java 9...) for the impatient
-Haskell Programming from First Principles http://haskellbook.com/
-Mastering Bitcoin
-Proofs and Refutations
-Anatém
-Anihilace
-Problém tří těles",,,,
-Petr Ferschmann,,,,https://docs.google.com/presentation/d/1cApBr3-vNvWDu55cuJNbCoy8yk46NLRDGN-3lWeK9kU/edit?usp=sharing,
-Michal Franc,Loxone - chytrý dům (inteligentní elektroinstalaci bych znovu nechtel VOL II),,,https://docs.google.com/presentation/d/e/2PACX-1vQOC9i8KESfq18vtyv7gqgGRoQ_kZpMrrIvKvKanEPxYSWqEkG3R6Mgyk3i4OsFtNjsxWqWEl3ER1og/pub?start=false&loop=false&delayms=3000,
-Vojtech Ruzicka,Detecting dependencies with known security vulnerabilities,,,https://www.dropbox.com/s/s6czbfzz9r6jiez/ruzicka%20-%20Detekce%20znamych%20zranitelnosti.pptx?dl=0,
-Pavel Lahoda,User Management and Security,,,,
-Petr Juza,,,,,
+Ladislav Prskavec,JAMStack,https://blog.prskavec.net/,,"https://speakerdeck.com/abtris/jamstack, https://blog.prskavec.net/blog/2017/10/jopenspace-2017-a-moje-p%C5%99edn%C3%A1%C5%A1ka-o-jamstacku/",
+Anastázie Sedláková,Webové aplikace pro vizualizaci dat,http://www.sedlakovi.org/,Ukazka dvou frameworků: Shiny(R) a Dash (Python) pro rychlé vytvoření vizualizačních aplikací.,https://docs.google.com/presentation/d/1tA1QnIuVJ7X31jXywpjQdZ1HCzUlFxZmmBYQZfwLl-0/edit#slide=id.p,
+Alois Holub,"Návštěva v Google, Facebook, Apple",https://twitter.com/aloicz,,https://docs.google.com/presentation/d/1vf7LZOTn9yzbBQ4tuMC_Y5tFK4jQION6cpGBeteSQ6I/edit?usp=sharing,
+Jiri Fabian,Bionicking,http://www.jirifabian.net/wordpress/,,,
+Michal Těhník,6 weeks cycles,http://mictech.cz/,,https://docs.google.com/presentation/d/1ZWNWdCjI-3LHHzG1ne8I1ZR3Hhl2hZO7pSaHNHiK_hU/edit,
+Lukáš Křečan,Theory of Constraints pro zelenáče,https://blog.krecan.net/,,https://drive.google.com/file/d/0BxY-qaWoIbe5NlV3LUtsZEJua00/view?usp=sharing,
+Ondra Nekola,"Nad knihami
+",http://www.nekola.cz,"Scala (Java 8, Java 9...) for the impatient
+Haskell Programming from First Principles http://haskellbook.com/ 
+Mastering Bitcoin 
+Proofs and Refutations 
+Anatém 
+Anihilace 
+Problém tří těles",,
+Petr Ferschmann,AWS lamda,https://www.dativery.com/cs/,,https://docs.google.com/presentation/d/1cApBr3-vNvWDu55cuJNbCoy8yk46NLRDGN-3lWeK9kU/edit?usp=sharing,
+Michal Franc,Loxone - chytrý dům (inteligentní elektroinstalaci bych znovu nechtel VOL II),https://twitter.com/michalfranc,,https://docs.google.com/presentation/d/e/2PACX-1vQOC9i8KESfq18vtyv7gqgGRoQ_kZpMrrIvKvKanEPxYSWqEkG3R6Mgyk3i4OsFtNjsxWqWEl3ER1og/pub?start=false&loop=false&delayms=3000,
+Vojtech Ruzicka,Detecting dependencies with known security vulnerabilities,http://vojtechruzicka.com/,"Anotace: V dnešní době tvoří naprostou většinu aplikací frameworky a knihovny třetích stran. Tyto vnější závislosti často obsahují známé bezpečnostní zranitelnosti, které jsou poté opraveny v pozdějších verzích. Pojďme si ukázat, kde najít databáze takovýchto zranitelností a jak automaticky detekovat, že naše aplikace obsahuje zranitelný kód. Dále jak tuto detekci integrovat s build procesem aplikace, continuous integration nebo SonarQube statickou analýzou kódu.",https://docs.google.com/presentation/d/1FpBAB79MqEBww3lM7fpmUhup4KbA_yD3xYEQHEyrVXE/edit?usp=sharing,
+Pavel Lahoda,User Management and Security,https://twitter.com/lahoda,,,
+Petr Juza,Hluboká práce,https://twitter.com/pjuza,,,
