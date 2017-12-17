@@ -18,9 +18,8 @@ jOpenSpace vznikla v roce 2008 nápadem Michala Šrajera (Inmite, Avast, Happine
 Maximální počet účastníků do budoucna je 42. S každým rokem
 je o konferenci větší a větší zájem. Posuďte sami:
 
-- 2017: 42 účastníků, 1 žena
-TODO uvádět kolik z účastníků jsou ženy?
-- 2016: 38 účastníků, 2 ženy
+- 2017: 42 účastníků
+- 2016: 38 účastníků
 - 2015: 22 účastníků (tady jsme bohužel měli souběh s WebExpo konferencí)
 - 2014: 31 účastníků
 - 2013: 29 účastníků
@@ -32,8 +31,6 @@ startupové scény, programátoři, které programování baví - jednoduše lid
 
 Na základě předchozích zkušeností a očekávání partnerů jsme se rozhodli vypsat různé úrovně partnerství, abyste měli
 dopředu představu, na kolik by vás partnerství vyšlo a jaké výhody by Vám z toho plynuly.
-
-TODO kdyz nad tim vic a vic premyslim, je toto rozdeleni partneru ne-konferencni?
 
 ### Zlaté partnerství
 **Částka: 25000,- Kč**
