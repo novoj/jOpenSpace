@@ -57,10 +57,11 @@ year: 2017
                <h3>{{ member.Nazev }}</h3>
                {% if member.Anotace != nil && member.Anotace != "" %}<p class="articleContent">{{ member.Anotace }}</p>{% endif %}
                {% if member.Bio != nil && member.Bio != "" %}<p class="authorInfo"><a href="{{ member.Bio }}">{{ member.Bio }}</a></p>{% endif %}
+               {% if member.YouTube != nil && member.YouTube != "" %}<iframe width="560" height="315" src="{{ member.YouTube }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>{% endif %}
             </div>
             <ul class="clr articleMedia">
-               {% if member.Url != nil && member.Url != "" %}<li><a href="{{ member.Url }}">Prezentace</a></li>{% endif %}
-               <!--<li class="videocast"><a href="https://youtu.be/sXSzVS6gPvo" target="_blank">Video</a></li>-->
+               {% if member.Url != nil && member.Url != "" %}<li><a href="{{ member.Url }}" target="_blank">Prezentace</a></li>{% endif %}
+               {% if member.YouTube != nil && member.YouTube != "" %}<li class="videocast"><a href="{{ member.YouTube }}" target="_blank">Video</a></li>{% endif %}
             </ul>
          </article>
          {% endfor %}
