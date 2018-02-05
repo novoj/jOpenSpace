@@ -57,7 +57,9 @@ year: 2017
                <h3>{{ member.Nazev }}</h3>
                {% if member.Anotace != nil && member.Anotace != "" %}<p class="articleContent">{{ member.Anotace }}</p>{% endif %}
                {% if member.Bio != nil && member.Bio != "" %}<p class="authorInfo"><a href="{{ member.Bio }}">{{ member.Bio }}</a></p>{% endif %}
-               {% if member.YouTube != nil && member.YouTube != "" %}<iframe width="560" height="315" src="{{ member.YouTube }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>{% endif %}
+               <div style="text-align: center">
+                  {% if member.YouTube != nil && member.YouTube != "" %}<iframe width="560" height="315" src="{{ member.YouTube }}" style="margin-top: 2em;" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>{% endif %}
+               </div>
             </div>
             <ul class="clr articleMedia">
                {% if member.Url != nil && member.Url != "" %}<li><a href="{{ member.Url }}" target="_blank">Prezentace</a></li>{% endif %}
