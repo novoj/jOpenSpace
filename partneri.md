@@ -70,14 +70,16 @@ Jakmile se dohodneme na partnerství, budeme od vás potřebovat:
 - fakturační adresu, IČ, DIČ, text faktury (typicky ubytování, pronájem konferenční místnosti, občerstvení)
 - logo a krátký text (1-2 odstavce) pro uvedení na [www.jopenspace.cz](http://www.jopenspace.cz)
 - podklady pro medailonek v [Kafemlejnek.tv](https://kafemlejnek.TV) ... vlastí text si z podkladů připravíme sami
-- roll-up, swag, dárkové předměty před vlastním konáním akce
+- roll-up, swag, dárkové předměty před vlastním konáním akce, prosíme o zaslání alespoň měsíc před konáním ne-konference
 
 Následně proběhne:
 
+- výběr místa konání, místo a datum vybírá komunita hlasováním z předem vybraných možností pořadateli. Vybíráme místa, která jsou dostupná ze všech velkých měst do tří hodin autem. Ne-konference se 
+koná první nebo druhý týden v říjnu.
+- vystavení vašeho loga a představení partnera na [www.jopenspace.cz](http://www.jopenspace.cz)
 - hotelové zařízení vystaví zálohovou fakturu na základě, které proběhne platba (jopenspace.cz nemá IČ a proto částky
   vždy fakturuje hotelové zařízení - vy tak můžete mít jistotu, že prostředky jsou skutečně účelně využity)
-- po zaplacení vystaví hotel fakturu - daňový doklad
-- vystavení vašeho loga na [www.jopenspace.cz](http://www.jopenspace.cz)
+- po zaplacení vystaví hotel fakturu - daňový doklad o zaplacení zálohy
 - natočení medailonku a zveřenění na [www.jopenspace.cz](http://www.jopenspace.cz) před akcí, zároveň jako úvodník jednoho z následujících
   dílů [Kafemlejnek.tv](https://kafemlejnek.TV)
 - tweetnutí partnerství v období 1-3 týdny před akcí
