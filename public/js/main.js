@@ -50,11 +50,10 @@ $(document).ready(function() {
 
     /* mapka */
     $('#mapCanvas').gmap().bind('init', function(ev, map) {
-
-        $('#mapCanvas').gmap('addMarker', {'position': '49.461988, 15.242486', 'bounds': true}).click(function() {
-            $('#mapCanvas').gmap('openInfoWindow', {'content': '<div style="text-wrap: none"><strong>Hotel Farma</strong><br/>GPS: 49°27\'43.2"N 15°14\'33.0"E<br/><a href="http://www.hotel-farma.cz/" target="_blank" class="mapAnchor">http://www.hotel-farma.cz/</a></div>'}, this);
+        $('#mapCanvas').gmap('addMarker', {'position': '49.6383333, 15.2991667', 'bounds': true}).click(function() {
+            $('#mapCanvas').gmap('openInfoWindow', {'content': '<div style="text-wrap: none"><strong>Hotel Luna</strong><br/>GPS: 49°38\'18"N 15°17\'57"E<br/><a href="https://www.hotelluna.cz/" target="_blank" class="mapAnchor">https://www.hotelluna.cz/</a></div>'}, this);
         });
-        $('#mapCanvas').gmap('option', 'zoom', 14);
+        $('#mapCanvas').gmap('option', 'zoom', 12);
     });
 
     /* přepínání tabů */
