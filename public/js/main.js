@@ -74,6 +74,9 @@ $(document).ready(function() {
         return false;
     };
 
+    /* sponzoři */
+	stirSponsors($("#sponsors"));
+
 });
 
 function stirSponsors(ul) {
