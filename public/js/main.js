@@ -6,7 +6,7 @@ document.createElement('article');
 document.createElement('figure');
 
 var recalculateColumns = function() {
-    if($(window).width() > 767) {
+    if(767 < $(window).width()) {
         var topContentHeightArr = new Array();
         $('#topContent .twoCols > *').each(function () {
             var height = $(this).outerHeight(false);
@@ -31,9 +31,9 @@ $(document).ready(function() {
     /* podcasty a videa - jiné zobrazení při jedné a více než dvou položkách */
     $('.articleMedia').each(function() {
         var size = $('>li', this).size();
-        if ( size == 1 ) {
+        if ( 1 === size ) {
             $(this).addClass('oneItem');
-        } else if ( size > 2 ) {
+        } else if ( 2 < size ) {
             $(this).addClass('moreItems');
         }
     });
@@ -86,7 +86,7 @@ function stirSponsors(ul) {
     }
     ul.find("li div").each(function() {
         var jThis = $(this);
-        if (jThis.find("p").length > 1) {
+        if (1 < jThis.find("p").length) {
             var original = jThis.html();
             var text = jThis.find("p:first").html();
             var lastDot = text.lastIndexOf('.');
@@ -94,14 +94,14 @@ function stirSponsors(ul) {
             jThis.html(text);
             jThis.data("value", "shortened");
             var expand = function () {
-                if(jThis.data("value") == "shortened") {
+                if("shortened" == jThis.data("value")) {
                     jThis.html(original);
                     jThis.data("value", "original");
                     recalculateColumns();
                 }
             };
             var shorten = function () {
-                if(jThis.data("value") == "original") {
+                if("original" == jThis.data("value")) {
                     jThis.html(text);
                     jThis.data("value", "shortened");
                     recalculateColumns();
