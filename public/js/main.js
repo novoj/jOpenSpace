@@ -49,7 +49,7 @@ $(document).ready(function() {
     });
 
     /* mapka */
-    $('#mapCanvas').gmap().bind('init', function(ev, map) {
+	$('#mapCanvas').gmap({'center':'49.6383333, 15.2991667'}).bind('init', function(ev, map) {
         $('#mapCanvas').gmap('addMarker', {'position': '49.6383333, 15.2991667', 'bounds': true}).click(function() {
             $('#mapCanvas').gmap('openInfoWindow', {'content': '<div style="text-wrap: none"><strong>Hotel Luna</strong><br/>GPS: 49°38\'18"N 15°17\'57"E<br/><a href="https://www.hotelluna.cz/" target="_blank" class="mapAnchor">https://www.hotelluna.cz/</a></div>'}, this);
         });
