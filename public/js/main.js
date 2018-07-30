@@ -100,14 +100,14 @@ function stirSponsors(ul) {
                 if("shortened" == jThis.data("value")) {
                     jThis.html(original);
                     jThis.data("value", "original");
-                    recalculateColumns();
+                    //recalculateColumns();
                 }
             };
             var shorten = function () {
                 if("original" == jThis.data("value")) {
                     jThis.html(text);
                     jThis.data("value", "shortened");
-                    recalculateColumns();
+                    //recalculateColumns();
                 }
             };
             jThis.hover(expand, shorten);
