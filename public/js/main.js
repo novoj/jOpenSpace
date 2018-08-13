@@ -7,6 +7,8 @@ document.createElement('figure');
 
 $(document).ready(function() {
 
+	hs.numberOfImagesToPreload = 0;
+
     /* podcasty a videa - jiné zobrazení při jedné a více než dvou položkách */
     $('.articleMedia').each(function() {
         var size = $('>li', this).size();
