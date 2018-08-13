@@ -5,28 +5,7 @@ document.createElement('nav');
 document.createElement('article');
 document.createElement('figure');
 
-var recalculateColumns = function() {
-    if(767 < $(window).width()) {
-        var topContentHeightArr = new Array();
-        $('#topContent .twoCols > *').each(function () {
-            var height = $(this).outerHeight(false);
-            topContentHeightArr.push(height);
-            console.log(height);
-        });
-        if(topContentHeightArr[1] < topContentHeightArr[0]) {
-            $('#topContent .twoCols > .fr').css({'height': topContentHeightArr[0] + 'px'});
-            $('#topContent .twoCols > .fl').css({'height': 'auto'});
-        } else {
-            $('#topContent .twoCols > .fr').css({'height': 'auto'});
-            $('#topContent .twoCols > .fl').css({'height': topContentHeightArr[1] + 'px'});
-        }
-    }
-};
-
 $(document).ready(function() {
-
-	/* topContent - výška pravého sloupce stejná jako levého */
-	setTimeout(recalculateColumns, 100);
 
     /* podcasty a videa - jiné zobrazení při jedné a více než dvou položkách */
     $('.articleMedia').each(function() {
@@ -100,14 +79,12 @@ function stirSponsors(ul) {
                 if("shortened" == jThis.data("value")) {
                     jThis.html(original);
                     jThis.data("value", "original");
-                    //recalculateColumns();
                 }
             };
             var shorten = function () {
                 if("original" == jThis.data("value")) {
                     jThis.html(text);
                     jThis.data("value", "shortened");
-                    //recalculateColumns();
                 }
             };
             jThis.hover(expand, shorten);

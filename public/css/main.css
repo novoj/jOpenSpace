@@ -90,7 +90,7 @@ ul.centered > li { display: inline-block; list-style: none; vertical-align: midd
 
 /* horní obsah */
 #topContent { background-color: #f7f6ee; position: relative; z-index: 1; overflow: hidden; padding-bottom: 4px;}
-#topContent .twoCols { box-shadow: 0 2px 4px #aaa;}
+#topContent .twoCols { box-shadow: 0 2px 4px #aaa; display: flex; flex-flow: wrap;}
 #topContent .twoCols > .fl { width: 750px; padding: 63px 0; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
 #topContent .twoCols > .fl > * { padding: 0 100px;}
 #topContent .twoCols > .fl .motive { padding: 0; margin: 54px 0 52px 0;}
