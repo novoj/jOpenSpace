@@ -1,7 +1,9 @@
 ## Organizační informace
 
 Ahoj nekonferenčníci,
-Akce se nám blíží, prosím, toto čtěte opravdu celé.
+
+akce se nám blíží, prosím, toto čtěte opravdu celé.
+
 Koutů máme v ČR docela dost, tak bacha při zadávání místa do navigace. Kouty 77 vedle Kamenné Lhoty a Ledče nad
 	Sázavou. [Mapa zde.](https://en.mapy.cz/s/36d0H") Monitorované parkoviště je přímo vedle hotelu.
 
