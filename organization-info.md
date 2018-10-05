@@ -5,7 +5,7 @@ Ahoj nekonferenčníci,
 akce se nám blíží, prosím, toto čtěte opravdu celé.
 
 Koutů máme v ČR docela dost, tak bacha při zadávání místa do navigace. Kouty 77 vedle Kamenné Lhoty a Ledče nad
-	Sázavou. [Mapa zde.](https://en.mapy.cz/s/36d0H") Monitorované parkoviště je přímo vedle hotelu.
+Sázavou. [Mapa zde.](https://en.mapy.cz/s/36d0H") Monitorované parkoviště je přímo vedle hotelu.
 
 Pokud nastane jakýkoliv problém a myslíte si, že s ním můžeme pomoci, zavolejte nám.
 
@@ -30,6 +30,12 @@ V minulosti se nám osvědčilo, pokud byly slajdy připravené a dostupné on-l
 někde zpřístupnit a dopsat odkaz do seznamu, který šel e-mailem.
 
 Pokud jsme se domluvili na platbě na místě, tak to dořešíme během soboty.
+
+## Důležité odkazy
+
+[Seznam přednášek](https://goo.gl/rPZ11Z)
+
+Doplňte prosím URL na své přednášky on-line, abstrakt a svůj promo link.
 
 ## Objednávky jídel
 
