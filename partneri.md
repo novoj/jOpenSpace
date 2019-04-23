@@ -78,7 +78,7 @@ Následně proběhne:
 koná první nebo druhý týden v říjnu.
 - vystavení vašeho loga a představení partnera na [www.jopenspace.cz](http://www.jopenspace.cz)
 - hotelové zařízení vystaví zálohovou fakturu na základě, které proběhne platba (jopenspace.cz nemá IČ a proto částky
-  vždy fakturuje hotelové zařízení - vy tak můžete mít jistotu, že prostředky jsou skutečně účelně využity)
+  vždy fakturuje hotelové zařízení - vy tak můžete mít jistotu, že prostředky jsou skutečně účelně využity), další možností je platba první den konání jOpenspace na místě přímo hotelovému zařízení
 - po zaplacení vystaví hotel fakturu - daňový doklad o zaplacení zálohy
 - natočení medailonku a zveřenění na [www.jopenspace.cz](http://www.jopenspace.cz) před akcí, zároveň jako úvodník jednoho z následujících
   dílů [Kafemlejnek.tv](https://kafemlejnek.TV)
