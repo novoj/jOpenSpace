@@ -30,9 +30,9 @@ $(document).ready(function() {
     });
 
     /* mapka */
-	$('#mapCanvas').gmap({'center':'49.6383333, 15.2991667'}).bind('init', function(ev, map) {
-        $('#mapCanvas').gmap('addMarker', {'position': '49.6383333, 15.2991667', 'bounds': true}).click(function() {
-            $('#mapCanvas').gmap('openInfoWindow', {'content': '<div style="text-wrap: none"><strong>Hotel Luna</strong><br/>GPS: 49°38\'18"N 15°17\'57"E<br/><a href="https://www.hotelluna.cz/" target="_blank" class="mapAnchor">https://www.hotelluna.cz/</a></div>'}, this);
+	$('#mapCanvas').gmap({'center':'49.1867294, 15.4482842'}).bind('init', function(ev, map) {
+        $('#mapCanvas').gmap('addMarker', {'position': '49.1867294, 15.4482842', 'bounds': true}).click(function() {
+            $('#mapCanvas').gmap('openInfoWindow', {'content': '<div style="text-wrap: none"><strong>Hotel Antoň Telč</strong><br/>GPS: 49.1867294N, 15.4482842E <br/><a href="https://www.hotel-anton.cz/" target="_blank" class=u"mapAnchor">https://www.hotel-anton.cz/</a></div>'}, this);
         });
         $('#mapCanvas').gmap('option', 'zoom', 14);
     });
