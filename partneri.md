@@ -36,7 +36,6 @@ dopředu představu, na kolik by vás partnerství vyšlo a jaké výhody by Vá
 **Částka: 25000,- Kč**
 
 - možnost roll-up v konferenční místnosti v záběru kamer
-- upoutávka v medailonku [Kafemlejnek.tv](https://kafemlejnek.TV) videocastu
 - logo v pravém sloupci [www.jopenspace.cz](http://www.jopenspace.cz)
 - tweet z účtu [@jopenspace](https://twitter.com/jopenspace)
 - osobní poděkování na uvítacím večeru jOpenSpace
@@ -47,7 +46,6 @@ dopředu představu, na kolik by vás partnerství vyšlo a jaké výhody by Vá
 **Částka: 10000,- Kč**
 
 - možnost roll-up v konferenční místnosti
-- krátká upoutávka v medailonku [Kafemlejnek.tv](https://kafemlejnek.TV) videocastu
 - logo v pravém sloupci [www.jopenspace.cz](http://www.jopenspace.cz)
 - tweet z účtu [@jopenspace](https://twitter.com/jopenspace)
 - osobní poděkování na uvítacím večeru jOpenSpace
