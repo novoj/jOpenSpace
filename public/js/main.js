@@ -30,12 +30,31 @@ $(document).ready(function() {
     });
 
     /* mapka */
-	$('#mapCanvas').gmap({'center':'49.1867294, 15.4482842'}).bind('init', function(ev, map) {
+	/*$('#mapCanvas').gmap({'center':'49.1867294, 15.4482842'}).bind('init', function(ev, map) {
         $('#mapCanvas').gmap('addMarker', {'position': '49.1867294, 15.4482842', 'bounds': true}).click(function() {
             $('#mapCanvas').gmap('openInfoWindow', {'content': '<div style="text-wrap: none"><strong>Hotel Antoň Telč</strong><br/>GPS: 49.1867294N, 15.4482842E <br/><a href="https://www.hotel-anton.cz/" target="_blank" class=u"mapAnchor">https://www.hotel-anton.cz/</a></div>'}, this);
         });
         $('#mapCanvas').gmap('option', 'zoom', 14);
-    });
+    });*/
+    var center = SMap.Coords.fromWGS84(49.1867294, 15.4482842);
+    var m = new SMap(JAK.gel("m"), center, 13);
+    m.addDefaultLayer(SMap.DEF_BASE).enable();
+    m.addDefaultControls();
+
+    var layer = new SMap.Layer.Marker();
+    m.addLayer(layer);
+    layer.enable();
+
+    var card = new SMap.Card();
+    card.getHeader().innerHTML = "<strong>Hotel Antoň Telč</strong>";
+    card.getBody().innerHTML = "<div style=\"text-wrap: none\">GPS: 49.1867294N, 15.4482842E <br/><a href=\"https://www.hotel-anton.cz/\" target=\"_blank\" class=\"mapAnchor\">https://www.hotel-anton.cz/</a></div>";
+
+    var options = {
+        title: "Hotel Antoň Telč"
+    };
+    var marker = new SMap.Marker(center, "myMarker", options);
+    marker.decorate(SMap.Marker.Feature.Card, card);
+    layer.addMarker(marker);
 
     /* přepínání tabů */
     $("#bottomContentCnt").organicTabs();
