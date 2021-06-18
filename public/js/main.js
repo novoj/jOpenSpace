@@ -36,7 +36,7 @@ $(document).ready(function() {
         });
         $('#mapCanvas').gmap('option', 'zoom', 14);
     });*/
-    var center = SMap.Coords.fromWGS84(49.1867294, 15.4482842);
+    var center = SMap.Coords.fromWGS84(15.4482842, 49.1867294);
     var m = new SMap(JAK.gel("mapCanvas"), center, 13);
     m.addDefaultLayer(SMap.DEF_BASE).enable();
     m.addDefaultControls();
