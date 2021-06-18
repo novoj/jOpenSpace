@@ -147,6 +147,10 @@ ul.centered > li { display: inline-block; list-style: none; vertical-align: midd
 .gallery li a, .gallery li a img { display: block; opacity: .9;}
 .gallery li a:hover { opacity: 1;}
 
+/* mapy */
+
+#mapCanvas { z-index: -600 }
+
 /* other galleries */
 .otherGalleries { }
 .otherGalleries li { list-style: none; text-align: left; margin-bottom: 0;}
