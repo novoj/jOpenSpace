@@ -14,15 +14,18 @@ ne-konference za námi, nemůžeme si být nikdy jisti.
 
 ## Historie jOpenSpace
 
-jOpenSpace vznikla v roce 2008 nápadem Michala Šrajera (Inmite, Avast, Happiness at work) a, s výjimkou jednoho roku, se na ní setkává vždy od 20 do 42 účastníků.
-Maximální počet účastníků do budoucna je 42. S každým rokem
-je o konferenci větší a větší zájem. Posuďte sami:
+jOpenSpace vznikla v roce 2008 nápadem Michala Šrajera (Inmite, Avast, Happiness at work) a, s výjimkou jednoho roku, 
+se na ní setkává vždy od 20 do 42 účastníků. Maximální počet účastníků do budoucna je 42. S každým rokem je o konferenci 
+větší a větší zájem. Posuďte sami:
 
+- 2019: 37 účastníků
+- 2018: 42 účastníků
 - 2017: 42 účastníků
 - 2016: 38 účastníků
 - 2015: 22 účastníků (tady jsme bohužel měli souběh s WebExpo konferencí)
 - 2014: 31 účastníků
 - 2013: 29 účastníků
+- u starších ročníků se evidence nevedla
 
 Na ne-konferenci se tradičně setkávají zajímaví lidé českého IT průmyslu - bloggeři, podcasteři, zakládající členové
 startupové scény, programátoři, které programování baví - jednoduše lidé, které stojí za to potkat.  
