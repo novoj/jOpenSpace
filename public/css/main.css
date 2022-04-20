@@ -141,7 +141,7 @@ ul.centered > li { display: inline-block; list-style: none; vertical-align: midd
 .styledList li:last-of-type { margin-bottom: 0;}
 
 /* galerie */
-.gallery {}
+.gallery { text-align: center; }
 .gallery li { margin: 0 46px 36px 0;}
 .gallery li:nth-of-type(4n) { margin-right: 0;}
 .gallery li a, .gallery li a img { display: block; opacity: .9;}
@@ -159,6 +159,7 @@ ul.centered > li { display: inline-block; list-style: none; vertical-align: midd
 /* obsah tabů */
 .author { font-size: 1.389em; color: #64b49e; margin-bottom: 0;}
 .articleContent { margin-bottom: 32px;}
+.articleContent ul {padding-left: 2em;}
 .articleContent, .authorInfo { padding-left: 49px;}
 .authorInfo { margin-bottom: 0;}
 .articleContent:before { content: ""; position: absolute; left: 0; top: 0; width: 28px; height: 32px; background: url('design/sprites.png') 0 0 no-repeat;}

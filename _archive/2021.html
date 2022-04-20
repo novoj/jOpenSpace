@@ -31,11 +31,11 @@ year: 2021
             <div class="in">
                <p class="author">{{ member.Prednasejici }}</p>
                <h3>{{ member.Nazev }}</h3>
-               {% if member.Anotace != nil && member.Anotace != "" %}<p class="articleContent">{{ member.Anotace }}</p>{% endif %}
+               {% if member.Anotace != nil && member.Anotace != "" %}<p class="articleContent" style="padding-top: 2em;">{{ member.Anotace }}</p>{% endif %}
                {% if member.Bio != nil && member.Bio != "" %}<p class="authorInfo"><a href="{{ member.Bio }}">{{ member.Bio }}</a></p>{% endif %}
             </div>
             <ul class="clr articleMedia">
-               {% if member.Url != nil && member.Url != "" %}<li><a href="{{ member.Url }}" target="_blank">Prezentace</a></li>{% endif %}
+               {% if member.Url != nil && member.Url != "" %}<li><a href="{{ member.Url }}" target="_blank">Web</a></li>{% endif %}
                {% if member.YouTube != nil && member.YouTube != "" %}<li class="videocast"><a href="{{ member.YouTube }}" target="_blank">Video</a></li>{% endif %}
             </ul>
          </article>
