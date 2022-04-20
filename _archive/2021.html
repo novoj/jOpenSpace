@@ -31,7 +31,7 @@ year: 2021
             <div class="in">
                <p class="author">{{ member.Prednasejici }}</p>
                <h3>{{ member.Nazev }}</h3>
-               {% if member.Anotace != nil && member.Anotace != "" %}<p class="articleContent" style="padding-top: 2em;">{{ member.Anotace }}</p>{% endif %}
+               {% if member.Anotace != nil && member.Anotace != "" %}<div class="articleContent" style="padding-top: 2em;">{{ member.Anotace }}</div>{% endif %}
                {% if member.Bio != nil && member.Bio != "" %}<p class="authorInfo"><a href="{{ member.Bio }}">{{ member.Bio }}</a></p>{% endif %}
             </div>
             <ul class="clr articleMedia">
