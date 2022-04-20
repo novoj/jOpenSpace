@@ -1,0 +1,46 @@
+---
+title: jOpenSpace - ročník 2021
+year: 2021
+---
+
+<div id="year2021" class="galleryGroup">
+   <div class="in">
+      <h4 style="text-align: center">Mediální partneři {{title}}</h4>
+      <p style="text-align: center">
+            <a href="https://kafemlejnek.tv" target="_blank"><img src="public/images/sponsor/kafemlejnektv.png" alt="Kafemlejnek.TV"/></a>
+            <div>Zastavte se na kávu s Honzou Novotným a Petrem Ferschmannem a nic vás při tvorbě software nesemele. Od vývojařů přes designery, architekty až po zakladatele společností. Za kamerou stojí Tomáš Hodr.</div>
+      </p>
+
+      <h4 style="text-align: center">Fotogalerie {{title}}</h4>
+      <ul class="gallery clr">
+         <li><a href="../public/images/gallery/2021/detail/PXL_20211009_050810124.jpg" class="highslide" rel="highslide"><img src="../public/images/gallery/2021/thumbnail/PXL_20211009_050810124.jpg" alt="" /></a></li>
+         <li><a href="../public/images/gallery/2021/detail/PXL_20211009_052706757.jpg" class="highslide" rel="highslide"><img src="../public/images/gallery/2021/thumbnail/PXL_20211009_052706757.jpg" alt="" /></a></li>
+         <li><a href="../public/images/gallery/2021/detail/PXL_20211009_085034523.jpg" class="highslide" rel="highslide"><img src="../public/images/gallery/2021/thumbnail/PXL_20211009_085034523.jpg" alt="" /></a></li>
+         <li><a href="../public/images/gallery/2021/detail/PXL_20211009_085037740.jpg" class="highslide" rel="highslide"><img src="../public/images/gallery/2021/thumbnail/PXL_20211009_085037740.jpg" alt="" /></a></li>
+         <li><a href="../public/images/gallery/2021/detail/PXL_20211010_112101095.jpg" class="highslide" rel="highslide"><img src="../public/images/gallery/2021/thumbnail/PXL_20211010_112101095.jpg" alt="" /></a></li>
+      </ul>
+      <p style="text-align: center"><a href="https://photos.app.goo.gl/45yNT4PJZ3ay6RA87" target="_blank">Kompletní fotogalerie z akce</a></p>
+      <h4 style="text-align: center">Zápisky z konference</h4>
+      <div style="text-align: center;">
+         <a href="https://docs.google.com/document/d/1RgBnCP8gxfSgerphA-TVWe3FJkG4kmK26CwWky6IVEg/edit#">Google docs</a>,
+      </div>
+
+      <ul>
+         {% for member in site.data.Prednasky_2021 %}
+         <article>
+            <div class="in">
+               <p class="author">{{ member.Prednasejici }}</p>
+               <h3>{{ member.Nazev }}</h3>
+               {% if member.Anotace != nil && member.Anotace != "" %}<p class="articleContent">{{ member.Anotace }}</p>{% endif %}
+               {% if member.Bio != nil && member.Bio != "" %}<p class="authorInfo"><a href="{{ member.Bio }}">{{ member.Bio }}</a></p>{% endif %}
+            </div>
+            <ul class="clr articleMedia">
+               {% if member.Url != nil && member.Url != "" %}<li><a href="{{ member.Url }}" target="_blank">Prezentace</a></li>{% endif %}
+               {% if member.YouTube != nil && member.YouTube != "" %}<li class="videocast"><a href="{{ member.YouTube }}" target="_blank">Video</a></li>{% endif %}
+            </ul>
+         </article>
+         {% endfor %}
+      </ul>
+   </div>
+
+</div>

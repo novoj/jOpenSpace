@@ -1,0 +1,729 @@
+Prednasejici;Nazev;Bio;Anotace;Url;YouTube
+Jan Horalík;Kvantové poèítaèe;;"<ul>
+<li>vyuívá se znalostí quantové mechaniky<ul>
+<li>suprapozice, </li>
+<li>interference - mohou se zvıraznit a </li>
+<li>entanglement - schopnost provázat dvì èástice geograficky vzdálené</li>
+</ul>
+</li>
+<li>umoòují øešit exponenciálnì ryhchleji problémy neøešitelné jinım zpùsobem<ul>
+<li>RSA šifra - Shorùv algoritmus </li>
+<li>kdy bude prolomen bitcoin? </li>
+<li>vızkum materiálù - slouèenin, které jsou moné je velké mnoství, které není ani moné vyzkoušet a kvantové poèítaèe mohou bıt velmi efektivní v simulaci</li>
+</ul>
+</li>
+<li>hlavní problém - extrémní fyzikální podmínky a s tím spojenı šum<ul>
+<li>velkı pokrok v posledních letech</li>
+<li>odhad e za deset let dojde k velkému zlomu</li>
+</ul>
+</li>
+<li>kvantové obvody<ul>
+<li>u klasickıch obvodù máme hradla</li>
+<li>kvanmtové obvody jsou obecnìjší - vstupy a vıstupy nemusí bıt jen 0 / 1, uvauje se superpozice
+mìøení p zmizení superpozice se pøevede na 0,1</li>
+</ul>
+</li>
+<li>kvantovı stav qbitu <ul>
+<li>pøedstava koule v prostoru, severní pól 9, jinı 1, a kadı bod na této svéøe je validnım stavem.</li>
+<li>tento bot je moné vyjádøit dvojicí komplexních èísel</li>
+</ul>
+</li>
+<li>kvantové hradlo <ul>
+<li>násobí unitární maticí - abysme se stále pohybovali po povrchu koule ve validním stavu</li>
+<li>pauliho-X hradlo</li>
+<li>NOT </li>
+<li>CX - CNOT hradlo<ul>
+<li>kontrolované hradlo, dva vstupy dva vıstupy</li>
+<li>jeden vstup je kontolní - pracuje jen kdy je na nìm jednièka</li>
+</ul>
+</li>
+<li>Halamardovo hradlo <ul>
+<li>transformuje dva stavy do superpozice</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Kvantovı Hello World -sestavení obvodu</p>
+</li>
+<li><p>Spuštìní - na simulátoru, nebo na kvantovém poèítaèi</p>
+</li>
+<li><p>typicky se spouští mnohorkát kvùli šumu - aby statisticky vygeneroval správnı vısledek
+spuštìní na kvantovém poèítaèi</p>
+</li>
+<li><p>dostupnı prakticky zadarmo v kadém cloudu</p>
+</li>
+<li>praktickı pøíklad pouití je bezpeènost a kryptografie</li>
+</ul>
+";;https://youtu.be/pA8a0nLdKlU
+Kamil Ševeèek;ZX Spectrum;;"<ul>
+<li>23.dubna 2022 - vıroèí 40 let</li>
+<li>poèítaè se nerozpadl v prach, komunita nespí a vyrábí se klony</li>
+<li>v osobním volnu dìlá vıvoj na spectru</li>
+<li>má doma krásné muzeum ZX techniky a originálnho SW</li>
+</ul>
+<p>Èím to zaèalo </p>
+<ul>
+<li>23.dubna - 1982</li>
+<li>ZX Spectrum - Sir Clive Sinclair</li>
+<li>30.7. 1944 - 16.9. 2021</li>
+<li>Didaktik Gama</li>
+<li>Didaktik M - nejstabilnìjší klon</li>
+<li>Kompakt - s didketovkou</li>
+<li>90 léta - usnulo - na smetišti zadarmo</li>
+<li>Ben Heck - ZX Spectrum na nepájivém poli</li>
+<li>pomìrnì jednoduché</li>
+</ul>
+<p>Dnes jak se dìlají</p>
+<ul>
+<li>Diskrétní souèástky - old school, velkı problém s ula chipem</li>
+<li><p>Harlequin 128 - stavebnice z didkrétních souèástek </p>
+</li>
+<li><p>softwarová emulace - neemulují rozšiøující sbìrnici</p>
+</li>
+<li>v system on chip vytvoøená Spectrum emulace</li>
+<li>VEGA - krabièka která se pøipojí k televizi </li>
+<li>ZX Baremulator - raspberry pi emulator</li>
+</ul>
+<p>FPGA</p>
+<ul>
+<li>100% kompatibilní se Spectrem ale drahé</li>
+<li>ZX spectrum next - krásné zaøízení ale nedostupné</li>
+<li>Pøekvapivì velká komunita</li>
+</ul>
+<p>Oldcomp.cz</p>
+<ul>
+<li>Bytefest 2021 konference v Praze</li>
+<li>ZX Spectrum a Kamilovy projekty</li>
+<li>TV digitizer - Cinch composite - HDMI</li>
+<li>Plošinovka Dizzy - v Kotlinu</li>
+</ul>
+";;https://youtu.be/1fJy3fzri-M
+Lukáš Køeèan;Jak vyhrát diskusi na internetu;;"<ul>
+<li>Zesmìšnit </li>
+<li>Ukázat fakta</li>
+<li>Nenásilná cesta - </li>
+</ul>
+<p>Co vyvolává nepravda  na internetu - emoce - zlost frustraci</p>
+<ul>
+<li>vztek = strach / stud / bezmoc</li>
+</ul>
+<p>Postup </p>
+<ul>
+<li>ubrzdit automatickou reakci</li>
+<li>pochopit svoje pocity - proè mi to vadí</li>
+<li>pochopit co potøebuje ten druhı</li>
+<li>pobavit se o tom jak to udìlat spolu</li>
+<li><a href=""https://nenasilnakomunikace.org/"">https://nenasilnakomunikace.org/</a></li>
+</ul>
+<p>Kartièky</p>
+<ul>
+<li>stìejní pomùou pojmenovat svoje emoce</li>
+</ul>
+";;https://youtu.be/pu6e2Dlh0hQ
+Martin Talpa;Life 3.0;;"<ul>
+<li>monı vliv umìlé inteligence na lidskou spoleènost</li>
+</ul>
+<p>Co je ivot? </p>
+<ul>
+<li>ivot ? kultura (zmìna vlastního SW) ? technologickı ivot (zmìna vlastního SW i HW)</li>
+<li>Inteligence - schopnost øešit komplikované tasky</li>
+<li>dnes vídáme spíše slabou AI - šachy - ale neumí øídit auto</li>
+<li>obecná inteligence - schopnost øešit jakıkoli problém stejnì jako èlovìk</li>
+<li>Superinteligence - za hranicemi èlovìka</li>
+<li>Inteligence Explosion - inteligence, která se dokáe vylepšovat</li>
+<li>Kniha Life 3.0 - Max Tegmark </li>
+</ul>
+<p>Hypotetická situace 
+1 - systém umí generovat AI systémy a vylepšovat se
+2 - bìhem dne sám sebe vylepší a mùe vydìlávat peníze bude øešit MTurk tasky ty dojdou
+kam dál - poèítaèové hry a programy ne - co kdyby vytvoøil nìco nebezpeèného 
+3 - filmy - pøeète knihy, scénáøe a zaène psát filmy a vydìlá víc ne všichni dohromady
+4 - Nestaèí AWS- zaène designovat datacentra aby mìl kde bìet
+5 - získání moci </p>
+<ul>
+<li>média - generování textu a analıza politické situace</li>
+<li>ví jak podpoøit, a koho se zbavit pomocí</li>
+<li>pokud mají nejètenìjší média tak je to velmi jednoduché nejsou zlí
+6 - novı svìt - AI vybírá to nejlepší pro lidskou spoleènost a podporuje, tím vzniká víc stejnì smıšlejících stran a lidé je podporují
+7 - aliance pøeroste i vlády a na pozadí bude ovládat celı svìt
+lidé jsou spokojení, protoe všechno funguje dobøe</li>
+</ul>
+";;https://youtu.be/3hj8nIFKHPU
+Milan Lempera;XTDB - CruxDb;;"<ul>
+<li>svìt funguje v èase a èasto si jej zjednodušujeme</li>
+</ul>
+<p>Napø:</p>
+<ul>
+<li>objednávkovı systém</li>
+<li>adresa odbìratele se mìní ale chceme mít historické hodnoty</li>
+<li>evidence zamìstandù<ul>
+<li>mìní se jména, náklady</li>
+</ul>
+</li>
+</ul>
+<p>Bitemporal databáze</p>
+<ul>
+<li>v databázi jsou dva zaznamy o èase</li>
+<li>valid time, transaction time, decision time</li>
+</ul>
+<p>Pouití XTDB</p>
+<ul>
+<li>transakce - put / delete / match /evict</li>
+<li>pøistupuje se k jsonu</li>
+<li>dotazuje se pomocí datalogu</li>
+<li>dotazy dle èasu ukazují aktuální stav</li>
+<li>evict - umoní zapomenout - øešení gdpr</li>
+<li>SQL adapter  - pokud nevyhovuje datalog je moné sql</li>
+<li>Java API, HTTP api</li>
+</ul>
+<p>Dotaz do publika - jak toto øešíte:</p>
+<ul>
+<li>duplikace dat - bobtnání dat</li>
+<li>vloení kopie (adresa do objednávky)</li>
+<li>datovı sklad - protoe v realtimu není historie èasto tøeba</li>
+<li>workspace - v oraclu</li>
+<li>datalog umoòuje doptávat se na logické vazby (jméno herce, kterı hrál s vybranım hercem a je mladší ne on)</li>
+</ul>
+";blog.lempera.cz;https://youtu.be/v0T4aOaadoM
+Petr Filip;Jak jsem programoval RT multiplayer hru;;"<ul>
+<li>z programátorského hlediska nutno vyøešit, jak komunikovat</li>
+<li>jaká data posílat na a z klienta</li>
+</ul>
+<p>Pøenos dat</p>
+<ul>
+<li>long pooling - spousta requestù / responsù</li>
+<li>event source - data jen ke klientovi</li>
+<li>websockety - obousmìrná komunikace</li>
+</ul>
+<p>nejdùleitìjší je samotnı stav - </p>
+<ul>
+<li>GameState = (currentState, moves, rules) = rules(currentState, moves)</li>
+<li>ukládal historii stavu pro monost znovuposlání - je k nièemu</li>
+<li>ale poté došlo k tomu, e se posílal stále celı stav </li>
+<li>v nové høe potøebujete</li>
+<li>vykreslovací vrstva</li>
+<li>definice stavu hry</li>
+<li>pravidla</li>
+</ul>
+";https://tix.cz/;https://youtu.be/EC8ip3jqpgk
+Tomáš Látal;Parse, don´t validate;;"<ul>
+<li>funkcionální pøístup umoní odstranit validaci vstupu z funkcí</li>
+<li>pomocí parseru mùete z ménì strukturovaného vstupu udìlat více strukturovanı</li>
+<li>dovnitø funkcí se pustí validní vstupy, nad kterımi nemusíte dìlat ádné kontroly</li>
+<li>silnı vstupní typ, slabı vıstupní typ</li>
+<li>neprázdné pole</li>
+<li><p>neduplicitní pole</p>
+</li>
+<li><p>mùe vést k tomu, e nevalidní data se protáhnou systémem, a a na konci se zjistí, e nevyhovuje
+v Elmu na to ale pøíjde pøi kompilaci </p>
+</li>
+<li>monost zapouzdøit tøeba èíslo karty, kde nikde neuteèe èíslo a bude zde jen poslední ètveøice</li>
+</ul>
+";;https://youtu.be/KbRXQKzmoZU
+Vía Plšek;Lego;;"<ul>
+<li>pokud máte sety z lega, èasto dìti vyadují další sety co není pøíliš ekologické a leze to do penìz</li>
+<li>sluba rebrickable - návody na alternativní plány pro sety z lega</li>
+<li>podle èísel setù umoòuje vyhledat a stáhnout návody na øadu dalších modelù ze setù, které u máte</li>
+<li>je moné si vytvoøit jednoduchou bluetooth klávesnici na tøi tlaèítka s cenou 250 Kè, staèí umìt trochu pájet</li>
+<li>doporuèuje nahrávat s dìtmi návody na sloení modelù pomocí stop motion aplikací v mobilu / tabletu</li>
+<li>bricklink, umoòuje najít konkrétní dílek, kterı se ztratil a najít obchody, které je prodávají a v Èechách jich je hodnì. Dílek staèí èasto tøeba jen korunu.</li>
+<li>IKEA pøíborník se hodí na kategorizaci dílkù lega podle typu</li>
+<li>tøídit lze dobøe ruènì quicksortem</li>
+<li>na YT je i video, které pøedstavuje automatickou tøídièku, která pouívá AI na tøídìní dílkù lega - <a href=""https://www.youtube.com/watch?v=04JkdHEX3Yk&amp;ab_channel=DanielWest"">https://www.youtube.com/watch?v=04JkdHEX3Yk&amp;ab_channel=DanielWest</a></li>
+</ul>
+<p>Strudio pro design lego modelù - <a href=""https://www.bricklink.com/v3/studio/download.page"">https://www.bricklink.com/v3/studio/download.page</a>
+Brickling - bible lega - <a href=""https://www.bricklink.com/v2/main.page"">https://www.bricklink.com/v2/main.page</a> 
+Rebrickable - alternativní modely - <a href=""https://rebrickable.com/home/"">https://rebrickable.com/home/</a></p>
+";vitaplsek.cz;https://youtu.be/lLITLwRRlts
+Tomáš Zvìøina;AsciiiDoc a PlantUML;;"<ul>
+<li>ASCII doc je principem podobnı markdownu, ale hodí se na psaní celıch knih</li>
+<li>má rozšíøení pro poznámky, sidebary, poznámky pod èarou, citace, zdrojovı kód</li>
+<li>jeden z pluginù je PlantUML, kterı umí activity diagramy, sekvenèní, deployent diagramy, vizualizovat JSON … velmi jednoduše se ty diagramy píší</li>
+<li>vısledkem je velmi produktivní a spravovatelná dokumentace</li>
+<li>nevıhody - klient to nemùe editovat - komentáøe jen jako code review, diagramy nelze doladit o layoutu rozhoduje algoritmus, pøi vìtším mnoství obrázkù je to pomalejší</li>
+<li>vıhody: lze to verzovat, rozdìlit a includovat</li>
+<li>formát umoòuje plno vìcí a zároveò není vısledek rozbitı, formát je robustní</li>
+<li>dokumentace se builduje Mavenem, existuje plugin do IntelliJ Idea … musí se ale nìco doinstalovávat na stroj, kterı provádí publikaci</li>
+</ul>
+";https://fnx.io;https://youtu.be/A85Fvn2gQSA
+Vojtìch Rùièka;Web monetization;;"<ul>
+<li>pokud jsem tvùrce na webu a chci platit<ul>
+<li>reklamy</li>
+<li>paywall - zaplate pro další ètení</li>
+<li>jsou velmi invazivní</li>
+</ul>
+</li>
+<li>Brave browser <ul>
+<li>øeší privacy</li>
+<li>øeší odmìòování tvùrcù</li>
+<li>za reklamu dostávám BAT Cryptocurrency</li>
+<li>na stránce vidím, zda stránka mùe získávat odmìnu</li>
+<li>mùu poslat pøímo</li>
+<li>mùu nastavit auto pøíspìvek - podle toho, jak na web chodím.</li>
+<li>po spárování penìenky, mohu jako tvùrce dostávat odmìnu</li>
+<li>podpora také github, youtube, reddit, twitter, umoòuje odmìòovat  </li>
+<li>problém - svázáno s prohlíeèem - aktuálnì 38M uivatelù</li>
+</ul>
+</li>
+<li>Web Monetization - návrh standardu W3C<ul>
+<li>po schválení by mohli podporovat prohlíeèe</li>
+<li>Uivatel<ul>
+<li>Registruju se u poskytovatele - platím Coil - (5$ mìsíc</li>
+<li>Aktuálnì není standard - tedy potøebuju plugin</li>
+</ul>
+</li>
+<li>Poskytovatel<ul>
+<li>Registrace</li>
+<li>pøipojení penìenky - Gatehub / uphold</li>
+<li>JS api, mùu se dotazovat na eventy (zaèal platit)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Aktuálnì Web Monetization menší pouití ne Brave Browser</li>
+<li>API aktuálnì nepodporuje “subscription” spíše funguje stylem, kudy chodím, tudy trousím peníze</li>
+<li>dev.to - integruje</li>
+</ul>
+";www.vojtechruzicka.com;https://youtu.be/s1pOmM6J1u8
+Zbyšek Voda;Jak na desky plošnıch spojù;;"<ul>
+<li>v èem navrhovat:<ul>
+<li>EasyEDA - online, napojeno na prodejce souèástek, jednoduše se vyrobí tišák</li>
+<li>KiCad - oblíbenı - opensource, stojí za ním CERN</li>
+</ul>
+</li>
+<li>Kroky návrhu<ul>
+<li>Schéma</li>
+<li>Konkrétní souèástky</li>
+<li>Import tvaru vısledné desky - vrstva - edge cuts</li>
+<li>Rozmístìní souèástek</li>
+<li>Nakreslení spojù</li>
+<li>Vygenerování jednotlivıch vrstev pro tvorbu</li>
+</ul>
+</li>
+<li>Vıbìr vırobce<ul>
+<li>èíòan</li>
+<li>Pragoboard</li>
+<li>Isler</li>
+</ul>
+</li>
+<li>ukázka objednávky - JLCPCB<ul>
+<li>upload a vıbìr barev</li>
+<li>naklikám</li>
+<li>za 14 dní + celní øízení a mám je doma</li>
+<li>je moné obìdnat i se souèástkama - KiCad by mìl umìt PCBA (PCB assembly)</li>
+</ul>
+</li>
+</ul>
+";;https://youtu.be/4P1EIzeJ9m8
+David Ondøich;Jak (vy)øešíme GDPR;;"<ul>
+<li>osobní údaj je v principu cokoliv podle èeho je moné identifikovat<ul>
+<li>monost nakládat ukládá zákon, oprávnìnı zájem, souhlas</li>
+<li>poadavky zákazníka</li>
+<li>mít zákazníka jednou, se správnou rolí</li>
+<li>historizace</li>
+<li>omezená viditelnost, (pseudo)anonymizace</li>
+</ul>
+</li>
+<li>architektura<ul>
+<li>IDM - zná jen identifikátor, nezná email uivatele - </li>
+<li>pøi pøihlášení emailem se vytvoøí hash proti kterému se porovnává</li>
+<li>rejstøík osob pro osobní údaje - ta drí osobní data</li>
+<li>profily - implementace role s daty navíc</li>
+</ul>
+</li>
+<li>REST API<ul>
+<li>zámky - data nelze mìnit, musí udìlat externí autorita, nebo právní zákaz zmìny dat</li>
+<li>vše v pamìti</li>
+<li>úloištì ala firebase, event- driven úpravy</li>
+</ul>
+</li>
+<li>Kde je to GDPR?<ul>
+<li>data na jednom místì</li>
+<li>klienti pracují jen s ID + displayName</li>
+<li>anonymizace na jednom místì v kombinaci se zámky</li>
+<li>auditní stopa</li>
+</ul>
+</li>
+</ul>
+";dond.cz;https://youtu.be/h-jldaLcUsY
+Filip Sedlák;Audit a startup;;"<ul>
+<li>i v prostøedí startupu se dá s auditem vyrovnat<ul>
+<li>chtìjí vìdìt co dìláte a co bude kdy se to rozsype</li>
+<li>auditoøi mají rozum a do malého tımu tolik netlaèí</li>
+<li>zpøesòování auditu</li>
+</ul>
+</li>
+<li>PCI-DSS - práce s platebními kartami  <ul>
+<li>Roèní KPMG audit</li>
+<li>Due Diligence</li>
+<li>2 tıdny práce pro nìkolik lidí</li>
+<li>spousta otázek z jiného svìta </li>
+<li>dopisován dokumentace</li>
+<li>dohledávání </li>
+</ul>
+</li>
+<li>Nejvíc je zajímá <ul>
+<li>Change management</li>
+<li>github + youtrack staèil</li>
+<li>Dùleité mít malı poèet lidí, kteøí mohou zasahovat do produkce</li>
+</ul>
+</li>
+<li>Vše zaznamenávat<ul>
+<li>Mít penetraèní testy - auditorùm staèí mít zaškrtnuto, e mají</li>
+<li>Pci-DSS</li>
+<li>nemít citlivá data a mít oddìlené sluby</li>
+<li>Dodavatel mìl jednoduchou databázi Key value - prodával za tìké peníze, protoe procházel audity </li>
+<li>není tøeba splnit vše</li>
+<li>nelhat a pøiznat, e nìco neumíme, je na majitelıch aby se rozhodli co s tím</li>
+</ul>
+</li>
+</ul>
+";sedlakovi.org;https://youtu.be/_5uYw4ARMnA
+Filip Štaffa;Guix;;"<ul>
+<li>vıbìr distribuce linuxu</li>
+<li>ubuntu, debian - nuda, pouívají to všichni</li>
+<li>GUIX - distribuce a package manager<ul>
+<li>Balíèkovací manager</li>
+<li>zajišují verzování souborù</li>
+<li>øeší závislosti balíèkù - nedovolí mít více balíèkù ve stejné verzi</li>
+<li>breaking update - nemùu mít knihovny, které závisí na rùznıch verzích </li>
+<li>musím potenciálnì upgradovat kdy nechci, nebo musím poèkat na upgrade</li>
+<li>je tìké zreplikovat instalaci souèasného systému</li>
+<li>nìkteré balíèky mohou bıt novìjší</li>
+<li>pøi pouití více balíèkovacích systémù musíme øešit kompilaci</li>
+</ul>
+</li>
+<li>GUIX<ul>
+<li>umoní mít balíèky ve více verzích </li>
+<li>pøi instalaci vytváøí profil a ukládá s hashem a zachovává starou verzi balíèku</li>
+<li>profil - skupina balíèkù</li>
+<li>balíèky mohou bıt z libovolné doby - je moné replikovat jakıkoli stav</li>
+<li>channel - repository s definicemi balíèkù, commit urèuje verze všech balíèkù </li>
+<li>source code distribuce - s binárními substitute</li>
+<li>GNU - libre kernel - nemá svobodné balíèky</li>
+<li>Asdf - monost mít více verzí runtimu a pøepíná podle adresáøù - <a href=""https://github.com/asdf-vm/asdf"">https://github.com/asdf-vm/asdf</a></li>
+</ul>
+</li>
+</ul>
+";;https://youtu.be/qtUdGQe2O7Y
+František Øezáè;K èemu je pravda;;"<ul>
+<li>Samoopravné a samodetekující kódy <ul>
+<li>pokud posíláme po nespolehlivém kanálu </li>
+</ul>
+</li>
+<li>øešení<ul>
+<li>zdvojení - samodetekující kód - nezjistíme ale co je správnì</li>
+<li>ztrojení - samoopravnı - pravdìpodobnì opravíme podle dvou správnıch</li>
+</ul>
+</li>
+<li>Hammingùv kód<ul>
+<li>4 bity zakódujeme pomocí 7 kódù</li>
+<li>vypoèítá se “syndrom” - zjistí chybu v konkrétním bitu</li>
+</ul>
+</li>
+<li><p>Kompilátor</p>
+<ul>
+<li>v kódu má dostatek redundance na to, aby vydedukoval co jsme chtìli udìlat</li>
+<li>navlékáme kód na syntaxi</li>
+<li>pokud je kód sloitı a není tam dostatek redundance, tak není moné zjistit kde je chyba - napøíklad Java Streamy</li>
+</ul>
+</li>
+<li><p>Explicitní tvrzení o skuteènosti jsou redundantní</p>
+<ul>
+<li>pravdivé tvrzení mùe slouit jako kontrolní redundance</li>
+</ul>
+</li>
+<li>V programování -Curry-Howardova korespondence<ul>
+<li>datovı typ odpovídá logicky dokazovanému tvrzení a program je jeho dùkaz</li>
+<li>Redundance v programovacím jazyce je tradeoff</li>
+<li>je tøeba vymìnit vıhody na nevıhody</li>
+</ul>
+</li>
+</ul>
+";https://calavera.info;https://youtu.be/hRycaM3mfAk
+Jan Novotnı;Evita DB;;"<ul>
+<li>E-commerce API pro sjednocení frontendù e-shopù<ul>
+<li>dùraz na rychlost</li>
+<li>google preferuje rychlé odezvy</li>
+<li>research grant</li>
+<li>tøi konkurenèní tımy</li>
+<li>standardizované api</li>
+<li>tøi implementace - PostgreSQL / Elasticsearch / in-memory noSQL - </li>
+<li>FG forrest se zabıvá in-memory databází</li>
+</ul>
+</li>
+<li>kritéria<ul>
+<li>kompletní api</li>
+<li>rychlost</li>
+</ul>
+</li>
+</ul>
+<p>Zajímavé knihovny</p>
+<ul>
+<li>Roaring Bitmaps<ul>
+<li>práce s rozsáhlıma polema èísel (ID záznamy v databázi) </li>
+<li>automaticky kombinuje pole, BitSet , run-length encoding</li>
+<li>velká úspora proti vıbìru pouze jedné strategie - pro kadı pøípad se pouije nejvıhodnìjší varianta</li>
+</ul>
+</li>
+<li>Kryo - serializaèní knihovna<ul>
+<li>øeší pomalost standardní serializace</li>
+<li>1,5gb dat - 7 sekund</li>
+</ul>
+</li>
+<li>Random testing<ul>
+<li>testování náhodnıch operací nad datovımi strukturami</li>
+<li>pouívá pro transaction memory</li>
+<li>porovnávání operací nad referenèní implementací a vlastní implementací</li>
+</ul>
+</li>
+<li>Vıkonostní testy<ul>
+<li>CI/CD job - vytvoøí infrastructure nad digital ocean,  spustí testy a pošlou do gistu a infrastruktura se zruší - nízká cena</li>
+<li>JMH - visualiser - zobrazuje JSON z Gistu</li>
+</ul>
+</li>
+</ul>
+";https://blog.novoj.net;https://youtu.be/lPOKjeAwaXI
+Jaromír Pešout;Shenandoah GC;;"<ul>
+<li>firma Luxonit - low latency Java - zpracování dat<ul>
+<li>Ve finanèním svìtì se dìlají aplikace v C++ kvùli absenci garbage projektoru</li>
+<li>díky nízké latency by bylo moné problém povaovat za vyøešenı</li>
+</ul>
+</li>
+<li>Shenandoah GC<ul>
+<li>JDK 8 - 17</li>
+<li>low pause time</li>
+<li>negeneraèní kolektor</li>
+</ul>
+</li>
+<li>Cyklus shenandoah<ul>
+<li>Konkurenèní fáze -  s aplikací Continuous mark</li>
+<li>Paralelní fáze</li>
+<li>Celá halda se prohledává najednou</li>
+<li>pauza závislá na velikosti root setu - 5-10%</li>
+<li>vysoké nároky na pamì, ideální utilizace 30%</li>
+<li>poté zpomalení a prodlouení pauzy</li>
+<li>Amazon corretto pracuje na podpoøe generací </li>
+<li>JDK 16-17 - concurent stack processing</li>
+<li>STW ménì ne 1 ms</li>
+</ul>
+</li>
+</ul>
+";www.pesout.cz;https://youtu.be/FEjtThV3gao
+Luboš Raèanskı;Vıuka programování bez PC;;"<ul>
+<li>ve volném èase vede krouek programování<ul>
+<li>jako první vìc chce nauèit pøevod z 10ky do 2kové</li>
+</ul>
+</li>
+<li>jako v Hejného matematice<ul>
+<li>základní schopnost - rozpoznávání vzorcù opakování</li>
+<li>trénovat barvy, nebo geometrické tvary</li>
+<li>iq testy jsou pìkné úlohy na opakování</li>
+<li>trendem jsou bloková schémata </li>
+<li>úloha s podmínkami a kratami </li>
+<li>rychle se nauèí sledovat kroky, ale problém je abstrakce a opakování</li>
+</ul>
+</li>
+<li>datová struktura algoritmù<ul>
+<li>komprese <ul>
+<li>zvládne i druhá tøída</li>
+</ul>
+</li>
+<li>kontrolní èíslice - èárovı kód</li>
+<li>tøídìní <ul>
+<li>dìti podle schématu mohou putovat v políècích a na konci budou seøazení</li>
+</ul>
+</li>
+<li>grafové algoritmy <ul>
+<li>spojení mezi mìsteèky</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Bobøík informatiky - spousta úkolù pro rùzné vìkové kategorie</li>
+<li>Podzimní aktivita Codeweek</li>
+<li>Stavebnice<ul>
+<li>Boffin a klony</li>
+</ul>
+</li>
+<li>Dùleitost komunikace<ul>
+<li>pomocí lega a tiché pošty je moné tvoøit stavby, a porovnávat se zadáním - dobrá ukázka, e komunikace je dùleitá</li>
+</ul>
+</li>
+<li>Turring Tumble - turingtumble.com <ul>
+<li>turingovskı poèítaè</li>
+</ul>
+</li>
+</ul>
+";blog.zvestov.cz;https://youtu.be/6HcTuM3P0Aw
+Tomáš Záluskı;Neo4j;;"<ul>
+<li>grafová databáze<ul>
+<li>subset Cetin Network Inventory - 140 000 uzlù, 1.5M hran</li>
+<li>úloha - analıza vıpadkù v síti</li>
+<li>pùvodní implementace - oracle </li>
+<li>v nové implementaci - zmenšení datového skladu a napojení na Neo4j</li>
+</ul>
+</li>
+<li>pøechod mezi paradigmaty<ul>
+<li>øádek mono pøipodobnit k uzlu v grafu</li>
+<li>relationship není pøímo hrana ale je to jemnìjší propojení </li>
+<li>nemusí odpovídat 1:1</li>
+<li>dotazuje se jazykem Cypher</li>
+<li>grafové paradigma je silné pro hierarchie </li>
+<li>je moné øíct, kolikrát je moné pøeskoèit uzel</li>
+</ul>
+</li>
+<li>algoritmy a*<ul>
+<li>více se ptáme jak ne co</li>
+<li>java plugin - uloené procedury</li>
+</ul>
+</li>
+<li>netahejte skálu ke krumpáèi.<ul>
+<li>Je moné vytvoøit plugin do Neo4j, tedy vše se provádí v Neo4j</li>
+<li>Traversal framework - umoní urèit jak se graf bude procházet </li>
+<li>dobrı sluha zlı pán</li>
+<li>Plugin psali i kvùli zjednodušení, cypher by byl pøíliš sloitı</li>
+</ul>
+</li>
+<li>Databázi si hostuje cetin sám</li>
+</ul>
+";www.intelis.cz;https://youtu.be/AyaAB8rcl3Y
+Zdenìk Henek;Volební obvody vytvoøené genetickım algoritmem;;"<ul>
+<li>zmìna pravidel vedla ke spravedlivìjšímu rozdìlení mandátù na hlasù</li>
+<li>v 2017 - vısledky voleb vedly k tomu, e strany 6% mìly 3% mandátù kvùli DHondtovu pravidlu</li>
+<li>Pokud si zaènete mìnit volební obvody budete obvinìni z Gerrymanderingu</li>
+<li>V USA okrsek zvolen tak e vypadal jako salamander</li>
+<li>vìtšinovı volební systém vede k tomu, e ten kdo vyhraje o procento dostává všechny mandáty</li>
+</ul>
+<p>Jakı systém by mìl bıt spravedlivı </p>
+<ul>
+<li>støedoèeskı kraj -milion 397 tisíc </li>
+<li>Karlovarskı 300 tisíc  </li>
+<li>menší kraj generuje míò mandátù</li>
+<li>Autoredistrict - pomocí genetického algoritmu vytvoøeny volební obvody, které mají stejnı poèet volièù - tedy potenciálnì stejné zastoupení</li>
+<li>algoritmus to zvládne pro ÈR s rozdílem desítek lidí</li>
+<li>genetickı algoritmus</li>
+<li>pomocí fitness funkce zajistí spojitost okrskù </li>
+<li>kadı vıpoèet vypadá jinak</li>
+</ul>
+";;https://youtu.be/WXHhkWAahK4
+Borek Bernard;Jak v JSONu poslat èíslo;;"<ul>
+<li><p>nìkteré api - posílají string, nìkteré number</p>
+<ul>
+<li>problém s number a pøesností</li>
+<li>øešíme pøenos - datové typy v JSONUI</li>
+<li>cena je normální èíslo</li>
+<li>IEEE 754</li>
+<li>pouívá kadá platforma</li>
+<li>Kolem èísel je spousta bludù</li>
+</ul>
+</li>
+<li><p>Argumentace: 1.7 se nedá vyjádøit pøesnì - vısledkem je 1.69 nebo 1.7</p>
+<ul>
+<li>1,7 - double</li>
+<li>uloeno jako 1.699999 ….. </li>
+<li>printing = 1.7 a nikdy 1.69 </li>
+<li>Tedy argumentace je špatná</li>
+</ul>
+</li>
+<li><p>JSON jako celek je string</p>
+<ul>
+<li>JSON number je bezpeènı na pøenos, ale ne poèítání</li>
+<li>Pøenos jako string má také své problémy - 7.47 - je formátorvací rozhodnutí</li>
+<li>Pro pøenos Number OK, ale ne pro vıpoèty</li>
+<li>pro vıpoèty decimal datovı typ </li>
+<li>spoèítat a zaokrouhlit</li>
+<li>V Javì do BigDecimal</li>
+<li>pøi pøevádìní - pouít string a ne number</li>
+</ul>
+</li>
+</ul>
+";https://twitter.com/borekb;https://youtu.be/RMxoRjON8WI
+Martin Bednáø;Istio;;"<ul>
+<li>service mesh <ul>
+<li>konkurence Linkerd(málo moností), Consul (komerèní)</li>
+<li>Istio - intenzivní vıvoj </li>
+</ul>
+</li>
+<li>Funkce<ul>
+<li>Automatickı load balancing - HTTP, gRPC, Sockety</li>
+<li>routing, retrie mezi servisami, circuit breaker</li>
+<li>je moné pracovat s chybovostí service - FaultInjection</li>
+<li>metriky, a logy</li>
+<li>zabezpeèení, Autentizace autorizace (ingres)</li>
+<li>dostupná v cloudu</li>
+</ul>
+</li>
+<li>Architektura s Istio<ul>
+<li>do kadého konteineru pøidá proxy envoy</li>
+<li>sluba s proxy komunikuje s HTTP</li>
+<li>service spolu komunikují pøes https - control plane je generuje a posílá do proxy</li>
+</ul>
+</li>
+<li>GUI<ul>
+<li>Kiali - vizualizace provozu a konfigurace istia</li>
+</ul>
+</li>
+<li>Budoucnost<ul>
+<li>B/G deployments - Canary deployments</li>
+<li>WASM - filtery</li>
+</ul>
+</li>
+</ul>
+";;https://youtu.be/vBFZFtVR8gs
+David Voòka;Pøeklad do SQL;;"<ul>
+<li>vytváøí systém pro zpracování dat - no code system<ul>
+<li>velké mnoství práce v pamìti po nataení všech dat do pamìti </li>
+<li>mono vylepšit</li>
+<li>øada problémù <ul>
+<li>joiny</li>
+<li>indexy</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>funkce nekorespondují v db a aplikaci<ul>
+<li>snaha o pøepis do sql - Snowflake v cloudu</li>
+<li>aktuálnì zkouší proti sqllite</li>
+</ul>
+</li>
+</ul>
+";;https://youtu.be/bDEiOfwmxTU
+Lubomir Petera;Spolehlivost;;"<ul>
+<li>jak špatná mùe bıt špatná prezentace<ul>
+<li>kritéria úspìchu</li>
+<li>máme tendenci ít v èernobílém svìtì</li>
+<li>kdo si øekne “super mám 60% programu pøeloeno a pak to spadlo”</li>
+</ul>
+</li>
+<li>faktory kvality - Spolehlivost - poadované funkce s poadovanou pøesností<ul>
+<li>SLA</li>
+<li>SLO</li>
+<li>SLO</li>
+<li>KPI</li>
+</ul>
+</li>
+<li>jakou škálu pouít pro hodnocení jak vhodné je UI<ul>
+<li>nic není èernobílé, je dobré znát celou škálu</li>
+<li>èasto v porovnání s jinımi, to nemusí bıt tak špatná volba </li>
+<li><a href=""https://userinyerface.com/"">https://userinyerface.com/</a></li>
+</ul>
+</li>
+</ul>
+";https://www.dynatrace.com/;https://youtu.be/d8zHlhoUXcA
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
