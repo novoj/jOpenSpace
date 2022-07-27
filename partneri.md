@@ -8,9 +8,9 @@ konferenční místnosti, projektoru, ubytování a stravování. Zbytek si hrad
 není výdělečná akce a organizátoři nemají z jejího pořádání žádný příjem. Příspěvky partnerů zjednodušují nám,
 organizátorům, práci v tom, že máme předem pokryté základní náklady a tudíž se minimalizuje riziko finančních problémů,
 pokud by se na ne-konferenci nepřihlásil očekávaný počet lidí nebo došlo k odhláškám na poslední chvíli. Toto jsme 
-již zažili např. ve chvíli, kdy se na stejný termín později ohlásila jiná - větší konference typu WebExpo. Máme za 
-sebou již několik úspěšných ročníků a řadu zkušeností, takže se nám již daří podobným failům vyhýbat, ale dokud není
-ne-konference za námi, nemůžeme si být nikdy jisti.
+již zažili např. ve chvíli, kdy se na stejný termín později ohlásila jiná - větší konference typu WebExpo. Máme za sebou 
+již více než 10 ročníků této ne-konference, při kterých jsme nasbírali řadu zkušeností a akce samotná získala dostatečný 
+kredit a proto věříme, že i letošní ročník bude úspěšným.
 
 ## Historie jOpenSpace
 
