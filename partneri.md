@@ -36,7 +36,7 @@ startupové scény, programátoři, které programování baví - jednoduše lid
 ## Typy partnerství
 
 Na základě předchozích zkušeností a očekávání partnerů jsme se rozhodli vypsat různé úrovně partnerství, abyste měli
-dopředu představu, na kolik by vás partnerství vyšlo a jaké výhody by Vám z toho plynuly.
+dopředu představu, na kolik by vás partnerství vyšlo a jaké výhody by Vám z toho plynuly. Částky jsou uváděné bez DPH.
 
 ### Zlaté partnerství
 **Částka: 25000,- Kč**
@@ -68,6 +68,18 @@ dopředu představu, na kolik by vás partnerství vyšlo a jaké výhody by Vá
 - malé logo ve videozáznamech z ne-konference
 
 ## Organizační informace
+
+Vzhledem k tomu, že se jedná o malou, jednorázovou akci není pro tyto účely zřízena samostatná organizace a pořadatelé 
+zajišťují vystavení potřebných faktur pro naše partnery přímo ze strany hotelu. Z toho důvodu lze také na faktury pouze 
+textace související s rozsahem činností hotelu:
+
+1. Účtujeme Vám zálohu na občerstvení v rámci konference jOpenSpace  v termínu DATUM v Hotelu MÍSTO KONÁNÍ.
+2. Účtujeme Vám zálohu v rámci konference jOpenSpace v termínu DATUM v Hotelu MÍSTO KONÁNÍ. Pronájem konferenční místnosti.
+3. Fakturujeme Vám zálohu na poskytnuté služby v termínu DATUM v Hotelu MÍSTO KONÁNÍ v rámci konference jOpenSpace:
+     - Záloha na občerstvení účastníků
+     - Záloha na ubytování účastníků
+
+Hotel je plátcem DPH.
 
 Jakmile se dohodneme na partnerství, budeme od vás potřebovat:
 
