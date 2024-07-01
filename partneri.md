@@ -36,7 +36,7 @@ startupové scény, programátoři, které programování baví - jednoduše lid
 ## Typy partnerství
 
 Na základě předchozích zkušeností a očekávání partnerů jsme se rozhodli vypsat různé úrovně partnerství, abyste měli
-dopředu představu, na kolik by vás partnerství vyšlo a jaké výhody by Vám z toho plynuly. Částky jsou uváděné bez DPH.
+dopředu představu, na kolik by vás partnerství vyšlo a jaké výhody by Vám z toho plynuly. Částky jsou uváděné s DPH.
 
 ### Zlaté partnerství
 **Částka: 25000,- Kč**
