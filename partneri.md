@@ -18,6 +18,7 @@ jOpenSpace vznikla v roce 2008 nápadem Michala Šrajera (Inmite, Avast, Happine
 se na ní setkává vždy od 20 do 42 účastníků. Maximální počet účastníků do budoucna je 42. S každým rokem je o konferenci 
 větší a větší zájem. Posuďte sami:
 
+- 2024: 36 účastníků (velká marodka)
 - 2023: 42 účastníků (technický limit konference)
 - 2022: 24 účastníků
 - 2021: 31 účastníků (po Covid přestávce)

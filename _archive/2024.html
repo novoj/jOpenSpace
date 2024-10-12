@@ -1,0 +1,45 @@
+---
+title: jOpenSpace - ročník 2024
+year: 2024
+---
+
+<div id="year2024" class="galleryGroup">
+   <div class="in">
+      <h4 style="text-align: center">Fotogalerie {{title}}</h4>
+      <ul class="gallery clr">
+         <li><a href="../public/images/gallery/2024/detail/pripraveny-sal.jpg" class="highslide" rel="highslide"><img src="../public/images/gallery/2024/thumbnail/pripraveny-sal.jpg" alt="" /></a></li>
+         <li><a href="../public/images/gallery/2024/detail/partneri-swag.jpg" class="highslide" rel="highslide"><img src="../public/images/gallery/2024/thumbnail/partneri-swag.jpg" alt="" /></a></li>
+         <li><a href="../public/images/gallery/2024/detail/nebulus.jpg" class="highslide" rel="highslide"><img src="../public/images/gallery/2024/thumbnail/nebulus.jpg" alt="" /></a></li>
+         <li><a href="../public/images/gallery/2024/detail/level-porazen.jpg" class="highslide" rel="highslide"><img src="../public/images/gallery/2024/thumbnail/level-porazen.jpg" alt="" /></a></li>
+         <li><a href="../public/images/gallery/2024/detail/zaciname.jpg" class="highslide" rel="highslide"><img src="../public/images/gallery/2024/thumbnail/zaciname.jpg" alt="" /></a></li>
+         <li><a href="../public/images/gallery/2024/detail/javascript.jpg" class="highslide" rel="highslide"><img src="../public/images/gallery/2024/thumbnail/javascript.jpg" alt="" /></a></li>
+         <li><a href="../public/images/gallery/2024/detail/vybeh.jpg" class="highslide" rel="highslide"><img src="../public/images/gallery/2024/thumbnail/vybeh.jpg" alt="" /></a></li>
+         <li><a href="../public/images/gallery/2024/detail/vyherci.jpg" class="highslide" rel="highslide"><img src="../public/images/gallery/2024/thumbnail/vyherci.jpg" alt="" /></a></li>
+         <li><a href="../public/images/gallery/2024/detail/skupinovka.jpg" class="highslide" rel="highslide"><img src="../public/images/gallery/2024/thumbnail/skupinovka.jpg" alt="" /></a></li>
+         <li><a href="../public/images/gallery/2024/detail/prochazka_telc.jpg" class="highslide" rel="highslide"><img src="../public/images/gallery/2024/thumbnail/prochazka_telc.jpg" alt="" /></a></li>
+      </ul>
+      <p style="text-align: center"><a href="https://photos.app.goo.gl/EVeBcjFN25dqHovJA" target="_blank">Kompletní fotogalerie z akce</a></p>
+      <h4 style="text-align: center">Zápisky z konference</h4>
+      <div style="text-align: center;">
+         <a href="https://docs.google.com/document/d/1_RCUK45Dq4hlH9xkXX-JyRKN-W_QXUxKgWKhFe-Jubs/edit?usp=sharing">Google docs</a>,
+      </div>
+
+      <ul>
+         {% for member in site.data.Prednasky_2024 %}
+         <article>
+            <div class="in">
+               <p class="author">{{ member.Prednasejici }}</p>
+               <h3>{{ member.Nazev }}</h3>
+               {% if member.Anotace != nil && member.Anotace != "" %}<div class="articleContent" style="padding-top: 2em;">{{ member.Anotace }}</div>{% endif %}
+               {% if member.Bio != nil && member.Bio != "" %}<p class="authorInfo"><a href="{{ member.Bio }}">{{ member.Bio }}</a></p>{% endif %}
+            </div>
+            <ul class="clr articleMedia">
+               {% if member.Url != nil && member.Url != "" %}<li><a href="{{ member.Url }}" target="_blank">Web</a></li>{% endif %}
+               {% if member.YouTube != nil && member.YouTube != "" %}<li class="videocast"><a href="{{ member.YouTube }}" target="_blank">Video</a></li>{% endif %}
+            </ul>
+         </article>
+         {% endfor %}
+      </ul>
+   </div>
+
+</div>
