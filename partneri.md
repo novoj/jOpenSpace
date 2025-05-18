@@ -9,8 +9,20 @@ není výdělečná akce a organizátoři nemají z jejího pořádání žádn�
 organizátorům, práci v tom, že máme předem pokryté základní náklady a tudíž se minimalizuje riziko finančních problémů,
 pokud by se na ne-konferenci nepřihlásil očekávaný počet lidí nebo došlo k odhláškám na poslední chvíli. Toto jsme 
 již zažili např. ve chvíli, kdy se na stejný termín později ohlásila jiná - větší konference typu WebExpo. Máme za sebou 
-již více než 10 ročníků této ne-konference, při kterých jsme nasbírali řadu zkušeností a akce samotná získala dostatečný 
+již více než 15 ročníků této ne-konference, při kterých jsme nasbírali řadu zkušeností a akce samotná získala dostatečný 
 kredit a proto věříme, že i letošní ročník bude úspěšným.
+
+## Promo partnera
+
+Každý partner má možnost se na ne-konferenci prezentovat formou roll-upu, který bude umístěn v konferenční místnosti.
+Jeho logo bude také umístěno na webu [www.jopenspace.cz](http://www.jopenspace.cz) a v závěrečném videozáznamu z ne-konference.
+Videozáznamy jsou poměrně sledované a mají téměř 60 tisíc zhlédnutí - viz. [YouTube kanál](https://www.youtube.com/@jopenspace)
+a screenshot statistik z administračního rozhraní:
+
+![Statistiky YouTube kanálu](/public/images/youtube/2025-05-18_statistics.png)
+
+Každý partner dostává samostatný post na sociálních sítích X a Mastodon a také možnost se prezentovat na uvítacím večeru
+jOpenSpace.
 
 ## Historie jOpenSpace
 
