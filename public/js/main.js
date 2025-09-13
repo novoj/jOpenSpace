@@ -36,25 +36,21 @@ $(document).ready(function() {
         });
         $('#mapCanvas').gmap('option', 'zoom', 14);
     });*/
-    var center = SMap.Coords.fromWGS84(15.4482842, 49.1867294);
-    var m = new SMap(JAK.gel("mapCanvas"), center, 13);
-    m.addDefaultLayer(SMap.DEF_BASE).enable();
-    m.addDefaultControls();
 
-    var layer = new SMap.Layer.Marker();
-    m.addLayer(layer);
-    layer.enable();
+	maptilersdk.config.apiKey = 'WYRmW70yZYslUvfCANa4';
 
-    var card = new SMap.Card();
-    card.getHeader().innerHTML = "<strong>Hotel Antoň Telč</strong>";
-    card.getBody().innerHTML = "<div style=\"text-wrap: none\">GPS: 49.1867294N, 15.4482842E <br/><a href=\"https://www.hotel-anton.cz/\" target=\"_blank\" class=\"mapAnchor\">https://www.hotel-anton.cz/</a></div>";
+        const map = new maptilersdk.Map({
+            container: 'mapCanvasi',
+            style: maptilersdk.MapStyle.STREETS,
+            center: [15.4482822, 49.1867292],
+            zoom: 15
+        });
 
-    var options = {
-        title: "Hotel Antoň Telč"
-    };
-    var marker = new SMap.Marker(center, "myMarker", options);
-    marker.decorate(SMap.Marker.Feature.Card, card);
-    layer.addMarker(marker);
+        // Add marker for Hotel Antoň at Slavatovská 92, Telč
+        new maptilersdk.Marker({color: '#FF0000'})
+            .setLngLat([15.4482822, 49.1867292])
+            .setPopup(new maptilersdk.Popup().setHTML('<h3>Hotel Antoň</h3><p>Slavatovská 92<br>588 56 Telč</p><p><strong>GPS:</strong><br>49.1867292N, 15.4482822E</p><a href=\"https://www.hotel-anton.cz/\" target=\"_blank\" class=\"mapAnchor\">https://www.hotel-anton.cz/</a>'))
+            .addTo(map);
 
     /* přepínání tabů */
     $("#bottomContentCnt").organicTabs();
