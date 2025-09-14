@@ -29,14 +29,6 @@ $(document).ready(function() {
         }, 500);
     });
 
-    /* mapka */
-	/*$('#mapCanvas').gmap({'center':'49.1867294, 15.4482842'}).bind('init', function(ev, map) {
-        $('#mapCanvas').gmap('addMarker', {'position': '49.1867294, 15.4482842', 'bounds': true}).click(function() {
-            $('#mapCanvas').gmap('openInfoWindow', {'content': '<div style="text-wrap: none"><strong>Hotel Antoň Telč</strong><br/>GPS: 49.1867294N, 15.4482842E <br/><a href="https://www.hotel-anton.cz/" target="_blank" class=u"mapAnchor">https://www.hotel-anton.cz/</a></div>'}, this);
-        });
-        $('#mapCanvas').gmap('option', 'zoom', 14);
-    });*/
-
 	maptilersdk.config.apiKey = 'WYRmW70yZYslUvfCANa4';
 
         const map = new maptilersdk.Map({
