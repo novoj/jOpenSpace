@@ -40,7 +40,7 @@ $(document).ready(function() {
 	maptilersdk.config.apiKey = 'WYRmW70yZYslUvfCANa4';
 
         const map = new maptilersdk.Map({
-            container: 'mapCanvasi',
+            container: 'mapCanvas',
             style: maptilersdk.MapStyle.STREETS,
             center: [15.4482822, 49.1867292],
             zoom: 15
