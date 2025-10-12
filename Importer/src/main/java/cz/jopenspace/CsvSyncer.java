@@ -68,7 +68,7 @@ public class CsvSyncer {
         }
 
         // Step 1: Fetch the YouTube playlist details
-        List<YouTubeVideo> youtubeVideos = fetchYouTubeVideos(apiKey, "PLd8Uq2Jp0zZ27rayYElVck-Th8m2EaF6Z");
+        List<YouTubeVideo> youtubeVideos = fetchYouTubeVideos(apiKey, "PLd8Uq2Jp0zZ3-xR5QcI9LSSVPMjJzHUkR");
 
         // Step 2: Read the CSV file
         List<String[]> csvData = readCsv(sourcePath);
@@ -182,7 +182,7 @@ public class CsvSyncer {
 
             YouTubeVideo bestMatch = null;
             double bestScore = 0.0;
-            Pattern pattern = Pattern.compile("jOpenSpace 2024 - (.*)? - (.*)?", Pattern.CASE_INSENSITIVE);
+            Pattern pattern = Pattern.compile("jOpenSpace 2025 - (.*)? - (.*)?", Pattern.CASE_INSENSITIVE);
 
             for (YouTubeVideo video : youtubeVideos) {
                 // Use the Jaro-Winkler distance for partial matching
