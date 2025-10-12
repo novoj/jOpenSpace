@@ -136,7 +136,7 @@ public class CsvSyncer {
     }
 
     public static String loadApiKey() throws IOException {
-        File file = new File("api_key.txt");
+        File file = new File("youtube_api_key.txt");
         if (!file.exists()) {
             throw new IOException("API key file 'api_key.txt' not found in working directory: " + file.getAbsolutePath());
         }

@@ -31,9 +31,6 @@ import java.util.Objects;
  */
 public class SubtitleAbstractor {
 
-    // Default location used by SubtitleDownloader (kept here to avoid changing its access modifier)
-    private static final String DEFAULT_INPUT_DIR = "data/subtitles";
-
     // Output extension for generated abstracts
     private static final String OUTPUT_EXTENSION = ".txt";
 
@@ -58,19 +55,24 @@ public class SubtitleAbstractor {
     // System prompt you can freely adjust
     public static final String SYSTEM_PROMPT =
             "Jsi asistent pro sumarizaci přednášek. Na základě poskytnutých titulků " +
-            "vytvoř věcný, srozumitelný a kompaktní abstrakt (cca 5–8 vět) v češtině. " +
-            "Zachyť téma, cíl, hlavní body a přínos. Neopisuj doslovně a nepoužívej časové značky.";
+            "vytvoř věcný, srozumitelný a kompaktní abstrakt (cca 8 vět) v češtině. " +
+            "Zachyť téma, cíl, hlavní body a přínos. Neopisuj doslovně a používej popis z pohledu třetí osoby. " +
+            "Příklad: \"Honza Novák prezentuje ...\", nebo \"V přednášce vám Jiří Novotný ukáže ...\". " +
+            "Snaž se udělat text poutavý tak, aby čtenáře zaujal a přiměl ho podívat se na celou přednášku.";
 
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
-    public static void main(String[] args) throws Exception {
-        String inputDir = args != null && args.length > 0 && args[0] != null && !args[0].isBlank()
-                ? args[0]
-                : DEFAULT_INPUT_DIR;
+    public static void main(String[] args) {
+        if (args == null || args.length == 0 && args[0] == null && args[0].isBlank()) {
+            System.err.println("Usage: java cz.jopenspace.SubtitleAbstractor [inputDir]");
+            System.exit(1);
+        }
+
+        String inputDir = args[0];
 
         String apiKey = getApiKey();
         if (apiKey == null || apiKey.isBlank()) {
-            System.err.println("[ERROR] Missing OpenAI API key. Set OPENAI_API_KEY env var or -Dopenai.api.key.");
+            System.err.println("[ERROR] Missing OpenAI API key. Set OPENAI_API_KEY, -Dopenai.api.key, or put the key in ./open_ai_api_key.txt.");
             System.exit(2);
         }
 
@@ -80,7 +82,7 @@ public class SubtitleAbstractor {
             System.exit(3);
         }
 
-        File[] inputs = dir.listFiles((d, name) -> name.toLowerCase().endsWith(".txt") && !name.toLowerCase().endsWith(OUTPUT_EXTENSION));
+        File[] inputs = dir.listFiles((d, name) -> name.toLowerCase().endsWith(".captions") && !name.toLowerCase().endsWith(OUTPUT_EXTENSION));
         if (inputs == null) inputs = new File[0];
         Arrays.sort(inputs, (a, b) -> a.getName().compareToIgnoreCase(b.getName()));
 
@@ -140,6 +142,19 @@ public class SubtitleAbstractor {
     private static String getApiKey() {
         String key = System.getenv("OPENAI_API_KEY");
         if (key == null || key.isBlank()) key = System.getProperty("openai.api.key");
+        if (key == null || key.isBlank()) {
+            File f = new File("open_ai_api_key.txt");
+            if (f.exists() && f.isFile()) {
+                try {
+                    String fromFile = Files.readString(f.toPath(), StandardCharsets.UTF_8).trim();
+                    if (!fromFile.isBlank()) {
+                        key = fromFile;
+                    }
+                } catch (IOException e) {
+                    System.err.println("[WARN] Failed to read open_ai_api_key.txt: " + e.getMessage());
+                }
+            }
+        }
         return key;
     }
 

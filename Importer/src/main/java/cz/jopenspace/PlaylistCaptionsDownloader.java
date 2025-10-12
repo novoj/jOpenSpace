@@ -79,7 +79,7 @@ public class PlaylistCaptionsDownloader {
                     skipped++;
                     continue;
                 }
-                String text = downloadCaptionPlainText(yt, e.videoId, langPref);
+                String text = downloadCaptionFileContent(yt, e.videoId, e.title, langPref);
                 if (text == null || text.isBlank()) {
                     System.out.printf("[%s] %s — no captions available or empty.\n", index, e.title);
                     skipped++;
@@ -147,7 +147,7 @@ public class PlaylistCaptionsDownloader {
         return result;
     }
 
-    private static String downloadCaptionPlainText(YouTube yt, String videoId, String langPref) throws IOException {
+    private static String downloadCaptionFileContent(YouTube yt, String videoId, String videoTitle, String langPref) throws IOException {
         Captions.List listReq = yt.captions().list(List.of("snippet"), videoId);
         CaptionListResponse listResp = listReq.execute();
         List<Caption> tracks = listResp.getItems();
@@ -164,28 +164,72 @@ public class PlaylistCaptionsDownloader {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         dl.executeMediaAndDownloadTo(baos);
         String vtt = new String(baos.toByteArray(), StandardCharsets.UTF_8);
-        return vttToPlainText(vtt);
+        String plain = vttToPlainText(vtt);
+        if (plain == null || plain.isBlank()) return null;
+
+        String lang = chosen.getSnippet().getLanguage();
+        StringBuilder sb = new StringBuilder();
+        sb.append("### ").append(videoTitle).append('\n').append('\n');
+        sb.append("Kind: captions Language: ").append(lang == null ? "" : lang).append('\n');
+        sb.append(plain);
+        return sb.toString();
     }
 
     private static String vttToPlainText(String vtt) {
         StringBuilder out = new StringBuilder();
         try (BufferedReader br = new BufferedReader(new StringReader(vtt))) {
             String line;
+            boolean inCue = false;
+            boolean hasTextInCue = false;
             while ((line = br.readLine()) != null) {
                 String s = line.trim();
-                if (s.isEmpty()) continue;
-                // Skip WEBVTT header, NOTE/STYLE/REGION blocks, and cue timings/identifiers
+
+                // Skip WEBVTT header and block headers
                 if (s.equalsIgnoreCase("WEBVTT")) continue;
-                if (s.contains("-->")) continue; // timecode line
                 if (s.matches("^(NOTE|STYLE|REGION)(?:$|\\s).*")) continue;
-                if (s.matches("^\\d{1,6}$")) continue; // numeric cue id
-                // Remove any tags
+
+                // Blank line ends a cue
+                if (s.isEmpty()) {
+                    if (inCue && hasTextInCue) {
+                        out.append('\n'); // end delimiter at end of caption item
+                    }
+                    inCue = false;
+                    hasTextInCue = false;
+                    continue;
+                }
+
+                // Timecode line starts a cue
+                if (s.contains("-->")) {
+                    if (inCue && hasTextInCue) {
+                        out.append('\n');
+                    }
+                    inCue = true;
+                    hasTextInCue = false;
+                    continue;
+                }
+
+                // Numeric cue id
+                if (s.matches("^\\d{1,6}$")) continue;
+
+                // Text line
                 s = s.replaceAll("<[^>]+>", "");
-                out.append(s).append(' ');
+                if (s.isEmpty()) continue;
+                if (!inCue) inCue = true;
+                if (hasTextInCue) out.append(' ');
+                out.append(s);
+                hasTextInCue = true;
+            }
+            // EOF: close any open cue
+            if (inCue && hasTextInCue) {
+                out.append('\n');
             }
         } catch (IOException ignored) {
         }
-        return out.toString().trim();
+        // Normalize space before newlines and trim trailing newlines
+        String result = out.toString()
+                .replaceAll("[ \\t\\x0B\\f\\r]+\\n", "\n")
+                .replaceAll("\\n+$", "");
+        return result;
     }
 
     private record PlaylistEntry(String videoId, String title, int position) {}
