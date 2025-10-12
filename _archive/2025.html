@@ -1,0 +1,41 @@
+---
+title: jOpenSpace - ročník 2025
+year: 2025
+---
+
+<div id="year2025" class="galleryGroup">
+   <div class="in">
+      <h4 style="text-align: center">Fotogalerie {{title}}</h4>
+      <ul class="gallery clr">
+         <li><a href="../public/images/gallery/2025/detail/01-predstaveni-ucastniku.jpg" class="highslide" rel="highslide" title=""><img src="../public/images/gallery/2025/thumbnail/01-predstaveni-ucastniku.jpg" alt="Páteční představení účastníků" title="Páteční představení účastníků" /></a></li>
+         <li><a href="../public/images/gallery/2025/detail/02-chillout-u-konzole.jpg" class="highslide" rel="highslide" title=""><img src="../public/images/gallery/2025/thumbnail/02-chillout-u-konzole.jpg" alt="I letos jsme měli &quot;pařanský koutek&quot;" title="I letos jsme měli &quot;pařanský koutek&quot;" /></a></li>
+         <li><a href="../public/images/gallery/2025/detail/03-ranni-vybeh.jpg" class="highslide" rel="highslide" title=""><img src="../public/images/gallery/2025/thumbnail/03-ranni-vybeh.jpg" alt="Běžecká parta byla letos dost prořídlá" title="Běžecká parta byla letos dost prořídlá" /></a></li>
+         <li><a href="../public/images/gallery/2025/detail/04-ranni-vybeh-u-kaplicky.jpg" class="highslide" rel="highslide" title=""><img src="../public/images/gallery/2025/thumbnail/04-ranni-vybeh-u-kaplicky.jpg" alt="Ale na foto u kapličky samozřejmě došlo" title="Ale na foto u kapličky samozřejmě došlo" /></a></li>
+         <li><a href="../public/images/gallery/2025/detail/05-ranni-otuzovani.jpg" class="highslide" rel="highslide" title=""><img src="../public/images/gallery/2025/thumbnail/05-ranni-otuzovani.jpg" alt="Zato se nám tu formuje silná skupina otužilců" title="Zato se nám tu formuje silná skupina otužilců" /></a></li>
+         <li><a href="../public/images/gallery/2025/detail/06-prednasky.jpg" class="highslide" rel="highslide" title=""><img src="../public/images/gallery/2025/thumbnail/06-prednasky.jpg" alt="A samozřejmě hlavním programem jsou lightning talky" title="A samozřejmě hlavním programem jsou lightning talky" /></a></li>
+         <li><a href="../public/images/gallery/2025/detail/07-zaverecny-fight.jpg" class="highslide" rel="highslide" title=""><img src="../public/images/gallery/2025/thumbnail/07-zaverecny-fight.jpg" alt="Na závěr proběhl závěrečný boj o výherce 8-bitové konzole" title="Na závěr proběhl závěrečný boj o výherce 8-bitové konzole" /></a></li>
+         <li><a href="../public/images/gallery/2025/detail/08-nejlepsi-recnici.jpg" class="highslide" rel="highslide" title=""><img src="../public/images/gallery/2025/thumbnail/08-nejlepsi-recnici.jpg" alt="A také byli oceněni autoři nejlepších přednášek" title="A také byli oceněni autoři nejlepších přednášek" /></a></li>
+         <li><a href="../public/images/gallery/2025/detail/09-skupinovka.jpg" class="highslide" rel="highslide" title=""><img src="../public/images/gallery/2025/thumbnail/09-skupinovka.jpg" alt="A neschází ani závěrečné skupinové foto" title="A neschází ani závěrečné skupinové foto" /></a></li>
+         <li><a href="../public/images/gallery/2025/detail/10-skupinovka-dron.jpg" class="highslide" rel="highslide" title=""><img src="../public/images/gallery/2025/thumbnail/10-skupinovka-dron.jpg" alt="Letos poprové i se záběrem z dronu" title="Letos poprové i se záběrem z dronu" /></a></li>
+      </ul>
+      <p style="text-align: center"><a href="https://photos.app.goo.gl/ALcpemNN5JTTRPaH8" target="_blank">Kompletní fotogalerie z akce</a></p>
+
+      <ul>
+         {% for member in site.data.Prednasky_2025 %}
+         <article>
+            <div class="in">
+               <p class="author">{{ member.Prednasejici }}</p>
+               <h3>{{ member.Nazev }}</h3>
+               {% if member.Anotace != nil && member.Anotace != "" %}<div class="articleContent" style="padding-top: 2em;">{{ member.Anotace }}</div>{% endif %}
+               {% if member.Bio != nil && member.Bio != "" %}<p class="authorInfo"><a href="{{ member.Bio }}">{{ member.Bio }}</a></p>{% endif %}
+            </div>
+            <ul class="clr articleMedia">
+               {% if member.Url != nil && member.Url != "" %}<li><a href="{{ member.Url }}" target="_blank">Web</a></li>{% endif %}
+               {% if member.YouTube != nil && member.YouTube != "" %}<li class="videocast"><a href="{{ member.YouTube }}" target="_blank">Video</a></li>{% endif %}
+            </ul>
+         </article>
+         {% endfor %}
+      </ul>
+   </div>
+
+</div>
