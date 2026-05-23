@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
+import java.util.stream.Collectors;
 
 /**
  * Simple utility to download captions for all videos in a YouTube playlist
@@ -151,7 +152,18 @@ public class PlaylistCaptionsDownloader {
         Captions.List listReq = yt.captions().list(List.of("snippet"), videoId);
         CaptionListResponse listResp = listReq.execute();
         List<Caption> tracks = listResp.getItems();
-        if (tracks == null || tracks.isEmpty()) return null;
+        if (tracks == null || tracks.isEmpty()) {
+            System.out.println("No captions found for video " + videoId);
+            return null;
+        } else {
+            System.out.printf("Found %d caption track(s) for video %s: %s\n",
+                tracks.size(),
+                videoId,
+                tracks.stream()
+                    .map(it -> it.getSnippet().getLanguage())
+                    .collect(Collectors.joining(", "))
+            );
+        }
 
         Caption chosen = tracks.stream()
                 .filter(c -> "*".equals(langPref) || langPref.equalsIgnoreCase(c.getSnippet().getLanguage()))
