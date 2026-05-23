@@ -19,7 +19,7 @@ Jeho logo bude také umístěno na webu [www.jopenspace.cz](http://www.jopenspac
 Videozáznamy jsou poměrně sledované a mají téměř 60 tisíc zhlédnutí - viz. [YouTube kanál](https://www.youtube.com/@jopenspace)
 a screenshot statistik z administračního rozhraní:
 
-![Statistiky YouTube kanálu](/public/images/youtube/2025-05-18_statistics.png)
+![Statistiky YouTube kanálu](/public/images/youtube/2026-05-23_statistics.png)
 
 Každý partner dostává samostatný post na sociálních sítích X a Mastodon a také možnost se prezentovat na uvítacím večeru
 jOpenSpace.
