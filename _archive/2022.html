@@ -5,38 +5,37 @@ year: 2022
 
 <div id="year2022" class="galleryGroup">
    <div class="in">
-      <h4 style="text-align: center">Fotogalerie {{title}}</h4>
+      <h4>Fotogalerie {{title}}</h4>
       <ul class="gallery clr">
-         <li><a href="../public/images/gallery/2022/detail/uvodni_vecer.jpg" class="highslide" rel="highslide"><img src="../public/images/gallery/2022/thumbnail/uvodni_vecer.jpg" alt="" /></a></li>
-         <li><a href="../public/images/gallery/2022/detail/priprava_nataceni.jpg" class="highslide" rel="highslide"><img src="../public/images/gallery/2022/thumbnail/priprava_nataceni.jpg" alt="" /></a></li>
-         <li><a href="../public/images/gallery/2022/detail/sal.jpg" class="highslide" rel="highslide"><img src="../public/images/gallery/2022/thumbnail/sal.jpg" alt="" /></a></li>
-         <li><a href="../public/images/gallery/2022/detail/swag.jpg" class="highslide" rel="highslide"><img src="../public/images/gallery/2022/thumbnail/swag.jpg" alt="" /></a></li>
-         <li><a href="../public/images/gallery/2022/detail/pair_programming.jpg" class="highslide" rel="highslide"><img src="../public/images/gallery/2022/thumbnail/mictech_php.jpg" alt="" /></a></li>
-         <li><a href="../public/images/gallery/2022/detail/mictech_php.jpg" class="highslide" rel="highslide"><img src="../public/images/gallery/2022/thumbnail/mictech_php.jpg" alt="" /></a></li>
-         <li><a href="../public/images/gallery/2022/detail/dron.jpg" class="highslide" rel="highslide"><img src="../public/images/gallery/2022/thumbnail/dron.jpg" alt="" /></a></li>
+         <li><a href="../public/images/gallery/2022/detail/uvodni_vecer.jpg" class="highslide" rel="highslide"><img loading="lazy" src="../public/images/gallery/2022/thumbnail/uvodni_vecer.jpg" alt="" /></a></li>
+         <li><a href="../public/images/gallery/2022/detail/priprava_nataceni.jpg" class="highslide" rel="highslide"><img loading="lazy" src="../public/images/gallery/2022/thumbnail/priprava_nataceni.jpg" alt="" /></a></li>
+         <li><a href="../public/images/gallery/2022/detail/sal.jpg" class="highslide" rel="highslide"><img loading="lazy" src="../public/images/gallery/2022/thumbnail/sal.jpg" alt="" /></a></li>
+         <li><a href="../public/images/gallery/2022/detail/swag.jpg" class="highslide" rel="highslide"><img loading="lazy" src="../public/images/gallery/2022/thumbnail/swag.jpg" alt="" /></a></li>
+         <li><a href="../public/images/gallery/2022/detail/pair_programming.jpg" class="highslide" rel="highslide"><img loading="lazy" src="../public/images/gallery/2022/thumbnail/mictech_php.jpg" alt="" /></a></li>
+         <li><a href="../public/images/gallery/2022/detail/mictech_php.jpg" class="highslide" rel="highslide"><img loading="lazy" src="../public/images/gallery/2022/thumbnail/mictech_php.jpg" alt="" /></a></li>
+         <li><a href="../public/images/gallery/2022/detail/dron.jpg" class="highslide" rel="highslide"><img loading="lazy" src="../public/images/gallery/2022/thumbnail/dron.jpg" alt="" /></a></li>
       </ul>
       <p style="text-align: center"><a href="https://photos.app.goo.gl/rg9HSB2xzvRDqxuN6" target="_blank">Kompletní fotogalerie z akce</a></p>
-      <h4 style="text-align: center">Zápisky z konference</h4>
+      <h4>Zápisky z konference</h4>
       <div style="text-align: center;">
          <a href="https://docs.google.com/document/d/130UpdAFx8L_vYUi7f-eX1S9YeULFah2GTmMX2ZQWlnw/edit?usp=sharing">Google docs</a>,
       </div>
 
-      <ul>
-         {% for member in site.data.Prednasky_2022 %}
-         <article>
-            <div class="in">
-               <p class="author">{{ member.Prednasejici }}</p>
-               <h3>{{ member.Nazev }}</h3>
-               {% if member.Anotace != nil && member.Anotace != "" %}<div class="articleContent" style="padding-top: 2em;">{{ member.Anotace }}</div>{% endif %}
-               {% if member.Bio != nil && member.Bio != "" %}<p class="authorInfo"><a href="{{ member.Bio }}">{{ member.Bio }}</a></p>{% endif %}
-            </div>
-            <ul class="clr articleMedia">
-               {% if member.Url != nil && member.Url != "" %}<li><a href="{{ member.Url }}" target="_blank">Web</a></li>{% endif %}
-               {% if member.YouTube != nil && member.YouTube != "" %}<li class="videocast"><a href="{{ member.YouTube }}" target="_blank">Video</a></li>{% endif %}
-            </ul>
-         </article>
-         {% endfor %}
-      </ul>
    </div>
+
+   {% for member in site.data.Prednasky_2022 %}
+   <article>
+      <div class="in">
+         <p class="author">{{ member.Prednasejici }}</p>
+         <h3>{{ member.Nazev | remove_first: "🎤" | strip }}</h3>
+         {% if member.Anotace != nil and member.Anotace != "" %}<div class="articleContent">{{ member.Anotace }}</div>{% endif %}
+         {% if member.Bio != nil and member.Bio != "" %}<p class="authorInfo"><a href="{{ member.Bio }}">{{ member.Bio }}</a></p>{% endif %}
+      </div>
+      <ul class="clr articleMedia">
+         {% if member.Url != nil and member.Url != "" %}<li class="web"><a href="{{ member.Url }}" target="_blank">Web</a></li>{% endif %}
+         {% if member.YouTube != nil and member.YouTube != "" %}<li class="videocast"><a href="{{ member.YouTube }}" target="_blank">Video</a></li>{% endif %}
+      </ul>
+   </article>
+   {% endfor %}
 
 </div>

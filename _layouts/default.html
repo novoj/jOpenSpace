@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="cs">
 
   {% include head.html %}
 
   <body>
 
+    <a class="skipLink" href="#main">Přejít na obsah</a>
+
     {% include header.html %}
 
-    <section>
+    <main id="main">
 
       <div class="vw">
         <div id="preContent">
-          <h2>proběhla 2. – 4. října 2026</h2>
-          <p>v <a href="https://www.hotel-anton.cz/" target="_blank">hotelu Antoň</a> v Telči &ndash; příští ne-konference se uskuteční <strong>1. – 3. října 2027</strong></p>
+          <h2>proběhla <span class="nowrap">2. – 4. října 2026</span></h2>
+          <p>v&nbsp;<a href="https://www.hotel-anton.cz/" target="_blank">hotelu Antoň</a> v&nbsp;Telči &ndash; příští ne-konference se uskuteční <strong><span class="nowrap">1. – 3. října 2027</span></strong></p>
         </div>
 
         <div id="topContent">
@@ -33,7 +35,7 @@
 
       {% include archive.html class="bottomContent" %}
 
-    </section>
+    </main>
 
     {% include footer.html %}
 

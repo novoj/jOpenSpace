@@ -1,0 +1,16 @@
+# Jekyll build output
+_site/
+Gemfile.lock.new
+
+# Importer credentials and OAuth tokens (never commit)
+Importer/client_secret*.json
+Importer/*api_key*.txt
+Importer/tokens/
+
+# Importer build output
+Importer/target/
+
+# IDE
+.idea/
+*.iml
+

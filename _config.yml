@@ -1,5 +1,8 @@
 # Plugins
-gems:             ['jekyll-paginate', 'jekyll-gist', 'jekyll-github-metadata']
+plugins:          ['jekyll-paginate', 'jekyll-gist', 'jekyll-github-metadata']
+
+# Not part of the web (the Importer holds API credentials when used locally)
+exclude:          ['Importer', 'README.md', 'Gemfile', 'Gemfile.lock', 'jekyll.sh', '*.iml']
 
 # Dependencies
 highlighter:      rouge

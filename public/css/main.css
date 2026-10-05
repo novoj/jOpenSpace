@@ -49,12 +49,27 @@ a { display: inline-block; color: #635f55; -webkit-transition: all .35s; transit
 a:hover { text-decoration: none; -webkit-transition: all .35s; transition: all .35s;}
 a img {	border: none; display: block;}
 
-a, a:hover, a:active, a:focus, select {
+a, a:hover, a:active, select {
 	outline: 0;
+}
+
+/* keyboard focus must stay visible (WCAG 2.4.7) */
+a:focus-visible, button:focus-visible { outline: 2px solid #f7f6ee; outline-offset: 0; box-shadow: 0 0 0 5px #2b2823;}
+
+img { max-width: 100%; height: auto;}
+iframe { max-width: 100%;}
+iframe[src*="youtube"] { height: auto; aspect-ratio: 16 / 9;}
+
+.skipLink { position: absolute; left: 8px; top: -100px; z-index: 1000; padding: 8px 16px; background: #f7f6ee; color: #635f55;}
+.skipLink:focus { top: 8px;}
+
+@media (prefers-reduced-motion: reduce) {
+	*, *:before, *:after { transition: none !important; animation: none !important; scroll-behavior: auto !important;}
 }
 
 p { margin-bottom: 17px;}
 
+.nowrap { white-space: nowrap; font-weight: inherit;}
 .fl { float: left;}
 .fr { float: right;}
 .dn { display: none;}
@@ -67,7 +82,8 @@ h2 { font-size: 2.778em; text-transform: uppercase; font-weight: 300; margin-bot
 h3 { font-size: 2.222em; font-weight: 300; margin-bottom: 17px; line-height: 50px;}
 h4 { font-size: 1.5em; font-weight: 300; margin-bottom: 17px; line-height: 30px;}
 
-body { background: url('design/header.jpg?v=20180813') 50% 0 no-repeat #fff; background-size: 100%;}
+/* on narrow screens the photo keeps a minimum width, so it stays tall enough to sit behind the date box */
+body { background: url('design/header.jpg?v=20180813') 50% 0 no-repeat #fff; background-size: max(100%, 720px) auto;}
 
 /* header */
 header { margin-bottom: 66px;}
@@ -75,17 +91,17 @@ header nav { text-align: right; padding-top: 23px; margin-bottom: 28px;}
 header nav ul { display: inline-block !important;}
 header nav ul li { margin-left: 32px;}
 header nav ul li:first-of-type { margin-left: 0;}
-header nav ul li a { text-decoration: none; color: #f6f7e3; font-size: .944em;}
-header nav ul li a:hover { text-decoration: none; color: #64b49e;}
+header nav ul li a { text-decoration: none; color: #f6f7e3; font-size: .944em; text-shadow: 0 1px 3px rgba(0, 0, 0, .6);}
+header nav ul li a:hover { text-decoration: underline;}
 .logo { text-align: center;}
 
-section { margin-bottom: 25px;}
+main, section { margin-bottom: 25px;}
 ul.centered { text-align: center;}
 ul.centered > li { display: inline-block; list-style: none; vertical-align: middle; margin: 20px;}
 
 /* precontent */
-#preContent { background-color: #fff; background-color: rgba( 255, 255, 255, .71); text-align: center; padding: 27px 0 36px 0;}
-#preContent h2 { color: #64b49e; line-height: 50px; margin: 0;}
+#preContent { background-color: #fff; background-color: rgba( 255, 255, 255, .85); text-align: center; padding: 27px 0 36px 0;}
+#preContent h2 { color: #357d6a; line-height: 50px; margin: 0;}
 #preContent p { margin-bottom: 0;}
 
 /* horní obsah */
@@ -96,12 +112,12 @@ ul.centered > li { display: inline-block; list-style: none; vertical-align: midd
 #topContent .twoCols > .fl .motive { padding: 0; margin: 54px 0 52px 0;}
 #topContent .twoCols > .fl .motiveNoMargin { padding: 0; margin: 8px 0 8px 0;}
 #topContent .twoCols > .fr { width: 390px; background: url('design/bg-right-col.jpg') 0 0 repeat; text-align: center; padding: 63px 40px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
-#topContent .twoCols > .fr h2 { color: #fff; margin-bottom: 32px;}
+#topContent .twoCols > .fr h2 { color: #2b2823; margin-bottom: 32px;}
 #topContent .twoCols > .fr li { font-size: .844em; }
-#topContent .twoCols > .fr li * { color: #fff;}
+#topContent .twoCols > .fr li * { color: #2b2823;}
 #topContent .twoCols > .fr li p { line-height: 1.8;}
 #sponsors li { list-style: none; font-size: 60%; line-height: 1; }
-#sponsors li a img { margin-bottom: 30px; margin-top: 30px; }
+#sponsors li a img { margin: 30px auto;}
 .bottomSponsors li { height: 160px; }
 .bottomSponsors li span { height: 150px; width: 320px; vertical-align: bottom; display: inline-block; }
 
@@ -111,13 +127,14 @@ ul.centered > li { display: inline-block; list-style: none; vertical-align: midd
 
 /* spodní obsah - taby */
 #bottomContent { margin-top: 479px;}
-#bottomContentSwitch { background: url('design/bg-right-col.jpg') 0 0 repeat; padding: 31px 0 31px 0;}
-#bottomContentSwitch .years { background-color: #fff; background-color: rgba(210, 210, 210, 0.71);}
-#bottomContentSwitch .years li { width: 190px }
+#bottomContentSwitch { background: linear-gradient(rgba(60, 56, 48, .5), rgba(60, 56, 48, .5)), url('design/bg-right-col.jpg') 0 0 repeat; padding: 31px 0 31px 0;}
+#bottomContentSwitch .years { background-color: rgba(40, 37, 32, .25); display: flex; flex-wrap: wrap;}
+#bottomContentSwitch .years li { width: 190px; float: none;}
+#bottomContentSwitch .years:after { display: none;}
 #bottomContentSwitch h2 { color: #fff; margin: 0 100px 31px 100px; text-align: center; }
 #bottomContentSwitch li a { color: #fff; text-decoration: none; font-size: 2.222em; padding: 5px 47px; font-weight: 300; -webkit-transition: all .15s; transition: all .15s;}
 #bottomContentSwitch li a.current { background-color: #f7f6ee; color: #635f55; -webkit-transition: all .15s; transition: all .15s;}
-#bottomContentSwitch li a:hover { color: #64b49e;}
+#bottomContentSwitch li a:hover { text-decoration: underline;}
 .list-wrap > div > * { border-bottom: 1px solid #ececec; margin-bottom: 10px; background-color: #f7f6ee;}
 .list-wrap article p { position: relative;}
 .list-wrap article ul.clr { padding: 0; border-bottom: 1px solid #ececec;}
@@ -128,6 +145,8 @@ ul.centered > li { display: inline-block; list-style: none; vertical-align: midd
 .list-wrap article ul.clr li.presentation a { background-position: 0 -280px;}
 .list-wrap article ul.clr li.videocast a { background-position: 0 -580px;}
 .list-wrap article ul.clr li.examples a { background-position: 0 -680px;}
+/* the sprite has no web icon - a globe drawn in the same thin-line style */
+.list-wrap article ul.clr li.web a { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='%23635f55' stroke-width='1.6'%3E%3Ccircle cx='16' cy='16' r='13'/%3E%3Cellipse cx='16' cy='16' rx='5.5' ry='13'/%3E%3Cpath d='M3 16h26M5 9.5h22M5 22.5h22'/%3E%3C/svg%3E") 0 50% no-repeat;}
 .list-wrap article ul.clr li a:hover { text-decoration: none;}
 .list-wrap article ul.clr li i { font-weight: 300; margin-bottom: 20px; display: block;}
 .in { padding: 61px 100px;}
@@ -137,13 +156,17 @@ ul.centered > li { display: inline-block; list-style: none; vertical-align: midd
 .hide {position: relative; top: 0; left: 0; display: none }
 
 /* seznam */
-.styledList li { list-style: none; margin-bottom: 10px;}
+.styledList li { list-style: none; margin-bottom: 10px; text-align: center;}
+
+/* archive section headings look the same in every year */
+#archive .in > h4 { text-align: center;}
+#archive .in > h4 ~ h4 { margin-top: 1.5em;}
 .styledList li:last-of-type { margin-bottom: 0;}
 
 /* galerie */
-.gallery { text-align: center; }
-.gallery li { margin: 0 46px 36px 0;}
-.gallery li:nth-of-type(4n) { margin-right: 0;}
+ul.gallery { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 36px 46px; margin-bottom: 36px;}
+ul.gallery:after { display: none;}
+.gallery li { float: none;}
 .gallery li a, .gallery li a img { display: block; opacity: .9;}
 .gallery li a:hover { opacity: 1;}
 
@@ -153,15 +176,17 @@ ul.centered > li { display: inline-block; list-style: none; vertical-align: midd
 
 /* other galleries */
 .otherGalleries { }
-.otherGalleries li { list-style: none; text-align: left; margin-bottom: 0;}
+.otherGalleries li { list-style: none; text-align: center; margin-bottom: 0;}
 .otherGalleries li:last-of-type { margin-bottom: 0;}
 
 /* obsah tabů */
-.author { font-size: 1.389em; color: #64b49e; margin-bottom: 0;}
-.articleContent { margin-bottom: 32px;}
+.author { font-size: 1.389em; color: #357d6a; margin-bottom: 0;}
+.articleContent { margin-bottom: 32px; position: relative; overflow-wrap: anywhere;}
 .articleContent ul {padding-left: 2em;}
+.articleContent a { display: inline;}
 .articleContent, .authorInfo { padding-left: 49px;}
 .authorInfo { margin-bottom: 0;}
+.authorInfo a { display: inline; overflow-wrap: anywhere;}
 .articleContent:before { content: ""; position: absolute; left: 0; top: 0; width: 28px; height: 32px; background: url('design/sprites.png') 0 0 no-repeat;}
 .authorInfo:before { content: ""; position: absolute; left: 0; top: 0; width: 28px; height: 32px; background: url('design/sprites.png') 0 -100px no-repeat;}
 
@@ -175,6 +200,7 @@ ul.centered > li { display: inline-block; list-style: none; vertical-align: midd
 /* ostatní stránky */
 #pageContent { background-color: #fff; padding: 2em; }
 #pageContent ul { margin: 2em }
+#pageContent a { overflow-wrap: anywhere;}
 
 /* patička */
 footer { margin-bottom: 30px;}
@@ -186,7 +212,6 @@ footer { margin-bottom: 30px;}
     #topContent .twoCols > .fl .motive { width: 634px;}
     #topContent .twoCols > .fl > * { padding: 0 50px;}
     .in { padding: 61px 50px;}
-    .gallery li { margin:  0 41px 36px 0;}
     #bottomContentSwitch h2 { margin-left: 50px;}
 }
 
@@ -199,8 +224,6 @@ footer { margin-bottom: 30px;}
     #topContent .twoCols > .fr { width: 270px; padding: 63px 20px;}
     #bottomContentSwitch li a { padding: 5px 28px;}
     .in { padding: 61px 30px;}
-    .gallery li:nth-of-type(3n) { margin-right: 0;}
-    .gallery li:nth-of-type(4n) { margin-right: 41px;}
     #topContent .twoCols > .fl .motive { width: 530px;}
     #bottomContentSwitch h2 { margin-left: 30px;}
     #topContent .twoCols > .fr li img { max-width: 220px;}
@@ -222,7 +245,6 @@ footer { margin-bottom: 30px;}
     #topContent .twoCols > .fl .motive { width: 100%;}
     #topContent .twoCols > .fr { float: none; width: 100%;}
     #bottomContentSwitch li a { padding: 5px 12px;}
-    .gallery li:nth-of-type(3n) { margin-right: 41px;}
     .list-wrap article ul.clr li { padding-left: 60px;}
     #topContent .twoCols > .fr li img { max-width: 500px;}
 }
@@ -232,26 +254,41 @@ footer { margin-bottom: 30px;}
     h1.logo img { width: 335px;}
     h2 { font-size: 2em;}
     #bottomContentSwitch li a { font-size: 1.5em; padding: 5px 13px;}
-    .gallery { margin-bottom: 25px;}
-    .gallery li { margin: 0 10px 10px 0;}
-    .gallery li:nth-of-type(2n) { margin-right: 0;}
-    .gallery li:nth-of-type(3n) { margin-right: 10px;}
+    ul.gallery { gap: 10px; margin-bottom: 25px;}
+    h3 { font-size: 1.6em; line-height: 1.3;}
+    .in { padding: 40px 16px;}
+    .articleContent, .authorInfo { padding-left: 40px;}
+    #bottomContentSwitch .years li { width: 25%;}
+    #bottomContentSwitch .years li a { display: block; text-align: center;}
     .list-wrap article ul.clr li { padding-left: 25px;}
     #topContent .twoCols > .fr li img { max-width: 400px;}
     #topContent .twoCols > .fl, #topContent .twoCols > .fr { height: auto !important;}
+    #preContent { padding: 18px 16px 22px;}
+    #preContent h2 { font-size: 1.6em; line-height: 1.2; margin-bottom: 8px;}
+    #preContent p { font-size: .9em; line-height: 1.5;}
 }
 
 @media all and (max-width: 479px) {
-    .vw { width: 320px;}
-    header nav { margin-bottom: 5px;}
-    header nav ul li { margin-left: 15px;}
-    header nav ul li a { font-size: .722em;}
+    .vw { width: auto; margin: 0;}
+    footer .vw { padding: 0 18px;}
+    #topContent h2 { margin-bottom: 12px;}
     h1.logo img { width: 205px;}
     #bottomContentSwitch li a { font-size: 1em; padding: 5px 9px;}
     .list-wrap article ul.clr li { padding-left: 12px;}
     .list-wrap article ul.clr li a { padding-left: 45px;}
     #topContent .twoCols > .fr li img { max-width: 280px;}
-
+    body { font-size: 1em; line-height: 1.6;}
+    header nav { text-align: center; padding-top: 16px; margin-bottom: 5px;}
+    header nav ul li { margin-left: 14px;}
+    header nav ul li a { font-size: .875em;}
+    h2 { font-size: 1.75em; line-height: 1.2;}
+    h3 { font-size: 1.3em; line-height: 1.35;}
+    #topContent .twoCols > .fl { padding: 36px 0;}
+    #topContent .twoCols > .fl > * { padding: 0 18px;}
+    #topContent .twoCols > .fl .motive { margin: 32px 0;}
+    #topContent .twoCols > .fr { padding: 36px 18px;}
+    #topContent .twoCols > .fr h2 { margin-bottom: 8px;}
+    #bottomContentSwitch h2 { margin: 0 18px 24px;}
 }
 
 

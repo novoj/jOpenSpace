@@ -2,22 +2,16 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
 
-  <title>
-    {% if page.title == "Home" %}
-    {{ site.title }} &middot; {{ site.tagline }}
-    {% else %}
-    {{ page.title }} &middot; {{ site.title }}
-    {% endif %}
-  </title>
+  <title>{% if page.title and page.title != site.title %}{{ page.title }} &middot; {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 
   <!-- meta -->
   <meta name="robots" content="index, follow" />
   <meta name="googlebot" content="index, follow, snippet, archive" />
-  <meta name="author" content="{{ author.name }}, {{ author.url }}" />
+  <meta name="author" content="{{ site.author.name }}, {{ site.author.url }}" />
   <meta name="keywords" content="openspace, non-conference, developers, podcast, presentations" />
-  <meta name="title" property="og:title" content="{{ page.title }}">
-  <meta name="description" content="{{ page.description }}" />
-  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+  <meta property="og:title" content="{{ page.title | default: site.title }}">
+  <meta name="description" content="{{ page.description | default: site.description }}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="HIDXDYvVDyhunDUovEXgLbJEAWD6xH8agaWVvgaYyq8" />
 
   <!-- Standard favicon -->
@@ -33,15 +27,14 @@
   <!-- Android/Progressive Web App -->
   <link rel="manifest" href="{{ site.baseurl }}/public/images/favicon/site.webmanifest">
 
-  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300&amp;subset=latin,latin-ext&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" media="screen" href="{{ site.baseurl }}/public/js/highslide/highslide.css">
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/public/css/main.css?v=201507140905" />
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/public/css/main.css?v=202610052300" />
 
-  <script type="text/javascript" src="{{ site.baseurl }}/public/js/jquery-1.8.js"></script>
-  <script type="text/javascript" src="{{ site.baseurl }}/public/js/jquery.organicTabs.js"></script>
-  <script type="text/javascript" src="{{ site.baseurl }}/public/js/highslide/highslide-full.js"></script>
-  <script type="text/javascript" src="{{ site.baseurl }}/public/js/main.js?v=202106182033"></script>
-
-  <script src="https://cdn.maptiler.com/maptiler-sdk-js/v2.0.3/maptiler-sdk.umd.js"></script>
-  <link href="https://cdn.maptiler.com/maptiler-sdk-js/v2.0.3/maptiler-sdk.css" rel="stylesheet">
+  <script defer src="{{ site.baseurl }}/public/js/jquery-1.8.js"></script>
+  <script defer src="{{ site.baseurl }}/public/js/jquery.organicTabs.js"></script>
+  <script defer src="{{ site.baseurl }}/public/js/highslide/highslide-full.js"></script>
+  <script defer src="{{ site.baseurl }}/public/js/main.js?v=202610052300"></script>
 </head>
