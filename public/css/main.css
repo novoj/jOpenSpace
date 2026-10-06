@@ -255,6 +255,7 @@ footer { margin-bottom: 30px;}
     h2 { font-size: 2em;}
     #bottomContentSwitch li a { font-size: 1.5em; padding: 5px 13px;}
     ul.gallery { gap: 10px; margin-bottom: 25px;}
+    #year2026 .gallery img { width: 150px; }
     h3 { font-size: 1.6em; line-height: 1.3;}
     .in { padding: 40px 16px;}
     .articleContent, .authorInfo { padding-left: 40px;}
